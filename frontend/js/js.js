@@ -28,7 +28,7 @@ searchButton.addEventListener("click", async () => {
     console.log(element.show.name);
     mainElement.innerHTML += `
         <div class="grid-item">
-          <img src=${photo} alt=${altPhoto}>
+          <img src="../mockupPhoto/glögg.png" alt=${altPhoto}>
         </div>`;
 
   }
