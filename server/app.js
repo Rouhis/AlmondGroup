@@ -12,4 +12,4 @@ app.use(express.urlencoded({extended:true}));
 app.use('/profile', profileRoute)
 
 
-app.listen(port, () => console.log('app listening on port ' + port))
+app.listen(port, () => console.log(`app listening on port ${port}!`))

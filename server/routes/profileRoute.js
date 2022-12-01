@@ -1,12 +1,11 @@
-'use strict'
+"use strict";
 
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-
 const profileController = require('../controllers/profileController')
 
-router.get('/', profileController.getProfiles)
-        .get('/:profileId', profileController.getProfile)
+router.get("/",profileController.getProfiles)
+        .get('/:profileId', profileController.getProfiles)
 
 
 
