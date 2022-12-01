@@ -16,10 +16,12 @@
         <ul class="navbar">
             <li class="navelement"><a id="nav_a">Almond app</a></li>
             <li class="navlink"><a id="nav_a" href="#">Home</a></li>
-            <li class="navlink" id="user"><a id="nav_a" href="#" onclick="openLogInForm()"><img src="../mockupPhoto/user.jpg" alt="profilepicture"
+            <li class="navlink" id="user"><a id="nav_a" href="#" onclick="openLogInForm()"><img
+                        src="../mockupPhoto/user.jpg" alt="profilepicture"
                         style="max-width: 3em; max-height: 3em; border-radius: 50%;"></a></li>
         </ul>
     </nav>
+
     <!-- Loging form -->
     <div class="login" id="loginform">
         <a id="close" href="#" type="close" onclick="closeLogInForm()">&times;</a>
@@ -38,7 +40,7 @@
             </div>
     </div>
     </form>
-    <!-- SigUp form -->
+    <!-- SignUp form -->
     <div class="signup" id="signupform">
         <a id="close" href="#" type="close" onclick="closeSignUpForm()">&times;</a>
         <form>
@@ -54,35 +56,39 @@
             <input type="submit" value="Submit">
     </div>
     </form>
+
     <!-- Div for centering the form -->
     <div class="searchdiv">
         <!-- Search form for finding recipes -->
-        <form class="search" action="#">
-            <input type="text" placeholder="Look for a recipe..." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
+        <form class="search" action=>
+            <input id="search" type="text" placeholder="Look for a recipe...">
+            <button id="button" type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>
     <!-- Div for all the recipecards -->
-    <main class="recipecards">
-
-    </main>
+        <main class="gridcontainer">
+            <script src="../js/js.js"></script>
+        </main>
 </body>
 <script>
-    function openLogInForm(){
-    document.getElementById("loginform").style.display = "block";
-}
+    function openLogInForm() {
+        document.getElementById("loginform").style.display = "block";
+    }
 
-function closeLogInForm() {
-    document.getElementById("loginform").style.display = "none";
-  }
+    function closeLogInForm() {
+        document.getElementById("loginform").style.display = "none";
+    }
 
-  function openSignUpForm(){
-    document.getElementById("loginform").style.display = "none";
-    document.getElementById("signupform").style.display = "block";
-}
+    function openSignUpForm() {
+        document.getElementById("loginform").style.display = "none";
+        document.getElementById("signupform").style.display = "block";
+    }
 
-function closeSignUpForm() {
-    document.getElementById("signupform").style.display = "none";
-  }
+    function closeSignUpForm() {
+        document.getElementById("signupform").style.display = "none";
+    }
+
+
 </script>
+
 </html>
