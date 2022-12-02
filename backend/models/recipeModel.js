@@ -1,4 +1,5 @@
 "use strict";
+const { validationResult } = require("express-validator");
 const pool = require("../db/db");
 const promisePool = pool.promise();
 
@@ -32,10 +33,24 @@ const getRecipeByUserId = async (res, userId) => {
         console.error("error", e.message);
         res.status(500).send(e.message);
     }
-}
+};
+
+const addRecipe = async (recipe, res) => {
+  try{
+    const sql = 'INSERT INTO recipe (name,user_id,ingredients,instructions,img) VALUES (?,?,?,?,?,?)';
+    const values = [recipe.name, recipe.userId, recipe.ingredients, recipe.instructions, recipe.img];
+    const [result] = await promisePool.query(sql,values);
+    console.log([result])
+    return result.insertId
+  }catch(e){
+    console.error("error",e.message);
+    res.status(500).send(e.message);
+  }
+};
 
 module.exports = {
     getAllRecipes,
     getRecipeById,
-    getRecipeByUserId
+    getRecipeByUserId,
+    addRecipe
 };

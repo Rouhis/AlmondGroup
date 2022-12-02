@@ -19,6 +19,13 @@ const upload = multer({dest: "uploads/", fileFilter});
 
 router.get("/",recipeController.getRecipes)
 .get("/:recipeId", recipeController.getRecipeById)
-.get("/user/:userId",recipeController.getRecipeByUserId);
+.get("/user/:userId",recipeController.getRecipeByUserId)
+.post("/", upload.single("recipe"),
+body("userid"),
+body("name"),
+body("ingredients"),
+body("instructions"),
+body("img"),
+recipeController.createRecipe);
 
 module.exports = router;
