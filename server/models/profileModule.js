@@ -12,6 +12,7 @@ const getAllProfiles = async (res) => {
     res.status(500).send(e.message);
   }
 };
+
 const getProfileById = async (res, profileId) => {
   try {
     const [rows] = await promisePool.query('SELECT * FROM user WHERE id= ?',[profileId]);

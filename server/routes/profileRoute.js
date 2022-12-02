@@ -5,7 +5,7 @@ const router = express.Router();
 const profileController = require('../controllers/profileController')
 
 router.get("/",profileController.getProfiles)
-        .get('/:profileId', profileController.getProfiles)
+        .get('/:profileId', profileController.getProfile)
 
 
 

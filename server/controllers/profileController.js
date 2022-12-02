@@ -6,19 +6,18 @@ const getProfiles = async(req, res) => {
     res.json(profiles)
 }
 
+const getProfile = async (req, res) => {
 
-const getProfileById = async (req,res) => {
-    const profile = await recipeModel.getRecipeById(res, req.params.profileId);
-    if(profile){
-        res.json(profile);
-    }else{
-        res.sendStatus(404);
+    const profile = await profileModule.getProfileById(res, req.params.profileId);
+    if (profile) {
+      res.json(profile);
+    } else {
+      res.sendStatus(404);
     }
-}
-
+  };
 
 
 module.exports = {
     getProfiles,
-    getProfileById,    
+    getProfile,    
 }
