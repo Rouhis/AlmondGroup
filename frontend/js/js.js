@@ -16,7 +16,7 @@ searchButton.addEventListener("click", async () => {
   const json = await response.json()
 
   console.log(json);
-  
+
   for (const element of json) {
     if (element.show.image == null || element.show.image.medium == null) {
       photo = null
@@ -27,9 +27,15 @@ searchButton.addEventListener("click", async () => {
     }
     console.log(element.show.name);
     mainElement.innerHTML += `
-        <div class="grid-item">
-          <img src="../mockupPhoto/glögg.png" alt=${altPhoto}>
-        </div>`;
+        <div class="grid-item" onclick="location.href='#';" style="cursor: pointer;">
+        <div class="textcontainer">
+        <a href="#" class="textonrecipe">Recipe</a>
+        </div> 
+        <div>
+        <img src="../mockupPhoto/glögg.png" alt=${altPhoto}>
+        </div>
+        </div>`
+      ;
 
   }
 }
