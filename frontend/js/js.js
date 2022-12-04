@@ -27,14 +27,16 @@ searchButton.addEventListener("click", async () => {
     }
     console.log(element.show.name);
     mainElement.innerHTML += `
-        <div class="grid-item" onclick="location.href='#';" style="cursor: pointer;">
-        <div class="textcontainer">
-        <a href="#" class="textonrecipe">Recipe</a>
-        </div> 
+        <a class="recipecard" onclick="location.href='#';" style="cursor: pointer;">
+
         <div>
         <img src="../mockupPhoto/glögg.png" alt=${altPhoto}>
         </div>
-        </div>`
+        <div class="recipecardbottom">
+        <h1>Name<h1>
+        <button class="favorite recipebutton"><3</button>
+        </div>
+        </a>`
       ;
 
   }

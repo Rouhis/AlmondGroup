@@ -122,34 +122,33 @@ form.search button:hover {
     background-color: #f1f1f1;
 }
 
-.containercontainer{
+.maincontainer{
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
     width: 100%;
-    background-color: aqua;
 }
 
 .container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #b9b248;
     width: 80%;
     
 }
-.gridcontainer{
+
+.recipes{
     display: grid;
     grid-template-columns: auto auto auto;
     
 }
 
-
-.grid-item{
+.recipecard{
     margin: 5px 5px 5px;
-    color: #3A3042;
-    max-width: 35em;
+    max-width: 25em;
+    max-height: 14em;
+    background-color: #000000;
 }
 
 img {
@@ -157,18 +156,26 @@ img {
     max-height: 100%;
 }
 
-.textcontainer{
-    text-align: center;
-    font-size: 2em;
-    
-}
-.grid-item.textcontainer{
+.recipecardbottom{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: space-between;
+    background-color: red;
     width: 100%;
-    height: 100%;
+    
 }
 
-.textonrecipe{
-    text-decoration: none;
-    color: var(--orange);
-    
+.recipecardbottom h1{
+    color: #FF784F;
+    margin: 0;
+    padding: 0;
+    font-size: 1.5vw;
+ 
+}
+
+.recipecardbottom button{
+    height: fit-content;
+    width: fit-content;
+    font-size: 1.5vw;
 }
