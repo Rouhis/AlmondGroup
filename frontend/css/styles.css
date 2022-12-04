@@ -147,7 +147,7 @@ form.search button:hover {
 .recipecard{
     margin: 5px 5px 5px;
     max-width: 25em;
-    max-height: 14em;
+    max-height: 15em;
     background-color: #000000;
 }
 
@@ -170,12 +170,12 @@ img {
     color: #FF784F;
     margin: 0;
     padding: 0;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
  
 }
 
 .recipecardbottom button{
     height: fit-content;
     width: fit-content;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
 }
