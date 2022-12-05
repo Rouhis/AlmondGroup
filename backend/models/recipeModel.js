@@ -37,7 +37,7 @@ const getRecipeByUserId = async (res, userId) => {
 
 const addRecipe = async (recipe, res) => {
   try{
-    const sql = 'INSERT INTO recipe (name,user_id,ingredients,instructions,img) VALUES (?,?,?,?,?,?)';
+    const sql = 'INSERT INTO recipe (name,user_id,ingredients,instructions,img) VALUES = (?,?,?,?,?,?)';
     const values = [recipe.name, recipe.userId, recipe.ingredients, recipe.instructions, recipe.img];
     const [result] = await promisePool.query(sql,values);
     console.log([result])
@@ -48,9 +48,23 @@ const addRecipe = async (recipe, res) => {
   }
 };
 
+const updateRecipeById = async (recipe, userId, res) =>{
+    try{
+        let sql, values;
+        sql = "UPDATE recipe SET name=?,ingredients=?, instructions=?, img=? WHERE id=?";
+        values = [recipe.name, recipe.ingredients, recipe.instructions, recipe.img, recipe.id];
+        const [rows] = await promisePool.query(sql,values);
+        return rows;
+    }catch(e){
+        console.error("error", e.message);
+        res.status(500).json({"error": e.message});
+    }
+}
+
 module.exports = {
     getAllRecipes,
     getRecipeById,
     getRecipeByUserId,
-    addRecipe
+    addRecipe,
+    updateRecipeById
 };

@@ -26,6 +26,7 @@ body("name"),
 body("ingredients"),
 body("instructions"),
 body("img"),
-recipeController.createRecipe);
+recipeController.createRecipe)
+.put("/", recipeController.modifyRecipeById);
 
 module.exports = router;

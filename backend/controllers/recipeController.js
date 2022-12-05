@@ -38,10 +38,25 @@ const createRecipe = async (req,res) => {
     }
 }
 
+const modifyRecipeById = async (req,res) =>{
+    //const
+    const recipe = req.body;
+    if(req.params.recipeId){
+        recipe.id = req.params.recipeId
+    }
+    const result = await recipeModel.updateRecipe(recipe);
+    if(result.affectedRows > 0){
+        res.json({message: "recipe modified: " + recipe.id});
+    } else {
+        res.status(400).json({message: "nothing modified"});
+    }
+};
+
 
 module.exports = {
     getRecipes,
     getRecipeById,
     getRecipeByUserId,
-    createRecipe
+    createRecipe,
+    modifyRecipeById
 }
