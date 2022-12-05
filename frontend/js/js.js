@@ -29,7 +29,7 @@ searchButton.addEventListener("click", async () => {
     mainElement.innerHTML += `
         <a class="recipecard" onclick="location.href='#';" style="cursor: pointer;">
         <div class="recipecardtop">
-        <img src="../mockupPhoto/glögg.png" alt=${altPhoto}>
+        <img src="../mockupPhoto/glögg.png" alt="recipe">
         </div>
         <div class="recipecardbottom">
         <h1>Name<h1>
