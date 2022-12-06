@@ -37,9 +37,11 @@ const getRecipeByUserId = async (res, userId) => {
 
 const addRecipe = async (recipe, res) => {
   try{
-    const sql = 'INSERT INTO recipe (name,user_id,ingredients,instructions,img) VALUES = (?,?,?,?,?,?)';
-    const values = [recipe.name, recipe.userId, recipe.ingredients, recipe.instructions, recipe.img];
-    const [result] = await promisePool.query(sql,values);
+ //   const sql = 'INSERT INTO recipe (name,user_id,ingredients,instructions,img) VALUES = (?,?,?,?,?)';
+  //  const values = [recipe.name, recipe.userId, recipe.ingredients, recipe.instructions, recipe.img];
+    const [result] = await promisePool.query(
+    'INSERT INTO recipe (name,user_id,ingredients,instructions,img) VALUES (?,?,?,?,?)'
+    ,[recipe.name, recipe.userid, recipe.ingredients, recipe.instructions, recipe.img]);
     console.log([result])
     return result.insertId
   }catch(e){

@@ -1,10 +1,11 @@
-"use strict";
+"use strict"
 
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 const {body} = require("express-validator");
-const recipeController = require("../controllers/recipeController");
+const commentController = require("../controllers/commentController");
+
 
 const fileFilter = (req, file, cb) => {
     const acceptedTypes = ["image/jpeg","image/png","image/gif"];
@@ -17,16 +18,15 @@ const fileFilter = (req, file, cb) => {
 
 const upload = multer({dest: "uploads/", fileFilter});
 
-router.get("/",recipeController.getRecipes)
-.get("/:recipeId", recipeController.getRecipeById)
-.get("/user/:userId",recipeController.getRecipeByUserId)
+
+router.get("/",commentController.getComments)
+.get("/:recipeId", commentController.getCommentsByRecipeId)
+.get("/user/:userId",commentController.getCommentByUserId)
 .post("/",
-body("name"),
-body("userid"),
-body("ingredients"),
-body("instructions"),
-body("img"),
-recipeController.createRecipe)
-.put("/", recipeController.modifyRecipeById);
+body("user_id"),
+body("recipe_id"),
+body("data"),commentController.createComment);
+
+
 
 module.exports = router;
