@@ -46,9 +46,20 @@ const addComment = async (comment,res) => {
       }
 };
 
+const deleteComment = async (comment,res) => {
+    try{
+        const [rows] = await promisePool.query("DELETE FROM comments WHERE id=? AND user_id=?",[comment.id,comment.user_id]);
+        return rows;
+    }catch (e) {
+        console.error('error', e.message);
+        res.status(500).send(e.message);
+      }
+};
+
 module.exports={
     getAllComments,
     getCommentsByRecipeId,
     getCommentByUserId,
-    addComment
+    addComment,
+    deleteComment
 }

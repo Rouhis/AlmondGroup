@@ -25,7 +25,11 @@ router.get("/",commentController.getComments)
 .post("/",
 body("user_id"),
 body("recipe_id"),
-body("data"),commentController.createComment);
+body("data"),commentController.createComment)
+.delete("/delete",
+body("id"), 
+body("user_id")
+,commentController.deleteComment)
 
 
 

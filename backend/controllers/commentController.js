@@ -39,10 +39,23 @@ const createComment = async (req,res) =>{
       }
 }
 
+const deleteComment = async (req,res)=>{
+    const comment = req.body;
+    const result = await commentModel.deleteComment(comment,res);
+    console.log("comment deleted",result);
+
+    if (result.affectedRows > 0) {
+        res.json({message: 'comment deleted'});
+      } else {
+        res.status(401).json({message: 'comment delete failed'});
+      }
+}
+
 
 module.exports = {
     getComments,
     getCommentsByRecipeId,
     getCommentByUserId,
-    createComment
+    createComment,
+    deleteComment
 }
