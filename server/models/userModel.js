@@ -25,7 +25,20 @@ const getUserById = async (res, userId) => {
     }
 };
 
+const addUser = async (user, res) => {
+  try {
+    const sql = 'INSERT INTO user VALUES (null, ?, ?, ?)';
+    const values = [user.username, user.password, user.role];
+    const [result] = await promisePool.query(sql, values);
+    return result.insertId;
+  } catch (e) {
+    console.error("error", e.message);
+    res.status(500).send(e.message);
+  }
+};
+
 module.exports = {
     getAllUsers,
-    getUserById
+    getUserById,
+    addUser
 }
