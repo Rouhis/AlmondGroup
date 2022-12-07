@@ -11,6 +11,7 @@ searchButton.addEventListener("click", async () => {
   let photo;
   let altPhoto
   let json;
+  
 
 //  mazeSearch = maze + searchField.value;
 
@@ -31,15 +32,18 @@ if(!searchField.value){
  // console.log(json);
 
 
+
+
   for (const element of json) {
 
     mainElement.innerHTML += `
-        <a class="recipecard" onclick="location.href='#';" style="cursor: pointer;">
+        <a class="recipecard" onclick="href='recipes.html?id=${element.id}';" style="cursor: pointer;">
         <div class="recipecardtop">
         <img src="../mockupPhoto/glögg.png" alt="recipe">
         </div>
         <div class="recipecardbottom">
         <h1>${element.name}<h1>
+        <h2>${element.id}</h2>
         <button class="favorite recipebutton"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
         </div>
         </a>`
