@@ -33,7 +33,7 @@ searchButton.addEventListener("click", async () => {
         </div>
         <div class="recipecardbottom">
         <h1>Name<h1>
-        <button class="favorite recipebutton"><3</button>
+        <button class="favorite recipebutton"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
         </div>
         </a>`
       ;
