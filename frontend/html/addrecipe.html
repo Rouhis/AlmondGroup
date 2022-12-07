@@ -1,3 +1,5 @@
+<!--Eetu Rouhiainen-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,15 +23,31 @@
     <div class="recipeadd_container">
         <form class="recipe_add">
             <div class="add_image">
-                <input type="file">
+                <input class ="hide "type="file" accept="image/*" onchange="loadFile(event)">
+                <img id="output" />
+                <script>
+                    var loadFile = function (event) {
+                        var output = document.getElementById('output');
+                        output.src = URL.createObjectURL(event.target.files[0]);
+                        output.onload = function () {
+                            URL.revokeObjectURL(output.src) 
+                        }
+                    };
+                </script>
             </div>
             <div class="guidelines">
                 <div class="add_ingredients">
+                    <h2>Add ingredients</h2>
+                    <input type="text">
+                </div>
+                <div class="add_steps">
+                    <h2>Add steps</h2>
                     <input>
                 </div>
-                <div class="add_steps"></div>
             </div>
-            <div class="add_button"></div>
+            <div class="add_button">
+                <button>Submit</button>
+            </div>
         </form>
 
     </div>
