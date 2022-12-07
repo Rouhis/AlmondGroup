@@ -52,11 +52,21 @@ const modifyRecipeById = async (req,res) =>{
     }
 };
 
+const getRecipeByName = async (req,res)=>{
+    const recipes = await recipeModel.getRecipeByName(res, req.params.recipeName);
+    if(recipes){
+        res.json(recipes)
+    }else{
+        res.sendStatus(404);
+    }
+}
+
 
 module.exports = {
     getRecipes,
     getRecipeById,
     getRecipeByUserId,
     createRecipe,
-    modifyRecipeById
+    modifyRecipeById,
+    getRecipeByName
 }

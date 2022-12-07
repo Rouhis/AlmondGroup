@@ -63,10 +63,22 @@ const updateRecipeById = async (recipe, userId, res) =>{
     }
 }
 
+const getRecipeByName = async (res, recipeName) =>{
+    try{
+        const [rows] = await promisePool.query("SELECT * FROM recipe WHERE name LIKE ?",[recipeName+"%"]);
+        console.log([rows]);
+        return rows;
+    }catch(e){
+        console.error("error",e.message);
+        res.status(500).send(e.message);
+      }
+}
+
 module.exports = {
     getAllRecipes,
     getRecipeById,
     getRecipeByUserId,
     addRecipe,
-    updateRecipeById
+    updateRecipeById,
+    getRecipeByName
 };

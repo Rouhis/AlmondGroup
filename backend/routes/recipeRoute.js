@@ -20,6 +20,7 @@ const upload = multer({dest: "uploads/", fileFilter});
 router.get("/",recipeController.getRecipes)
 .get("/:recipeId", recipeController.getRecipeById)
 .get("/user/:userId",recipeController.getRecipeByUserId)
+.get("/name/:recipeName", recipeController.getRecipeByName)
 .post("/",
 body("name"),
 body("userid"),
