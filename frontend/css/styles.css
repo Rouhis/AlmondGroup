@@ -1,9 +1,11 @@
 :root {
-    --orange: #FF784F;
+    --red: #FF0035;
     --yellow: #FFE19C;
-    --white: #f1f1f1;
-    --darkpurple: #3A3042;
+    --dark: #D3D6D9;
+    --black: #0E131F;
+    --light: #f1f1f1;
     --lighterpurple: #725E82;
+    --white: #f1f1f1;
 }
 
 * {
@@ -14,13 +16,13 @@ html,
 body {
     margin: 0px;
     padding: 0px;
-    background-color: var(--white);
+    background-color: var(--dark);
 }
 
 
 
 .navbar {
-    background-color: var(--darkpurple);
+    background-color: var(--black);
     display: flex;
     flex-direction: row;
     list-style-type: none;
@@ -32,7 +34,7 @@ body {
 
 .navlink {
     padding: .1em;
-    color: var(--orange);
+    color: var(--red);
 }
 
 .navlink:hover {
@@ -42,7 +44,7 @@ body {
 
 #nav_a {
     font-size: x-large;
-    color: var(--orange);
+    color: var(--red);
     text-decoration: none;
 }
 
@@ -64,7 +66,7 @@ form {
 form.search input[type=text] {
     padding: 10px;
     font-size: 17px;
-    border: 1px solid var(--darkpurple);
+    border: 1px solid var(--black);
     float: left;
     background: var(--white);
 }
@@ -72,7 +74,7 @@ form.search input[type=text] {
 form.search input[type=text] {
     padding: 10px;
     font-size: 17px;
-    border: 1px solid var(--darkpurple);
+    border: 1px solid var(--black);
     float: left;
     width: 90%;
     background: var(--white);
@@ -82,10 +84,10 @@ form.search button {
     float: left;
     min-width: 5%;
     padding: 10px;
-    background: var(--darkpurple);
-    color: var(--orange);
+    background: var(--black);
+    color: var(--red);
     font-size: 17px;
-    border: 1px solid var(--darkpurple);
+    border: 1px solid var(--black);
     border-left: none;
     cursor: pointer;
 }
@@ -162,17 +164,17 @@ form.search button:hover {
     flex-direction: row;
     justify-items: center;
     justify-content: space-between;
-    background-color: red;
+    background-color: var(--light);
     width: 100%;
     height: 20%;
 
 }
 
 .recipecardbottom h1 {
-    color: #FF784F;
+    color: var(--black);
     margin: 0;
     padding: 0;
-    font-size: xx-large;
+    font-size: x-large;
 
 }
 
