@@ -1,3 +1,5 @@
+/*Eetu Rouhiainen*/
+
 :root {
     --red: #FF0035;
     --yellow: #FFE19C;
@@ -19,7 +21,6 @@ body {
     padding: 0px;
     background-color: var(--dark);
 }
-
 
 .navbar {
     background-color: var(--black);
@@ -61,7 +62,6 @@ body {
 form {
     width: 70%;
 }
-
 
 form.search input[type=text] {
     padding: 10px;
@@ -124,9 +124,8 @@ form.search button:hover {
     width: 25em;
     height: 15em;
     border: 2px solid black;
-    
-}
 
+}
 
 .recipecardtop {
     height: 80%;
@@ -183,10 +182,9 @@ img {
 
 }
 
-
 /* Recipe page css starts here */
 
-.recipeimage{
+.recipeimage {
     display: flex;
     width: 60em;
     height: 30em;
@@ -199,27 +197,28 @@ img {
     height: fit-content;
 }
 
-.steps{
+.steps {
     width: 50%;
     height: fit-content;
 }
 
-.ingredients{
+.ingredients {
     width: 50%;
     height: fit-content;
 }
 
-.comments{
+.comments {
     width: 50em;
     height: fit-content
 }
-.comment{
+
+.comment {
     background-color: var(--orange);
 }
 
 @media only screen and (max-width: 950px) {
 
-    .recipeimage{
+    .recipeimage {
         display: flex;
         width: 95vw;
         height: 35vw
@@ -232,32 +231,30 @@ img {
         height: fit-content;
     }
 
-    .steps{
-        width: 90%;
-        height: fit-content;
-    }
-    
-    .ingredients{
+    .steps {
         width: 90%;
         height: fit-content;
     }
 
-    .comments{
+    .ingredients {
+        width: 90%;
+        height: fit-content;
+    }
+
+    .comments {
         width: 70vw;
         height: fit-content
     }
 }
 
-
 /* Login and Signup CSS */
 
-
-.login_body{
-    background: linear-gradient(120deg, #0E131F, #FF0035 );
+.login_body {
+    background: linear-gradient(120deg, #0E131F, #FF0035);
     height: 100vh;
 }
 
-.logincenter{
+.logincenter {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -267,13 +264,13 @@ img {
     border-radius: 10px;
 }
 
-.logincenter h1{
+.logincenter h1 {
     text-align: center;
     padding: 0 0 20px 0;
     border-bottom: 1px solid black;
 }
 
-.login_form{
+.login_form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -282,7 +279,7 @@ img {
     padding-bottom: 30px;
 }
 
-.txt_field{
+.txt_field {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -292,19 +289,47 @@ img {
 
 /* Add recipe css */
 
-
-
-.recipeadd_container{
+.recipeadd_container {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
     background-color: #FF0035;
+    padding-top: 7em;
+}
+
+.recipe_add {
+    width: 40vh;
+    height: 40vh;
+    background-color: #0E131F;
     
 }
 
-.recipe_add{
-    width: fit-content;
-    height: fit-content;
-    background-color: #0E131F;
+.add_image{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    height: 30%;
+    width: 100%;
+    background-color: #d8dfe7;
+
 }
+
+.guidelines{
+    display: flex;
+    flex-direction: row;
+    height: 70%;
+    width: 100%;
+    background-color: #725E82;
+}
+.add_ingredients{
+    width: 50%;
+    background-color: aquamarine;
+}
+
+
+.add_steps{
+    width: 50%;
+    background-color: purple;
+}
+
