@@ -5,8 +5,8 @@ const searchField = document.getElementById('search');
 let mainElement = document.querySelector('main');
 let mazeSearch;
 
-searchButton.addEventListener("click", async () => {
-
+searchButton.addEventListener("click", async (evt) => {
+  evt.preventDefault();
   let photo;
   let altPhoto;
 
@@ -20,11 +20,11 @@ searchButton.addEventListener("click", async () => {
 
   for (const element of json) {
     if (element.show.image == null || element.show.image.medium == null) {
-      photo = null
-      altPhoto = "No photo available"
+      photo = null;
+      altPhoto = "No photo available";
     } else {
       photo = element.show.image.medium;
-      altPhoto = "Photo"
+      altPhoto = "Photo";
     }
     console.log(element.show.name);
     mainElement.innerHTML += `
@@ -38,9 +38,8 @@ searchButton.addEventListener("click", async () => {
         </div>
         </a>`
       ;
-
-  }
-}
+  ;
+  }}
 );
 
 const getRecipes = async () => {
