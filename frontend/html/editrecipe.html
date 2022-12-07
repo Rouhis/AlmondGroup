@@ -11,12 +11,21 @@
     <nav>
         <!-- Navbar html -->
         <ul class="navbar">
-            <li class="navelement"><a id="nav_a">Almond app</a></li>
-            <li class="navlink"><a id="nav_a" href="#">Home</a></li>
-            <li class="navlink" id="user"><a id="nav_a" href="#" onclick="openLogInForm()"><img src="../mockupPhoto/user.jpg" alt="profilepicture"
+            <li class="navelement"><a id="nav_a" href="index.html">Almond app</a></li>
+            <li class="navlink" id="user"><a id="nav_a" href="#"><img src="../mockupPhoto/user.jpg" alt="profilepicture"
                         style="max-width: 3em; max-height: 3em; border-radius: 50%;"></a></li>
         </ul>
     </nav>
-    
+    <div class="container">
+        <form class="recipeadd">
+            <label class="recipeaddlabel">Recipe photo</label>
+            <input type="file" name="file" id="file">
+            <label class="recipeaddlabel">ingredients</label>
+            <input type="text">
+            <label class="recipeaddlabel">Instructions</label>
+            <input type="text">
+            <button id="addrecipebutton" type="submit">Add recipe</button>
+        </form>
+    </div>
 </body>
 </html>

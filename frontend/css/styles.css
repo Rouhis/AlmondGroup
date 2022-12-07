@@ -219,7 +219,6 @@ img {
 .recipecontainer {
     display: flex;
     flex-direction: row;
-   
     width: 60em;
     height: fit-content;
 }
@@ -271,4 +270,22 @@ img {
         width: 70vw;
         height: fit-content
     }
+}
+
+/*Recipe add css*/
+
+
+.recipeadd{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+}
+
+.recipeaddlabel{
+    padding: 2em;
+    
+}
+.addrecipebutton{
+    width:fit-content;
+    height: fit-content;
 }

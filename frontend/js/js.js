@@ -4,7 +4,7 @@ const searchButton = document.getElementById('button');
 const searchField = document.getElementById('search');
 let mainElement = document.querySelector('main');
 let mazeSearch;
-searchButton.addEventListener("click", async () => {
+searchButton.addEventListener('click', async () => {
 
   let photo;
   let altPhoto;
@@ -27,7 +27,7 @@ searchButton.addEventListener("click", async () => {
     }
     console.log(element.show.name);
     mainElement.innerHTML += `
-        <a class="recipecard" onclick="location.href='#';" style="cursor: pointer;">
+        <a class="recipecard" onclick="location.href="#";" style="cursor: pointer;">
         <div class="recipecardtop">
         <img src="../mockupPhoto/glögg.png" alt="recipe">
         </div>
