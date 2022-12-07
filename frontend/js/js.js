@@ -4,7 +4,8 @@ const searchButton = document.getElementById('button');
 const searchField = document.getElementById('search');
 let mainElement = document.querySelector('main');
 let mazeSearch;
-searchButton.addEventListener('click', async () => {
+
+searchButton.addEventListener("click", async () => {
 
   let photo;
   let altPhoto;
@@ -41,3 +42,13 @@ searchButton.addEventListener('click', async () => {
   }
 }
 );
+
+const getRecipes = async () => {
+  try{
+    const response = await fetch(url + "/recipes");
+    const recipes = await response.json();
+    console.log(recipes);
+  }catch(e){
+    console.log(e.message);
+  }
+}
