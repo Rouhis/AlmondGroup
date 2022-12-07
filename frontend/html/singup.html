@@ -8,20 +8,20 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="signup" id="signupform">
+    <form class="signup" id="signupForm">
         <a id="close" href="#" type="close">&times;</a>
-        <form>
+        <div>
             <h1>Sign Up</h1>
             <div class="txt-field">
-                <input type="text" required>
-                <label>Username</label>
+                <input class="light-border" type="text"required name ="username" placeholder="Username">
             </div>
             <div class="txt-field">
-                <input type="text" required>
-                <label>Password</label>
+                <input class="light-border" type="text"required  name = "password" placeholder="Password">
             </div>
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+            <button type="submit">login</button>
+        </div>
+    </form>
+    <script src="../js/serialize.js"></script>
+    <script src="../js/singup.js"></script>
 </body>
 </html>
