@@ -6,6 +6,7 @@
     --light: #f1f1f1;
     --lighterpurple: #725E82;
     --white: #f1f1f1;
+    --cold: #d8dfe7;
 }
 
 * {
@@ -95,32 +96,6 @@ form.search button {
 form.search button:hover {
 
     background: var(--lighterpurple);
-}
-
-.login,
-.signup {
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-    width: 20em;
-}
-
-.login h1,
-.signup h1 {
-    text-align: center;
-
-}
-
-#close {
-    position: relative;
-    left: 95%;
-
-}
-
-
-#close:hover {
-    background-color: #f1f1f1;
 }
 
 .maincontainer {
@@ -290,4 +265,46 @@ img {
 .addrecipebutton{
     width:fit-content;
     height: fit-content;
+}
+
+
+/* Login and Signup CSS */
+
+
+.login_body{
+    background: linear-gradient(120deg, #0E131F, #FF0035    );
+    height: 100vh;
+}
+
+.logincenter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: var(--cold);
+    border-radius: 10px;
+}
+
+.logincenter h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid black;
+}
+
+.login_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    width: 400px;
+    padding-bottom: 30px;
+}
+
+.txt_field{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 5px;
 }
