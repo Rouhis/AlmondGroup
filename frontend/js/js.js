@@ -4,10 +4,10 @@ const searchButton = document.getElementById('button');
 const searchField = document.getElementById('search');
 let mainElement = document.querySelector('main');
 let mazeSearch;
-const url = "http://localhost:3000";
+const url = "http://127.0.0.1:3000";
 
 searchButton.addEventListener("click", async () => {
-  getRecipes();
+  
   let photo;
   let altPhoto;
 
@@ -15,7 +15,8 @@ searchButton.addEventListener("click", async () => {
 
   const response = await fetch(mazeSearch);
 
-  const json = await response.json()
+//  const json = await response.json()
+const json = await getRecipes();
 
   console.log(json);
 
@@ -34,22 +35,27 @@ searchButton.addEventListener("click", async () => {
         <img src="../mockupPhoto/glögg.png" alt="recipe">
         </div>
         <div class="recipecardbottom">
-        <h1>Name<h1>
+        <h1>${element.name}<h1>
         <button class="favorite recipebutton"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
         </div>
         </a>`
       ;
 
-  }
+   }
 }
 );
 
+
+
 const getRecipes = async () => {
   try{
-    const response = await fetch(url + "/recipes");
+    const response = await fetch(url + "/recipe/");
     const recipes = await response.json();
     console.log(recipes);
+    return recipes;
+
   }catch(e){
     console.log(e.message);
   }
 }
+getRecipes();
