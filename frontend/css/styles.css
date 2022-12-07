@@ -97,14 +97,11 @@ form.search button:hover {
 
 .login,
 .signup {
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--lighterpurple);
+    transform: translate(-50%, -50%); */
     width: 20em;
-    transition: opacity 500ms;
-    display: none;
 }
 
 .login h1,
