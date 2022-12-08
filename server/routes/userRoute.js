@@ -1,3 +1,4 @@
+
 "use strict";
 
 const express = require("express");
@@ -7,10 +8,7 @@ const {body} = require('express-validator')
 
 router.get("/", userController.getUsers)
         .get('/:userId', userController.getUser)
-        .post('/',
-        body('username'),
-        body('password'),
-        userController.createUser)
+        
 
 
 

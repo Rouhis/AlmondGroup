@@ -16,7 +16,7 @@ signupForm.addEventListener('submit', async (evt) => {
     body: JSON.stringify(data), // body data type must match "Content-Type" header
   };
     console.log(fetchOptions)
-  const response = await fetch(url + '/user', fetchOptions);
+  const response = await fetch(url + '/auth/register', fetchOptions);
   const json = await response.json();
   alert(json.message);
   console.log(json);

@@ -1,4 +1,4 @@
-/*'use strict';
+'use strict';
 const passport = require('passport');
 const Strategy = require('passport-local').Strategy;
 const passportJWT = require('passport-jwt');
@@ -17,7 +17,7 @@ passport.use(
       const [user] = await getUserLogin(params);
       console.log('Local strategy', user);
       if (user === undefined) {
-        return done(null, false, {message: 'Incorrect email.'});
+        return done(null, false, {message: 'Incorrect username.'});
       }
   
       const passwordOK = await bcrypt.compare(password, user.password);
@@ -45,4 +45,4 @@ passport.use(
   )
 );
 
-module.exports = passport;*/
+module.exports = passport;
