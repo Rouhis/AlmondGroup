@@ -1,0 +1,56 @@
+<!--Eetu Rouhiainen-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <nav>
+        <!-- Navbar html -->
+        <ul class="navbar">
+            <li class="navelement"><a id="nav_a" href="home.html">Almond app</a></li>
+            <li class="navlink" id="user"><a id="nav_a" href="#"><img src="../mockupPhoto/user.jpg" alt="profilepicture"
+                        style="max-width: 3em; max-height: 3em; border-radius: 50%;"></a></li>
+        </ul>
+    </nav>
+    <div class="recipeadd_container">
+        <form class="recipe_add">
+            <div class="add_image">
+                <input class ="hide "type="file" accept="image/*" onchange="loadFile(event)">
+                <img id="output" />
+                <script>
+                    var loadFile = function (event) {
+                        var output = document.getElementById('output');
+                        output.src = URL.createObjectURL(event.target.files[0]);
+                        output.onload = function () {
+                            URL.revokeObjectURL(output.src) 
+                        }
+                    };
+                </script>
+            </div>
+            <div class="guidelines">
+                <div class="add_ingredients">
+                    <h2>Add ingredients</h2>
+                    <input type="text">
+                </div>
+                <div class="add_steps">
+                    <h2>Add steps</h2>
+                    <input>
+                </div>
+            </div>
+            <div class="add_button">
+                <button>Submit</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>

@@ -1,5 +1,7 @@
+<!--Eetu Rouhiainen-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,26 +9,42 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
 
+<body class="login_body">
+    <nav>
+        <!-- Navbar html -->
+        <ul class="navbar">
+            <li class="navelement"><a id="nav_a" href="home.html">Almond app</a></li>
+            <li class="navlink" id="user">
+                <a id="nav_a" href="#">
+                    <img src="../mockupPhoto/user.jpg" alt="profilepicture"
+                        style="max-width: 3em; max-height: 3em; border-radius: 50%;"></a>
+            </li>
+        </ul>
+    </nav>
+    
+        <div class="logincenter">
+            <h1>Login</h1>
+            <form method="post" class="login_form">
+                <div class="txt_field">
+                    <label>Username</label>
+                    <input type="text" required>
+                    
+                </div>
+                <div class="txt_field">
+                    <label>Password</label>
+                    <input type="Password" required>
+                </div>
+                <div class="loginbutton">
+                    <input type="submit" value="Login">
 
-   <div class="login" id="loginform">
-        <a id="close" href="#" type="close">&times;</a>
-        <form>
-            <h1>Log In</h1>
-            <div class="txt-field">
-                <input type="text" required>
-                <label>Username</label>
-            </div>
-            <div class="txt-field">
-                <input type="text" required>
-                <label>Password</label>
-            </div>
-            <input type="submit" value="Login">
-            <div class="signuplink"><a href="signup.html">Sign up</a>
-            </div>
-        </form>
-    </div>
+                </div>
+                <div class="signuplink">
+                    Don't have an account? <a href="signup.html">Signup</a>
+                </div>
+            </form>
+        </div>
     
 </body>
+
 </html>

@@ -1,3 +1,4 @@
+<!--Eetu Rouhiainen-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,10 +15,12 @@
     <nav>
         <!-- Navbar html -->
         <ul class="navbar">
-            <li class="navelement"><a id="nav_a" href="#">Almond app</a></li>
-            <li class="navlink" id="user"><a id="nav_a" href="#"><img
-                        src="../mockupPhoto/user.jpg" alt="profilepicture"
-                        style="max-width: 3em; max-height: 3em; border-radius: 50%;"></a></li>
+            <li class="navelement"><a id="nav_a" href="home.html">Almond app</a></li>
+            <li class="navlink" id="user">
+                <a id="nav_a" href="login.html">
+                    <img src="../mockupPhoto/user.jpg" alt="profilepicture"
+                    style="max-width: 3em; max-height: 3em; border-radius: 50%;"></a>
+            </li>
         </ul>
     </nav>
 
@@ -25,7 +28,7 @@
     <!-- Div for centering the form -->
     <div class="searchdiv">
         <!-- Search form for finding recipes -->
-        <form class="search" action=>
+        <form class="search">
             <input id="search" type="text" placeholder="Look for a recipe...">
             <button id="button" type="submit"><i class="fa fa-search"></i></button>
         </form>
@@ -39,29 +42,6 @@
         </div>
     </div>
     
- 
-
-
 </body>
-<script>
-    function openLogInForm() {
-        document.getElementById("loginform").style.display = "block";
-    }
-
-    function closeLogInForm() {
-        document.getElementById("loginform").style.display = "none";
-    }
-
-    function openSignUpForm() {
-        document.getElementById("loginform").style.display = "none";
-        document.getElementById("signupform").style.display = "block";
-    }
-
-    function closeSignUpForm() {
-        document.getElementById("signupform").style.display = "none";
-    }
-
-
-</script>
 
 </html>

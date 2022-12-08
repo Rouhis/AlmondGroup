@@ -1,9 +1,14 @@
+/*Eetu Rouhiainen*/
+
 :root {
-    --orange: #FF784F;
+    --red: #FF0035;
     --yellow: #FFE19C;
-    --white: #f1f1f1;
-    --darkpurple: #3A3042;
+    --dark: #D3D6D9;
+    --black: #0E131F;
+    --light: #f1f1f1;
     --lighterpurple: #725E82;
+    --white: #f1f1f1;
+    --cold: #d8dfe7;
 }
 
 * {
@@ -14,13 +19,11 @@ html,
 body {
     margin: 0px;
     padding: 0px;
-    background-color: var(--white);
+    background-color: var(--dark);
 }
 
-
-
 .navbar {
-    background-color: var(--darkpurple);
+    background-color: var(--black);
     display: flex;
     flex-direction: row;
     list-style-type: none;
@@ -32,7 +35,7 @@ body {
 
 .navlink {
     padding: .1em;
-    color: var(--orange);
+    color: var(--red);
 }
 
 .navlink:hover {
@@ -42,7 +45,7 @@ body {
 
 #nav_a {
     font-size: x-large;
-    color: var(--orange);
+    color: var(--red);
     text-decoration: none;
 }
 
@@ -60,11 +63,10 @@ form {
     width: 70%;
 }
 
-
 form.search input[type=text] {
     padding: 10px;
     font-size: 17px;
-    border: 1px solid var(--darkpurple);
+    border: 1px solid var(--black);
     float: left;
     background: var(--white);
 }
@@ -72,7 +74,7 @@ form.search input[type=text] {
 form.search input[type=text] {
     padding: 10px;
     font-size: 17px;
-    border: 1px solid var(--darkpurple);
+    border: 1px solid var(--black);
     float: left;
     width: 90%;
     background: var(--white);
@@ -82,10 +84,10 @@ form.search button {
     float: left;
     min-width: 5%;
     padding: 10px;
-    background: var(--darkpurple);
-    color: var(--orange);
+    background: var(--black);
+    color: var(--red);
     font-size: 17px;
-    border: 1px solid var(--darkpurple);
+    border: 1px solid var(--black);
     border-left: none;
     cursor: pointer;
 }
@@ -93,32 +95,6 @@ form.search button {
 form.search button:hover {
 
     background: var(--lighterpurple);
-}
-
-.login,
-.signup {
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-    width: 20em;
-}
-
-.login h1,
-.signup h1 {
-    text-align: center;
-
-}
-
-#close {
-    position: relative;
-    left: 95%;
-
-}
-
-
-#close:hover {
-    background-color: #f1f1f1;
 }
 
 .maincontainer {
@@ -148,9 +124,8 @@ form.search button:hover {
     width: 25em;
     height: 15em;
     border: 2px solid black;
-    
-}
 
+}
 
 .recipecardtop {
     height: 80%;
@@ -162,17 +137,17 @@ form.search button:hover {
     flex-direction: row;
     justify-items: center;
     justify-content: space-between;
-    background-color: red;
+    background-color: var(--light);
     width: 100%;
     height: 20%;
 
 }
 
 .recipecardbottom h1 {
-    color: #FF784F;
+    color: var(--black);
     margin: 0;
     padding: 0;
-    font-size: xx-large;
+    font-size: x-large;
 
 }
 
@@ -207,10 +182,9 @@ img {
 
 }
 
-
 /* Recipe page css starts here */
 
-.recipeimage{
+.recipeimage {
     display: flex;
     width: 60em;
     height: 30em;
@@ -219,56 +193,150 @@ img {
 .recipecontainer {
     display: flex;
     flex-direction: row;
-   
     width: 60em;
     height: fit-content;
 }
 
-.steps{
+.steps {
     width: 50%;
     height: fit-content;
 }
 
-.ingredients{
+.ingredients {
     width: 50%;
     height: fit-content;
 }
 
-.comments{
+.comments {
     width: 50em;
     height: fit-content
 }
-.comment{
+
+.comment {
     background-color: var(--orange);
 }
 
 @media only screen and (max-width: 950px) {
 
-    .recipeimage{
+    .recipeimage {
         display: flex;
-        width: 95vw;
-        height: 35vw
+        width: 95vh;
+        height: 35vh;
     }
 
     .recipecontainer {
         display: flex;
         flex-direction: column;
-        width: 95vw;
+        width: 95vh;
         height: fit-content;
     }
 
-    .steps{
-        width: 90%;
-        height: fit-content;
-    }
-    
-    .ingredients{
+    .steps {
         width: 90%;
         height: fit-content;
     }
 
-    .comments{
-        width: 70vw;
+    .ingredients {
+        width: 90%;
+        height: fit-content;
+    }
+
+    .comments {
+        width: 70vh;
         height: fit-content
     }
+}
+
+/* Login and Signup CSS */
+
+.login_body {
+    background: linear-gradient(120deg, #0E131F, #FF0035);
+    height: 100vh;
+}
+
+.logincenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: var(--cold);
+    border-radius: 10px;
+}
+
+.logincenter h1 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid black;
+}
+
+.login_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    width: 400px;
+    padding-bottom: 30px;
+}
+
+.txt_field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 5px;
+}
+
+/* Add recipe css */
+
+.recipeadd_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #FF0035;
+    padding-top: 7em;
+}
+
+.recipe_add {
+    width: 40vh;
+    height: 70vh;
+    background-color: #0E131F;
+    
+}
+
+.add_image{
+    height: 20%;
+    width: 100%;
+    background-color: #d8dfe7;
+}
+
+.guidelines{
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    width: 100%;
+    background-color: #725E82;
+}
+.add_ingredients{
+    width: 50%;
+    background-color: aquamarine;
+    text-align: center;
+}
+
+.add_steps{
+    width: 50%;
+    background-color: purple;
+    text-align: center;
+}
+
+.add_button{
+    text-align: center;
+    padding-top: 40px;
+    
+}
+
+.hide{
+    width: 100%;
+    background-color: #FF0035;
 }
