@@ -42,5 +42,7 @@ const getQParam = (param) => {
     }
   }
 
+
+
   window.onload = getRecipeById();
   window.onload = getCommentsById();
