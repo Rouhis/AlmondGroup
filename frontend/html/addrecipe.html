@@ -21,30 +21,21 @@
         </ul>
     </nav>
     <div class="recipeadd_container">
-        <form class="recipe_add">
+        <form class="recipe_add" id="recipe_add" method="post">
             <div  class="add_image">
                 <input class ="hide "type="file" accept="image/*" onchange="loadFile(event)">
                 <img id="output" />
-                <script>
-                    var loadFile = function (event) {
-                        var output = document.getElementById('output');
-                        output.src = URL.createObjectURL(event.target.files[0]);
-                        output.onload = function () {
-                            URL.revokeObjectURL(output.src) 
-                        }
-                    };
-                </script>
             </div>
             <div class="guidelines">
                 <div class="add_ingredients">
-                    <button>Add field</button>
+                    <button onclick="addField()">Add field</button>
                     <h2>Add ingredients</h2>
-                    <input type="text">
+                    <input type="text" id="textfield">
                 </div>
                 <div class="add_steps">
                     <button>Add field</button>
                     <h2>Add steps</h2>
-                    <input>
+                    <input type="text">
                 </div>
             </div>
             <div class="add_button">
@@ -54,5 +45,5 @@
 
     </div>
 </body>
-
+<script src="../js/addrecipe.js"></script>
 </html>
