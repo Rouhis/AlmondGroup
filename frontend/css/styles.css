@@ -220,14 +220,14 @@ img {
 
     .recipeimage {
         display: flex;
-        width: 95vw;
-        height: 35vw
+        width: 95vh;
+        height: 35vh;
     }
 
     .recipecontainer {
         display: flex;
         flex-direction: column;
-        width: 95vw;
+        width: 95vh;
         height: fit-content;
     }
 
@@ -242,7 +242,7 @@ img {
     }
 
     .comments {
-        width: 70vw;
+        width: 70vh;
         height: fit-content
     }
 }
