@@ -9,6 +9,7 @@ const commentController = require("../controllers/commentController");
 router.get("/",commentController.getComments)
 .get("/:recipeId", commentController.getCommentsByRecipeId)
 .get("/user/:userId",commentController.getCommentByUserId)
+.get("/user/recipe/:recipeId",commentController.getCommentAndUser)
 .post("/",
 body("user_id"),
 body("recipe_id"),

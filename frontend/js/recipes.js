@@ -20,11 +20,27 @@ const getQParam = (param) => {
         document.getElementById("name").innerHTML = recipes.name;
         document.getElementById("ingredients").innerHTML = recipes.ingredients;
         document.getElementById("steps").innerHTML = recipes.instructions;
-        console.log(json)
-        return json;
+      //  console.log(json)
+    //    return json;
       }catch(e){
         console.log(e.message);
       }
   }
 
+
+  const getCommentsById = async () => {
+    try{
+        const commentResponse = await fetch(url+"/comment/user/recipe/"+recipeId);
+        const comments = await commentResponse.json();
+        console.log(comments);
+        for (const element of comments){
+        document.getElementById("comments").innerHTML += `<div class="comment"><h4>${element.username}</h4><p>${element.data}</p></div>`
+        }
+    }catch(e){
+        console.log(e.message);
+
+    }
+  }
+
   window.onload = getRecipeById();
+  window.onload = getCommentsById();

@@ -1,6 +1,7 @@
 "use strict"
 
 const { validationResult } = require("express-validator");
+const { createPool } = require("mysql2");
 const commentModel = require("../models/commentModel");
 
 const getComments = async (req,res) => {
@@ -51,11 +52,22 @@ const deleteComment = async (req,res)=>{
       }
 }
 
+const getCommentAndUser = async (req,res)=>{
+    const comment = await commentModel.getCommentAndUser(res, req.params.recipeId)
+    if(comment){
+        res.json(comment)
+    } else {
+        res.status(401);
+    }
+
+}
+
 
 module.exports = {
     getComments,
     getCommentsByRecipeId,
     getCommentByUserId,
     createComment,
-    deleteComment
+    deleteComment,
+    getCommentAndUser
 }

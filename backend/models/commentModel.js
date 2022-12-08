@@ -56,10 +56,21 @@ const deleteComment = async (comment,res) => {
       }
 };
 
+const getCommentAndUser = async (res,recipeId) => {
+    try{
+        const [rows] = await promisePool.query("SELECT comments.id, comments.data, user.username FROM comments INNER JOIN user ON comments.user_id = user.id WHERE comments.recipe_id =?;",[recipeId]);
+        return rows;
+    }catch (e) {
+        console.error('error', e.message);
+        res.status(500).send(e.message);
+      }
+}
+
 module.exports={
     getAllComments,
     getCommentsByRecipeId,
     getCommentByUserId,
     addComment,
-    deleteComment
+    deleteComment,
+    getCommentAndUser
 }
