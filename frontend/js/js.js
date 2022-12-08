@@ -6,8 +6,8 @@ let mainElement = document.querySelector('main');
 
 const url = "http://127.0.0.1:3000";
 
-searchButton.addEventListener("click", async () => {
-  
+searchButton.addEventListener("click", async (evt) => {
+  evt.preventDefault();
   let photo;
   let altPhoto
   let json;
@@ -35,16 +35,16 @@ if(!searchField.value){
 
 
   for (const element of json) {
-    if (element.show.image == null || element.show.image.medium == null) {
+ /*   if (element.show.image == null || element.show.image.medium == null) {
       photo = null
       altPhoto = "No photo available"
     } else {
       photo = element.show.image.medium;
       altPhoto = "Photo"
-    }
-    console.log(element.show.name);
+    }*///
+   // console.log(element.show.name);
     mainElement.innerHTML += `
-        <a class="recipecard" onclick="location.href='#';" style="cursor: pointer;">
+    <a class="recipecard" onclick="href='recipes.html?id=${element.id}';" style="cursor: pointer;">
         <div class="recipecardtop">
         <img src="../mockupPhoto/glögg.png" alt="recipe">
         </div>
@@ -59,8 +59,6 @@ if(!searchField.value){
   }
 }
 );
-
-
 
 
 const getRecipes = async () => {
@@ -86,4 +84,4 @@ const getRecipeByName = async () => {
     console.log(e.message);
   }
 }
-getRecipes();
+window.onload = getRecipes();
