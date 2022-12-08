@@ -1,72 +1,53 @@
 'use strict'
-
+const maze = "https://api.tvmaze.com/search/shows?q=";
 const searchButton = document.getElementById('button');
 const searchField = document.getElementById('search');
 let mainElement = document.querySelector('main');
-
-const url = "http://127.0.0.1:3000";
+let mazeSearch;
 
 searchButton.addEventListener("click", async (evt) => {
   evt.preventDefault();
   let photo;
-  let altPhoto
-  let json;
+  let altPhoto;
 
+  mazeSearch = maze + searchField.value;
 
-if(!searchField.value){
-  console.log("tyhjä")
-  mainElement.innerHTML = ``;
-  json = await getRecipes();
-}else{
-  console.log("onon")
-  mainElement.innerHTML = ``;
-  json = await getRecipeByName();
-}
+  const response = await fetch(mazeSearch);
 
+  const json = await response.json()
+
+  console.log(json);
 
   for (const element of json) {
-  
+    if (element.show.image == null || element.show.image.medium == null) {
+      photo = null;
+      altPhoto = "No photo available";
+    } else {
+      photo = element.show.image.medium;
+      altPhoto = "Photo";
+    }
+    console.log(element.show.name);
     mainElement.innerHTML += `
-        <a class="recipecard" onclick="location.href='#';" style="cursor: pointer;">
+        <a class="recipecard" onclick="location.href='recipes.html';"" style="cursor: pointer;">
         <div class="recipecardtop">
         <img src="../mockupPhoto/glögg.png" alt="recipe">
         </div>
         <div class="recipecardbottom">
-        <h1>${element.name}<h1>
-        <h2>${element.id}</h2>
+        <h1>Name<h1>
         <button class="favorite recipebutton"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
         </div>
         </a>`
       ;
-
-  }
-}
+  ;
+  }}
 );
-
-
-
 
 const getRecipes = async () => {
   try{
-    const response = await fetch(url + "/recipe/");
+    const response = await fetch(url + "/recipes");
     const recipes = await response.json();
     console.log(recipes);
-    return recipes;
-
   }catch(e){
     console.log(e.message);
   }
 }
-
-const getRecipeByName = async () => {
-  try{
-    const response = await fetch(url + "/recipe/name/" + searchField.value);
-    const recipes = await response.json();
-    console.log(recipes);
-    return recipes;
-
-  }catch(e){
-    console.log(e.message);
-  }
-}
-getRecipes();

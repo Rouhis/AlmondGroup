@@ -6,9 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Recipes</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/recipes.css">
 </head>
 
 <body>
@@ -26,6 +25,10 @@
     <div class="container">
         <div class="recipeimage">
             <img src="../mockupPhoto/glögg.png">
+            <div class="likebutton_container">
+                <button class="likebutton">Like</button>
+            </div>
+            
         </div>
     </div>
     <div class="container">
@@ -73,6 +76,11 @@
     </div>
     <div class="container">
         <div class="comments">
+            <form class="add_comment">
+                <textarea rows = "5" cols = "60">
+                 </textarea>
+                <button id="add_comment_button">Add comment</button>
+            </form>
             <div class="comment">
                 <p>Pertti</p>
                 <p>HIENO RESEPTI LOL XD :DD</p>

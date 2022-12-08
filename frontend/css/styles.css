@@ -185,6 +185,7 @@ img {
 /* Recipe page css starts here */
 
 .recipeimage {
+    position: relative;
     display: flex;
     width: 60em;
     height: 30em;
@@ -209,11 +210,25 @@ img {
 
 .comments {
     width: 50em;
-    height: fit-content
+    height: fit-content;
 }
 
 .comment {
     background-color: var(--orange);
+}
+
+#add_comment{
+    height: 500px;
+}
+
+.likebutton{
+    height: 50px;
+    width: 50px;
+}
+.likebutton_container{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
 }
 
 @media only screen and (max-width: 950px) {
@@ -340,3 +355,4 @@ img {
     width: 100%;
     background-color: #FF0035;
 }
+
