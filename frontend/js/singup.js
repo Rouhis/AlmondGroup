@@ -1,10 +1,10 @@
 'use strict';
 const url = 'http://localhost:3000'; // change url when uploading to server
 
-// select existing html elements
+
 const signupForm = document.querySelector('#signupForm');
 
-// submit add user form
+
 signupForm.addEventListener('submit', async (evt) => {
   evt.preventDefault();
   const data = serializeJson(signupForm);
@@ -20,5 +20,4 @@ signupForm.addEventListener('submit', async (evt) => {
   const json = await response.json();
   alert(json.message);
   console.log(json);
-  //location.href = 'front.html';
 });

@@ -4,7 +4,7 @@ const app = express();
 const cors = require("cors");
 const userRouter = require("./routes/userRoute");
 const authRouter = require("./routes/authRoute");
-const passport = require("passport");
+const passport = require("./utils/passport");
 
 const port = 3000;
 

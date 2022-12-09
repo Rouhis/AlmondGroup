@@ -25,6 +25,19 @@ const getUserById = async (res, userId) => {
     }
 };
 
+const getUserLogin = async (user) => {
+    try {
+      console.log('getUserLogin()', user);
+      const [rows] = await promisePool.execute(
+          'SELECT * FROM user WHERE username = ?;',
+          user);
+      return rows;
+    } catch (e) {
+      console.error("error", e.message);
+      res.status(500).send(e.message);
+    }
+  };
+
 const addUser = async (user, res) => {
   try {
     const sql = 'INSERT INTO user VALUES (null, ?, ?, ?)';
@@ -40,5 +53,6 @@ const addUser = async (user, res) => {
 module.exports = {
     getAllUsers,
     getUserById,
-    addUser
+    addUser,
+    getUserLogin
 }
