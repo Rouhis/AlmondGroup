@@ -25,7 +25,7 @@
     <div class="login_body">
         <div class="logincenter">
             <h1>Login</h1>
-            <form method="post" class="login_form">
+            <form class="login_form">
                 <div class="txt_field">
                     <label>Username</label>
                     <input class="light-border" type="text"required name ="username">
@@ -35,18 +35,17 @@
                     <label>Password</label>
                     <input class="light-border" type="text"required  name = "password">
                 </div>
-                <div class="loginbutton">
-                    <button type="submit">login</button>
-
-                </div>
+                
+                <button class="submit" type="submit">Log In</button>
+                
                 <div class="signuplink">
                     Don't have an account? <a href="signup.html">Signup</a>
                 </div>
             </form>
+            <script src="../js/serialize.js"></script>
+             <script src="../js/singin.js"></script>
         </div>
     </div>
-    <script src="../js/serialize.js"></script>
-    <script src="../js/singin.js"></script>
+    
 </body>
-
 </html>
