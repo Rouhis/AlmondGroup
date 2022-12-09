@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
-<body>
+<body class="recipeaddbody">
     <nav>
         <!-- Navbar html -->
         <ul class="navbar">
@@ -21,21 +21,23 @@
         </ul>
     </nav>
     <div class="recipeadd_container">
+
         <form class="recipe_add" id="recipe_add" method="post">
-            <div  class="add_image">
-                <input class ="hide "type="file" accept="image/*" onchange="loadFile(event)">
-                <img id="output" />
+            <div class="image_container">
+                <div class="add_image">
+                    <input class="hide " type="file" accept="image/*" onchange="loadFile(event)">
+                    <img id="output">
+                </div>
             </div>
             <div class="guidelines">
                 <div class="add_ingredients">
-                    <button onclick="addField()">Add field</button>
+
                     <h2>Add ingredients</h2>
-                    <input type="text" id="textfield">
+                    <textarea id="textarea"></textarea>
                 </div>
                 <div class="add_steps">
-                    <button>Add field</button>
                     <h2>Add steps</h2>
-                    <input type="text">
+                    <textarea id="textarea"></textarea>
                 </div>
             </div>
             <div class="add_button">
@@ -43,7 +45,9 @@
             </div>
         </form>
 
+
     </div>
 </body>
 <script src="../js/addrecipe.js"></script>
-</html>
+
+</html><img>

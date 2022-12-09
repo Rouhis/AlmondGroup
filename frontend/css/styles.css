@@ -304,45 +304,53 @@ img {
 
 /* Add recipe css */
 
+.recipeaddbody{
+    background-color: var(--dark);
+}
 .recipeadd_container {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    background-color: #FF0035;
     padding-top: 7em;
 }
 
 .recipe_add {
-    width: 40vh;
+
+    width: 35%;
     height: 70vh;
-    background-color: #0E131F;
     
 }
 
 .add_image{
-    height: 20%;
+    height: 90%;
     width: 100%;
-    background-color: #d8dfe7;
+    max-width: 50%;
 }
 
 .guidelines{
+    padding-top: 20px;
     display: flex;
     flex-direction: row;
     height: 80%;
     width: 100%;
-    background-color: #725E82;
+   
 }
 .add_ingredients{
     width: 50%;
-    background-color: aquamarine;
+    background-color: var(--dark);
     text-align: center;
+    color: var(--black);
+    margin-right: 50px;
+    border-radius: 2%;
 }
 
 .add_steps{
     width: 50%;
-    background-color: purple;
+    background-color: var(--dark);
     text-align: center;
+    color: var(--black);
+    border-radius: 2%;
 }
 
 .add_button{
@@ -353,6 +361,17 @@ img {
 
 .hide{
     width: 100%;
-    background-color: #FF0035;
+    background-color: var(--dark);
 }
 
+#textarea{
+width: 70%;
+height: fit-content;
+}
+
+.image_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30%;
+}
