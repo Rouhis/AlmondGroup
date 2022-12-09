@@ -11,38 +11,21 @@ searchButton.addEventListener("click", async (evt) => {
   let photo;
   let altPhoto
   let json;
-  
 
-//  mazeSearch = maze + searchField.value;
-
-  //const response = await fetch(mazeSearch);
 
 if(!searchField.value){
   console.log("tyhjä")
   mainElement.innerHTML = ``;
   json = await getRecipes();
- // console.log(json);
 }else{
   console.log("onon")
   mainElement.innerHTML = ``;
   json = await getRecipeByName();
 }
 
-  //const json = await getRecipes();
- // console.log(json);
-
-
-
 
   for (const element of json) {
- /*   if (element.show.image == null || element.show.image.medium == null) {
-      photo = null
-      altPhoto = "No photo available"
-    } else {
-      photo = element.show.image.medium;
-      altPhoto = "Photo"
-    }*///
-   // console.log(element.show.name);
+  
     mainElement.innerHTML += `
     <a class="recipecard" onclick="href='recipes.html?id=${element.id}';" style="cursor: pointer;">
         <div class="recipecardtop">
