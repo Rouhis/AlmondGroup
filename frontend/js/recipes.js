@@ -6,7 +6,7 @@ const getQParam = (param) => {
     return urlParams.get(param);
   };
 
-  
+    let likeBtn = document.getElementById("likebutton");
     const url = "http://127.0.0.1:3000"; 
     const recipeId= getQParam("id"); 
      console.log(recipeId);
@@ -42,7 +42,45 @@ const getQParam = (param) => {
     }
   }
 
+  const addToFav = async () => {
+    const fd = '{"userId": 2,"recipeId": 1}'
+    const fetchOptions = {
+        method: 'POST',
+        body: fd,
+    };
+    const favResponse = await fetch(url + "/fav/" + fetchOptions);
+    console.log(fetchOptions + " " + fd);
+    const favJson = await favResponse.json();
+    alert(favJson.message);
+  };
+/*
+  likeBtn.addEventListener(async(evt)=>{
+    evt.preventDefault();
+    console.log("kfdlkfdl")
+  })
+*/
+//likeBtn.onclick = addToFav();
+
+  if(likeBtn){
+    console.log("otl")
+likeBtn.addEventListener("Submit", async(evt) =>{
+    console.log("otl")
+    evt.preventDefault();
+    const fd = '{"userId": 2,"recipeId": 1}'
+    const fetchOptions = {
+        method: 'POST',
+        body: fd,
+    };
+    const favResponse = await fetch(url + "/fav/" + fetchOptions);
+    console.log(fetchOptions + " " + fd);
+    const favJson = await favResponse.json();
+    alert(favJson.message);
+});
+  }else{
+    console.log("tyhäm")
+  }
 
 
   window.onload = getRecipeById();
   window.onload = getCommentsById();
+ // window.onload = addToFav();
