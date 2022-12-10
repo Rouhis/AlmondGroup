@@ -1,3 +1,6 @@
+lines (41 sloc)  1.46 KB
+
+<!--Eetu Rouhiainen-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,24 +8,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Almond recipes</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
     <nav>
         <!-- Navbar html -->
         <ul class="navbar">
             <li class="navelement"><a id="nav_a">Almond app</a></li>
-            <li class="navlink"><a id="nav_a" href="home.html   ">Home</a></li>
-            <li class="navlink" id="user"><a id="nav_a" href="#" onclick="openLogInForm()"><img
+            <li class="navlink"><a id="nav_a" href="home.html">Home</a></li>
+            <li class="navlink" id="user"><a id="nav_a" href="singin.html" onclick="openLogInForm()"><img
                         src="../mockupPhoto/user.jpg" alt="profilepicture"
                         style="max-width: 3em; max-height: 3em; border-radius: 50%;"></a></li>
         </ul>
     </nav>
     <div class="profile_container">
         <div class="profile_info">
-            <h1 class ="username">Username</h1>
+            <h1 class="username" id="username"></h1>
             <div class="imageholder">
                 <img src="../mockupPhoto/user.jpg" class="userphoto">
             </div>
@@ -42,8 +45,10 @@
             </div>
             
         </div>
+        <div class="logout"><button>Sign out</button></div>
     </div>
-
+    
+    <script src="../js/profilePage.js"></script>
+    
 </body>
-
 </html>

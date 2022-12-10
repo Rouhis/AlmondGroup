@@ -5,8 +5,7 @@ const router = express.Router();
 const {body} = require('express-validator')
 const{login, logout, createUser} = require('../controllers/authController')
 
-router
-        .post('/login', login)
+router  .post('/login', login)
         .post(
             '/register',
         body('username').isLength({min:3}).trim().escape(),

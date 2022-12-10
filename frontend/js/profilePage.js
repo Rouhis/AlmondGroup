@@ -1,5 +1,5 @@
 'use strict'
+const usernameElement = document.querySelector('#username');
 
-if(!sessionStorage){
-    location.href('singin.html')
-}
+usernameElement.append(JSON.parse(sessionStorage.getItem("user")).username)
+    
