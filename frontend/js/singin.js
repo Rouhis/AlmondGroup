@@ -1,5 +1,7 @@
 'use strict';
-const url = 'http://localhost:3000'; // change url when uploading to server
+
+if(sessionStorage.getItem("user") == null){
+    const url = 'http://localhost:3000'; // change url when uploading to server
 
 
 const loginForm = document.querySelector('#login_form');
@@ -25,8 +27,11 @@ loginForm.addEventListener('submit', async (evt) => {
     // save token
     sessionStorage.setItem('token', json.token);
     sessionStorage.setItem('user', JSON.stringify(json.user));
-
-  }
+}
+location.href = "profile.html"
 
 });
-
+    
+}else{
+    location.href = "profile.html"
+}

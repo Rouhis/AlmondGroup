@@ -15,31 +15,36 @@
     <nav>
         <!-- Navbar html -->
         <ul class="navbar">
-            <li class="navelement"><a id="nav_a" href="home.html">Almond app</a></li>
-            <li class="navlink" id="user">
-                <a id="nav_a" href="#">
-                    <img src="../mockupPhoto/user.jpg" alt="profilepicture"
-                    style="max-width: 3em; max-height: 3em; border-radius: 50%;"></a>
-            </li>
+            <li class="navelement"><a id="nav_a">Almond app</a></li>
+            <li class="navlink"><a id="nav_a" href="home.html">Home</a></li>
+            <li class="navlink" id="user"><a id="nav_a" href="profile.html" onclick="openLogInForm()"><img
+                        src="../mockupPhoto/user.jpg" alt="profilepicture"
+                        style="max-width: 3em; max-height: 3em; border-radius: 50%;"></a></li>
         </ul>
     </nav>
-
-
-    <!-- Div for centering the form -->
-    <div class="searchdiv">
-        <!-- Search form for finding recipes -->
-        <form class="search">
-            <input id="search" type="text" placeholder="Look for a recipe...">
-            <button id="button" type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-    <!-- Div for all the recipecards -->
-    <div class="maincontainer">
-        <div class="container">
-            <main class="recipes">
-                <script src="../js/js.js"></script>
-            </main>
+    <div class="profile_container">
+        <div class="profile_info">
+            <h1>Username</h1>
+            <div class="imageholder">
+                <img src="../mockupPhoto/user.jpg" class="userphoto">
+            </div>
+            <div class="userinfo">
+               <div class="info">
+                <h1>Own recipes</h1>
+                <article id="ownrecipes">
+                    <!--Javascript adds recipes here-->
+                </article>
+               </div>
+               <div class="info">
+                <h1>Liked recipes</h1>
+                <article id="likedreipe">
+                    <!--Javascript adds recipes here-->
+                </article>
+               </div>
+            </div>
+            
         </div>
+        <div class="logout"><button>Sign out</button></div>
     </div>
     
 </body>
