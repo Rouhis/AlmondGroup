@@ -18,6 +18,15 @@ loginForm.addEventListener('submit', async (evt) => {
     console.log(fetchOptions)
   const response = await fetch(url + '/auth/login', fetchOptions);
   const json = await response.json();
-  alert(json.message);
   console.log(json);
+  if (!json.user) {
+    alert(json.message);
+  } else {
+    // save token
+    sessionStorage.setItem('token', json.token);
+    sessionStorage.setItem('user', JSON.stringify(json.user));
+
+  }
+
 });
+
