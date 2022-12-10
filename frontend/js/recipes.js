@@ -35,8 +35,15 @@ const getCommentsById = async () => {
     console.log(comments);
     for (const element of comments) {
       document.getElementById(
-        "comments"
-      ).innerHTML += `<div class="comment"><h4>${element.username}</h4><p>${element.data}</p></div>`;
+        "commentfield"
+      ).innerHTML += `<div class="comment">
+      <div class="username">
+          <h4>${element.username}</h4>
+      </div>
+      <div class="comment_stuff">
+          <p>${element.data}</p>
+      </div>
+  </div>`;
     }
   } catch (e) {
     console.log(e.message);
