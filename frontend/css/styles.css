@@ -21,6 +21,11 @@ body {
     padding: 0px;
     background-color: var(--dark);
 }
+body{
+    background: linear-gradient(120deg, #0E131F, #FF0035);
+    height: fit-content;
+    min-height: 100vh;
+}
 
 .navbar {
     background-color: var(--black);
@@ -184,93 +189,84 @@ img {
 
 /* Recipe page css starts here */
 
-.recipeimage {
-    position: relative;
-    display: flex;
-    width: 50em;
-    height: 25em;
-}
 
-.recipecontainer {
+.image_container {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: fit-content;
+    padding-bottom: 2em;
 }
 
-.steps {
-    width: 25em;
+#image_container {
+    width: 60vh;
+    height: 30vh;
+    box-shadow: 3px 3px 3px 3px #0E131F;
+}
+
+.recipe_info {
+    display: flex;
+    flex-direction: row;
+    width: 80vh;
     height: fit-content;
+    padding: 15px 15px 15px;
+
+}
+
+.ingredients,
+.steps {
+    width: 50%;
+    height: fit-content;
+    background-color: var(--dark);
+    border-radius: 2%;
+    padding-left: 10px;
+    box-shadow: 3px 3px 3px 3px #0E131F;
 }
 
 .ingredients {
-    width: 25em;
-    height: fit-content;
+    margin-right: 15px;
 }
 
-.comment_container{
+.commentfield {
     display: flex;
     flex-direction: column;
+    width: 75vh;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 30vh;
-}
-
-.comments {
-    width: 50em;
     height: fit-content;
+    min-height: 12vh;
+    background: linear-gradient(120deg, #0E131F, #d8dfe7);
+    margin-top: 2em;
+    box-shadow: 3px 3px 3px 3px #0E131F;
 }
 
 .comment {
-    background-color: var(--orange);
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    height: fit-content;
+    min-height: 8vh;
+    background-color: var(--dark);
+    margin: 10px 10px 10px;
+    border-radius: 5%;
 }
 
-#add_comment{
-    height: 500px;
+.username {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30%;
+    width: 30%;
+    height: 100%;
 }
 
-.likebutton{
-    height: 50px;
-    width: 50px;
-}
-.likebutton_container{
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-}
+.comment_stuff {
+    min-width: 70%;
+    width: 70%;
+    min-height: 100%;
+    height: 100%;
 
-@media only screen and (max-width: 950px) {
-
-    .recipeimage {
-        display: flex;
-        width: 70vh;
-        height: 35vh;
-    }
-
-    .recipecontainer {
-        display: flex;
-        flex-direction: column;
-        width: 95vh;
-        height: fit-content;
-    }
-
-    .steps {
-        width: 90%;
-        height: fit-content;
-    }
-
-    .ingredients {
-        width: 90%;
-        height: fit-content;
-    }
-
-    .comments {
-        width: 70vh;
-        height: fit-content
-    }
 }
 
 /* Login and Signup CSS */
@@ -286,7 +282,7 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
-    background-color: var(--cold);
+    background: linear-gradient(120deg, #384052, #d8dfe7);
     border-radius: 10px;
 }
 
@@ -313,11 +309,27 @@ img {
     padding: 5px;
 }
 
+.recipe_headers{
+    text-align: center;
+}
+
+.addcomment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.comment_area{
+    width: 90%;
+    height: 10vh;
+}
 /* Add recipe css */
 
-.recipeaddbody{
+.recipeaddbody {
     background-color: var(--dark);
 }
+
 .recipeadd_container {
     display: flex;
     flex-direction: column;
@@ -330,24 +342,25 @@ img {
 
     width: 35%;
     height: 70vh;
-    
+
 }
 
-.add_image{
+.add_image {
     height: 90%;
     width: 100%;
     max-width: 50%;
 }
 
-.guidelines{
+.guidelines {
     padding-top: 20px;
     display: flex;
     flex-direction: row;
     height: 80%;
     width: 100%;
-   
+
 }
-.add_ingredients{
+
+.add_ingredients {
     width: 50%;
     background-color: var(--dark);
     text-align: center;
@@ -356,7 +369,7 @@ img {
     border-radius: 2%;
 }
 
-.add_steps{
+.add_steps {
     width: 50%;
     background-color: var(--dark);
     text-align: center;
@@ -364,23 +377,23 @@ img {
     border-radius: 2%;
 }
 
-.add_button{
+.add_button {
     text-align: center;
     padding-top: 40px;
-    
+
 }
 
-.hide{
+.hide {
     width: 100%;
     background-color: var(--dark);
 }
 
-#textarea{
-width: 70%;
-height: fit-content;
+#textarea {
+    width: 70%;
+    height: fit-content;
 }
 
-.image_container{
+.image_container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -388,7 +401,7 @@ height: fit-content;
 }
 
 /*Add profile css*/
-.profile_container{
+.profile_container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -397,22 +410,23 @@ height: fit-content;
     height: 95vh;
 }
 
-.profile_info{
+.profile_info {
     width: 70vh;
     height: 70vh;
     background-color: red;
     border-radius: 5%;
 }
-.profile_info h1{
+
+.profile_info h1 {
     text-align: center;
 }
 
-.userphoto{
-    width:200px;
+.userphoto {
+    width: 200px;
     height: 200px;
 }
 
-.imageholder{
+.imageholder {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -420,14 +434,15 @@ height: fit-content;
     height: 15vh;
 }
 
-.userinfo{
+.userinfo {
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 65%;
 
 }
-.info{
+
+.info {
     width: 50%;
     height: 100%;
 }
