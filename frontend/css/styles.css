@@ -187,25 +187,36 @@ img {
 .recipeimage {
     position: relative;
     display: flex;
-    width: 60em;
-    height: 30em;
+    width: 50em;
+    height: 25em;
 }
 
 .recipecontainer {
     display: flex;
     flex-direction: row;
-    width: 60em;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
     height: fit-content;
 }
 
 .steps {
-    width: 50%;
+    width: 25em;
     height: fit-content;
 }
 
 .ingredients {
-    width: 50%;
+    width: 25em;
     height: fit-content;
+}
+
+.comment_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 30vh;
 }
 
 .comments {
@@ -235,7 +246,7 @@ img {
 
     .recipeimage {
         display: flex;
-        width: 95vh;
+        width: 70vh;
         height: 35vh;
     }
 
