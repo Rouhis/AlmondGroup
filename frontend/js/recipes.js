@@ -50,11 +50,13 @@ const getCommentsById = async () => {
   }
 };
 
+console.log(JSON.parse(sessionStorage.getItem("user")).id);
+
 document
   .querySelector("#add_comment_button")
   .addEventListener("click", async (e) => {
     e.preventDefault();
-    const user_id = 2;
+    const user_id = JSON.parse(sessionStorage.getItem("user")).id;
     const recipe_id = recipeId;
     const data = document.querySelector("#commentBox").value;
     const response = await fetch(url + "/comment", {
@@ -76,7 +78,7 @@ document
 
 document.querySelector("#likebutton").addEventListener("click", async (e) => {
   e.preventDefault();
-  const userId = 2;
+  const userId = JSON.parse(sessionStorage.getItem("user")).id;
   const response = await fetch(url + "/fav", {
     method: "POST",
     headers: {

@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const bcrypt = require('bcryptjs');
 const {validationResult} = require('express-validator');
-const userModel = require('../models/userModel');
+const userModel = require('../../backend/models/userModel');
 require('dotenv').config();
 
 const login = (req, res) => {

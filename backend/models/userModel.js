@@ -1,7 +1,7 @@
 
 "use strict";
 const { validationResult } = require("express-validator");
-const pool = require("../database/db");
+const pool = require("../db/db");
 const promisePool = pool.promise();
 
 const getAllUsers = async (res) => {

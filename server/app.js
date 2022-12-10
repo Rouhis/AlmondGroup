@@ -13,7 +13,7 @@ app.use('/profile',profileRoute);
 
 
 const userRouter = require("./routes/userRoute");
-const authRouter = require("./routes/authRoute");
+const authRouter = require("../backend/routes/authRoute");
 const passport = require("./utils/passport");
 
 
