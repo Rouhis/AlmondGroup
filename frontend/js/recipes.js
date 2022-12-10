@@ -10,6 +10,7 @@ const getQParam = (param) => {
     const url = "http://127.0.0.1:3000"; 
     const recipeId= getQParam("id"); 
      console.log(recipeId);
+    const addCommnetForm = document.querySelector(".add_comment");
 
   const getRecipeById = async () => {
     try{
@@ -41,6 +42,49 @@ const getQParam = (param) => {
 
     }
   }
+
+  document.querySelector("#add_comment_button").addEventListener("click", async (e) =>{
+    e.preventDefault();
+    const user_id = 2;
+    const recipe_id = recipeId;
+    const data = document.querySelector("#commentBox").value;
+    const response = await fetch(url +"/comment", {
+        method: "POST",
+        headers: {
+        'Content-Type': 'application/json',
+         },
+         body: JSON.stringify({
+            recipe_id,
+            user_id,
+            data
+         }),
+    })
+    .then((res) => {
+        return res.json();
+    })
+    .then((data) => console.log(data));
+  });
+
+  document.querySelector("#likebutton").addEventListener("click", async (e) =>{
+    e.preventDefault();
+    const userId = 2;
+    const response = await fetch(url +"/fav", {
+        method: "POST",
+        headers: {
+        'Content-Type': 'application/json',
+         },
+         body: JSON.stringify({
+            userId,
+            recipeId
+         }),
+    })
+    .then((res) => {
+        return res.json();
+    })
+    .then((data) => console.log(data));
+   
+  });
+
 
   const addToFav = async () => {
     const fd = '{"userId": 2,"recipeId": 1}'
