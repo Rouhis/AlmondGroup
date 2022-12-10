@@ -33,7 +33,6 @@ if(!searchField.value){
         </div>
         <div class="recipecardbottom">
         <h1>${element.name}<h1>
-        <h2>${element.id}</h2>
         <button class="favorite recipebutton"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
         </div>
         </a>`
