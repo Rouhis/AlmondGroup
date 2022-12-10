@@ -27,8 +27,16 @@ const getRecipeByUserId = async (req,res) => {
 
 const createRecipe = async (req,res) => {
     const errors = validationResult(req);
+    if(!req.file){
+        console.log(req.file);
+        console.log(req.body);
+        //console.log(req.file.filename)
+        res.status(400).json({message: "Kuveen lisäy ei toimi lol xd :D:D:D"});
+    }
+    else 
     if(errors.isEmpty){
     const recipe = req.body;
+    recipe.filename = req.file.filename;
     console.log("Creating a new recipe",recipe);
     const recipeId = await recipeModel.addRecipe(recipe, res);
     res.status(201).json({message: "recipe created", recipeId});

@@ -7,7 +7,7 @@ const {body} = require("express-validator");
 const recipeController = require("../controllers/recipeController");
 
 const fileFilter = (req, file, cb) => {
-    const acceptedTypes = ["image/jpeg","image/png","image/gif"];
+    const acceptedTypes = ["image/jpg","image/jpeg","image/png","image/gif"];
     if (acceptedTypes.includes(file.mimetype)){
         cb(null,true);
     }else{
@@ -15,18 +15,19 @@ const fileFilter = (req, file, cb) => {
     }
 };
 
-const upload = multer({dest: "uploads/", fileFilter});
+const upload = multer({dest: "./backend/uploads/", fileFilter});
 
 router.get("/",recipeController.getRecipes)
 .get("/:recipeId", recipeController.getRecipeById)
 .get("/user/:userId",recipeController.getRecipeByUserId)
 .get("/name/:recipeName", recipeController.getRecipeByName)
 .post("/",
+upload.single("recipe"),
 body("name"),
 body("userid"),
 body("ingredients"),
 body("instructions"),
-body("img"),
+//body("img"),
 recipeController.createRecipe)
 .put("/", recipeController.modifyRecipeById);
 

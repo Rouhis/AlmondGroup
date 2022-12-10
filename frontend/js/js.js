@@ -29,7 +29,7 @@ if(!searchField.value){
     mainElement.innerHTML += `
     <a class="recipecard" onclick="href='recipes.html?id=${element.id}';" style="cursor: pointer;">
         <div class="recipecardtop">
-        <img src="../mockupPhoto/glögg.png" alt="recipe">
+        <img src="../../backend/uploads/${element.img}"+".jpg" alt="recipe">
         </div>
         <div class="recipecardbottom">
         <h1>${element.name}<h1>

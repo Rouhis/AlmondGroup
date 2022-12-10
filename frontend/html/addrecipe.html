@@ -22,32 +22,46 @@
     </nav>
     <div class="recipeadd_container">
 
-        <form class="recipe_add" id="recipe_add" method="post">
+        <form action="http://localhost:3000/recipe" class="recipe_add" id="recipe_add" method="post">
             <div class="image_container">
                 <div class="add_image">
-                    <input class="hide " type="file" accept="image/*" onchange="loadFile(event)">
+                    <input class="hide" type="file" name="recipe" accept="image/*">
                     <img id="output">
                 </div>
             </div>
             <div class="guidelines">
+                <div class="add_name">
+                    <h2>Name</h2>
+                    <textarea name="name" id="textarea">asd</textarea>
+                </div>
+                <div class="add_id">
+                    <h2>ID</h2>
+                    <textarea name="userid" id="textarea">asd</textarea>
+                </div>
                 <div class="add_ingredients">
-
                     <h2>Add ingredients</h2>
-                    <textarea id="textarea"></textarea>
+                    <textarea name="ingredients" id="textarea">asd</textarea>
                 </div>
                 <div class="add_steps">
                     <h2>Add steps</h2>
-                    <textarea id="textarea"></textarea>
+                    <textarea name="instructions" id="textarea">dsa</textarea>
                 </div>
+                <!-- <div class="add_img">
+                    <h2>Img</h2>
+                    <textarea name="img" id="textarea">asd</textarea>
+                </div> -->
             </div>
             <div class="add_button">
-                <button>Submit</button>
+                <button type="submit">submit</button>
             </div>
         </form>
 
 
     </div>
-</body>
+ <script src="../js/serialize.js"></script>
 <script src="../js/addrecipe.js"></script>
+</body>
 
-</html><img>
+
+
+</html>
