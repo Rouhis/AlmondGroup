@@ -197,12 +197,22 @@ img {
     width: 100vw;
     height: fit-content;
     padding-bottom: 2em;
+    position: relative;
 }
-
+.likebutton{
+    height: 50px;
+    width: 50px;
+}
+.likebutton_container{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
 #image_container {
     width: 60vh;
     height: 30vh;
     box-shadow: 3px 3px 3px 3px #0E131F;
+    position: relative;
 }
 
 .recipe_info {
