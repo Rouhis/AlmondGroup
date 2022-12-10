@@ -7,7 +7,7 @@ const userModel = require('../models/userModel');
 require('dotenv').config();
 
 const login = (req, res) => {
-  // TODO: add passport authenticate
+  
   passport.authenticate('local', {session: false}, (err, user, info) => {
     if (err || !user) {
       return res.status(400).json({
@@ -19,8 +19,7 @@ const login = (req, res) => {
       if (err) {
         res.send(err);
       }
-      // generate a signed json web token with the contents of user object and return it in the response
-      // do not include password in token/user object when sending to client
+     
       delete user.password;
       const token = jwt.sign(user, process.env.JWT_SECRET);
       return res.json({user, token});
@@ -51,14 +50,7 @@ const createUser = async (req, res) => {
     }
 };
 
-
-const logout = (req, res) => {
-    console.log('some user logged out');
-    res.json({message: 'logged out'});
-  };
-  
   module.exports = {
     login,
-    logout,
     createUser,
   };
