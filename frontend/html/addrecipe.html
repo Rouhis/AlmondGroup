@@ -19,49 +19,34 @@
             <li class="navlink" id="user">
                 <button id="nav_a">
                     <img src="../mockupPhoto/user.jpg" alt="profilepicture" id="user_pic"
-                    style="max-width: 3em; max-height: 3em; border-radius: 50%;">
+                        style="max-width: 3em; max-height: 3em; border-radius: 50%;">
                     <div class="dropdown">
                         <div class="dropdown-content">
-                          <a href="login.html">Log In</a>
-                          <a href="profile.html">Profile</a>
-                          <a href="addrecipe.html">Make a recipe</a>
-                          <a href="loggedout.html">Log Out</a>
-                          
+                            <a href="login.html">Log In</a>
+                            <a href="profile.html">Profile</a>
+                            <a href="addrecipe.html">Make a recipe</a>
+                            <a href="loggedout.html">Log Out</a>
+
                         </div>
-                      </div>    
+                    </div>
+                </button>
             </li>
-        </button>
-                    
-            
         </ul>
     </nav>
-    <div class="recipeadd_container">
-        <h1>recipe name</h1>
-        <input>
-        <form class="recipe_add" id="recipe_add" method="post">
-            <div class="image_container">
-                <div class="add_image">
-                    <input class="hide " type="file" accept="image/*" onchange="loadFile(event)">
-                    <img id="output">
-                </div>
-            </div>
-            <div class="guidelines">
-                <div class="add_ingredients">
 
-                    <h2>Add ingredients</h2>
-                    <textarea id="textarea"></textarea>
-                </div>
-                <div class="add_steps">
-                    <h2>Add steps</h2>
-                    <textarea id="textarea"></textarea>
-                </div>
-            </div>
-            <div class="add_button">
-                <button>Submit</button>
+
+    <div class="recipeadd_container">
+        <form class="recipe_add">
+            <h1>Recipe name</h1>
+            <input id="recipename" type="text">
+            <div class="add_photo">
+                <input id="recipe_file" type="file" onchange="loadFile(event)">
+                <figure class="file_container">
+                    <img id="output">
+                </figure>
+               
             </div>
         </form>
-
-
     </div>
 </body>
 <script src="../js/addrecipe.js"></script>
