@@ -10,6 +10,7 @@
     --white: #FFFFFF;
     --cold: #F5F3F4;
     --border: #0a0000;
+    --notasblack: rgb(49, 46, 46);
 }
 
 * {
@@ -487,43 +488,71 @@ img {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 95vh;
+    padding-top: 10%;
 }
 
 .profile_info {
     width: 70vh;
-    height: 70vh;
-    background-color: red;
+    height: fit-content;
+    background-color: var(--notasblack);
     border-radius: 5%;
+    color: var(--red);
 }
 
 .profile_info h1 {
     text-align: center;
 }
 
-.userphoto {
-    width: 200px;
-    height: 200px;
-}
-
-.imageholder {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    height: 15vh;
-}
 
 .userinfo {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     width: 100%;
     height: 65%;
 
 }
 
 .info {
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
     height: 100%;
+}
+
+.ownrecipe_card, .likedrecipe_card{
+    width: 90%;
+    height: 30%;
+    min-height: 130px;
+    min-width: 240px;
+    background-color: #0a0000;
+    margin: 5px 5px 5px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .profile_info{
+        border-radius: 0%;
+    }
+    .userinfo {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .profile_info h1{
+        font-size: x-large;
+    }
+
+    .info h2{
+        font-size: larger;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .ownrecipe_card, .likedrecipe_card{
+        width: 70%;
+    }
 }
