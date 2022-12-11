@@ -1,5 +1,4 @@
-'use strict'
-const usernameElement = document.querySelector('#username');
+"use strict";
+const usernameElement = document.querySelector("#username");
 
-usernameElement.append(JSON.parse(sessionStorage.getItem("user")).username)
-    
+usernameElement.append(JSON.parse(sessionStorage.getItem("user")).username);

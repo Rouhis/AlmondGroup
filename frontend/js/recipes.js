@@ -50,13 +50,11 @@ const getCommentsById = async () => {
   }
 };
 
-//console.log(JSON.parse(sessionStorage.getItem("user")).id);
-
 document
   .querySelector("#add_comment_button")
   .addEventListener("click", async (e) => {
     e.preventDefault();
-    if(sessionStorage.getItem("user")){
+    if (sessionStorage.getItem("user")) {
       const user_id = JSON.parse(sessionStorage.getItem("user")).id;
       const recipe_id = recipeId;
       const data = document.querySelector("#commentBox").value;
@@ -75,16 +73,15 @@ document
           return res.json();
         })
         .then((data) => console.log(data));
-    }else{
-      alert("Please login to add comment")
+    } else {
+      alert("Please login to add comment");
     }
-
   });
 
 document.querySelector("#likebutton").addEventListener("click", async (e) => {
   e.preventDefault();
-  
-  if(sessionStorage.getItem("user")){
+
+  if (sessionStorage.getItem("user")) {
     const userId = JSON.parse(sessionStorage.getItem("user")).id;
     const response = await fetch(url + "/fav/test/", {
       method: "POST",
@@ -100,14 +97,10 @@ document.querySelector("#likebutton").addEventListener("click", async (e) => {
         return res.json();
       })
       .then((data) => console.log(data));
-  }else{
-    alert("Please login to add recipe to favorites")
+  } else {
+    alert("Please login to add recipe to favorites");
   }
-
 });
-
-
-
 
 window.onload = getRecipeById();
 window.onload = getCommentsById();
