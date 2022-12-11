@@ -79,7 +79,7 @@ document
 document.querySelector("#likebutton").addEventListener("click", async (e) => {
   e.preventDefault();
   const userId = JSON.parse(sessionStorage.getItem("user")).id;
-  const response = await fetch(url + "/fav", {
+  const response = await fetch(url + "/fav/test/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -95,24 +95,8 @@ document.querySelector("#likebutton").addEventListener("click", async (e) => {
     .then((data) => console.log(data));
 });
 
-if (likeBtn) {
-  console.log("otl");
-  likeBtn.addEventListener("Submit", async (evt) => {
-    console.log("otl");
-    evt.preventDefault();
-    const fd = '{"userId": 2,"recipeId": 1}';
-    const fetchOptions = {
-      method: "POST",
-      body: fd,
-    };
-    const favResponse = await fetch(url + "/fav/" + fetchOptions);
-    console.log(fetchOptions + " " + fd);
-    const favJson = await favResponse.json();
-    alert(favJson.message);
-  });
-} else {
-  console.log("tyhäm");
-}
+
+
 
 window.onload = getRecipeById();
 window.onload = getCommentsById();
