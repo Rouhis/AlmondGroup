@@ -1,14 +1,14 @@
 /*Eetu Rouhiainen*/
 
 :root {
-    --red: #FF0035;
-    --yellow: #FFE19C;
-    --dark: #D3D6D9;
-    --black: #0E131F;
-    --light: #f1f1f1;
-    --lighterpurple: #725E82;
-    --white: #f1f1f1;
-    --cold: #d8dfe7;
+    --background1: #0E131F;
+    --background2: #FF0035;
+    --red:var(--background2);
+    --dark: #B1A7A6;
+    --black: #161A1D;
+    --light: #D3D3D3;
+    --white: #FFFFFF;
+    --cold: #F5F3F4;
 }
 
 * {
@@ -19,11 +19,10 @@ html,
 body {
     margin: 0px;
     padding: 0px;
-    background-color: var(--dark);
 }
 
 body {
-    background: linear-gradient(120deg, #0E131F, #FF0035);
+    background: linear-gradient(120deg, var(--background1), var(--background2));
     height: fit-content;
     min-height: 100vh;
 }
@@ -204,6 +203,7 @@ img {
 .likebutton {
     height: 50px;
     width: 50px;
+    font-size: xx-large;
 }
 
 .likebutton_container {
@@ -215,7 +215,7 @@ img {
 #image_container {
     width: 60vh;
     height: 30vh;
-    box-shadow: 3px 3px 3px 3px #0E131F;
+    box-shadow: 3px 3px 3px 3px var(--black);
     position: relative;
 }
 
@@ -232,7 +232,7 @@ img {
 .steps {
     width: 50%;
     height: fit-content;
-    background-color: var(--dark);
+    background-color: var(--cold);
     border-radius: 2%;
     padding-left: 10px;
     box-shadow: 3px 3px 3px 3px #0E131F;
@@ -250,7 +250,7 @@ img {
     justify-content: center;
     height: fit-content;
     min-height: 12vh;
-    background: linear-gradient(120deg, #0E131F, #d8dfe7);
+    background-color: var(--light);
     margin-top: 2em;
     box-shadow: 3px 3px 3px 3px #0E131F;
 }
@@ -261,9 +261,9 @@ img {
     width: 95%;
     height: fit-content;
     min-height: 8vh;
-    background-color: var(--dark);
+    background-color: var(--cold);
     margin: 10px 10px 10px;
-    border-radius: 5%;
+    
 }
 
 .username {
@@ -291,6 +291,11 @@ img {
         align-items: center;
         justify-content: center;
         width: 100%;
+    }
+    .ingredients,
+    .steps {
+        width: 75%;
+
     }
 
     .steps {
@@ -328,8 +333,11 @@ img {
     .likebutton{
         height: 40px;
         width: 40px;
+        font-size: large;
     }
+
 }
+ 
 
 
 
