@@ -1,14 +1,16 @@
 /*Eetu Rouhiainen*/
 
 :root {
-    --red: #FF0035;
-    --yellow: #FFE19C;
-    --dark: #D3D6D9;
-    --black: #0E131F;
-    --light: #f1f1f1;
-    --lighterpurple: #725E82;
-    --white: #f1f1f1;
-    --cold: #d8dfe7;
+    --background1: #0E131F;
+    --background2: #FF0035;
+    --red: var(--background2);
+    --dark: #B1A7A6;
+    --black: #161A1D;
+    --light: #D3D3D3;
+    --white: #FFFFFF;
+    --cold: #F5F3F4;
+    --border: #0a0000;
+    --notasblack: rgb(49, 46, 46);
 }
 
 * {
@@ -19,9 +21,15 @@ html,
 body {
     margin: 0px;
     padding: 0px;
-    background-color: var(--dark);
 }
 
+body {
+    background: linear-gradient(120deg, var(--background1), var(--background2));
+    height: fit-content;
+    min-height: 100vh;
+}
+
+/*Navbar css starts here*/
 .navbar {
     background-color: var(--black);
     display: flex;
@@ -43,11 +51,114 @@ body {
 
 }
 
+
 #nav_a {
     font-size: x-large;
     color: var(--red);
     text-decoration: none;
+    background-color: var(--black);
+    border: none;
 }
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    font-size: large;
+    color: var(--background2);
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    background-color: var(--black);
+}
+
+
+.dropdown-content a {
+    color: var(--red);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.dropdown-content a:hover {
+    background-color: var(--background2);
+    color: var(--border);
+}
+
+
+#nav_a:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+/* Login and Signup CSS */
+
+.login_body {
+    background: linear-gradient(120deg, #0E131F, #FF0035);
+    height: 100vh;
+}
+
+.logincenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: linear-gradient(120deg, #384052, #d8dfe7);
+    border-radius: 10px;
+}
+
+.logincenter h1 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid black;
+}
+
+.login_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    width: 400px;
+    padding-bottom: 30px;
+}
+
+.txt_field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 5px;
+}
+
+.recipe_headers {
+    text-align: center;
+}
+
+.addcomment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.comment_area {
+    width: 90%;
+    height: 10vh;
+}
+
+
 
 /* Front page css starts here */
 
@@ -94,7 +205,8 @@ form.search button {
 
 form.search button:hover {
 
-    background: var(--lighterpurple);
+    background: var(--background2);
+    color: var(--background1);
 }
 
 .maincontainer {
@@ -123,7 +235,7 @@ form.search button:hover {
     margin: 5px 5px 5px;
     width: 25em;
     height: 15em;
-    border: 2px solid black;
+    border: 2px solid var(--border);
 
 }
 
@@ -135,16 +247,16 @@ form.search button:hover {
 .recipecardbottom {
     display: flex;
     flex-direction: row;
-    justify-items: center;
-    justify-content: space-between;
-    background-color: var(--light);
+    align-items: center;
+    background-color: var(--notasblack);
     width: 100%;
     height: 20%;
+    border-top: 2px solid var(--border);
 
 }
 
 .recipecardbottom h1 {
-    color: var(--black);
+    color: var(--red);
     margin: 0;
     padding: 0;
     font-size: x-large;
@@ -184,239 +296,263 @@ img {
 
 /* Recipe page css starts here */
 
-.recipeimage {
+
+.image_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: fit-content;
+    padding-bottom: 2em;
     position: relative;
-    display: flex;
-    width: 60em;
-    height: 30em;
 }
 
-.recipecontainer {
-    display: flex;
-    flex-direction: row;
-    width: 60em;
-    height: fit-content;
-}
-
-.steps {
-    width: 50%;
-    height: fit-content;
-}
-
-.ingredients {
-    width: 50%;
-    height: fit-content;
-}
-
-.comments {
-    width: 50em;
-    height: fit-content;
-}
-
-.comment {
-    background-color: var(--orange);
-}
-
-#add_comment{
-    height: 500px;
-}
-
-.likebutton{
+.likebutton {
     height: 50px;
     width: 50px;
+    font-size: xx-large;
+    color: var(--border);
+    background-color: var(--background2);
 }
-.likebutton_container{
+
+.likebutton_container {
     position: absolute;
     bottom: 0px;
     right: 0px;
 }
 
-@media only screen and (max-width: 950px) {
+#image_container {
+    width: 60vh;
+    height: 30vh;
+    box-shadow: 3px 3px 3px 3px var(--black);
+    position: relative;
+}
 
-    .recipeimage {
-        display: flex;
-        width: 95vh;
-        height: 35vh;
-    }
+.recipe_info {
+    display: flex;
+    flex-direction: row;
+    width: 80vh;
+    height: fit-content;
+    padding: 15px 15px 15px;
 
-    .recipecontainer {
+}
+
+.ingredients,
+.steps {
+    width: 50%;
+    height: fit-content;
+    background-color: var(--cold);
+    border-radius: 2%;
+    padding-left: 10px;
+    box-shadow: 3px 3px 3px 3px #0E131F;
+}
+
+.steps {
+    margin-left: 2em;
+}
+
+.commentfield {
+    display: flex;
+    flex-direction: column;
+    width: 75vh;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    min-height: 12vh;
+    background-color: var(--light);
+    margin-top: 2em;
+    box-shadow: 3px 3px 3px 3px #0E131F;
+}
+
+.comment {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    height: fit-content;
+    min-height: 8vh;
+    background-color: var(--cold);
+    margin: 10px 10px 10px;
+
+}
+
+.username {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30%;
+    width: 30%;
+    height: 100%;
+}
+
+.comment_stuff {
+    min-width: 70%;
+    width: 70%;
+    min-height: 100%;
+    height: 100%;
+
+}
+
+@media only screen and (max-width: 1025px) {
+
+    .recipe_info {
         display: flex;
         flex-direction: column;
-        width: 95vh;
-        height: fit-content;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .ingredients,
+    .steps {
+        width: 75%;
+
     }
 
     .steps {
-        width: 90%;
-        height: fit-content;
+        margin-top: 2em;
+        margin-left: 0;
     }
 
-    .ingredients {
-        width: 90%;
-        height: fit-content;
+    .commentfield {
+
+        width: 95%;
+
     }
 
-    .comments {
-        width: 70vh;
-        height: fit-content
+    #image_container {
+
+        width: 95%;
+        height: 30%;
+    }
+
+    .image_container {
+
+        width: 95%;
+        height: 30%;
     }
 }
 
-/* Login and Signup CSS */
+@media only screen and (max-width: 650px) {
 
-.login_body {
-    background: linear-gradient(120deg, #0E131F, #FF0035);
-    height: 100vh;
+    .ingredients,
+    .steps {
+        width: 100%;
+
+    }
+
+    .likebutton {
+        height: 40px;
+        width: 40px;
+        font-size: large;
+    }
+
 }
 
-.logincenter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    background-color: var(--cold);
-    border-radius: 10px;
-}
 
-.logincenter h1 {
-    text-align: center;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid black;
-}
 
-.login_form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    width: 400px;
-    padding-bottom: 30px;
-}
 
-.txt_field {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    padding: 5px;
-}
+
 
 /* Add recipe css */
 
-.recipeaddbody{
-    background-color: var(--dark);
-}
-.recipeadd_container {
+.recipeadd_container{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    padding-top: 7em;
-}
-
-.recipe_add {
-
-    width: 35%;
-    height: 70vh;
-    
-}
-
-.add_image{
-    height: 90%;
-    width: 100%;
-    max-width: 50%;
-}
-
-.guidelines{
-    padding-top: 20px;
-    display: flex;
-    flex-direction: row;
-    height: 80%;
-    width: 100%;
-   
-}
-.add_ingredients{
-    width: 50%;
-    background-color: var(--dark);
-    text-align: center;
-    color: var(--black);
-    margin-right: 50px;
-    border-radius: 2%;
-}
-
-.add_steps{
-    width: 50%;
-    background-color: var(--dark);
-    text-align: center;
-    color: var(--black);
-    border-radius: 2%;
-}
-
-.add_button{
-    text-align: center;
-    padding-top: 40px;
-    
-}
-
-.hide{
-    width: 100%;
-    background-color: var(--dark);
-}
-
-#textarea{
-width: 70%;
-height: fit-content;
-}
-
-.image_container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 30%;
-}
-
-/*Add profile css*/
-.profile_container{
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 95vh;
+    height: 90vh;
 }
 
-.profile_info{
-    width: 70vh;
-    height: 70vh;
-    background-color: red;
-    border-radius: 5%;
-}
-.profile_info h1{
-    text-align: center;
-}
-
-.userphoto{
-    width:200px;
-    height: 200px;
+.recipe_add{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75vw;
+    height: 100%;
+    background-color: white;
 }
 
-.imageholder{
+.file_container{
+    max-width: 600px;
+    max-height: 350px;
+    border: 2px solid var(--border);
+}
+#output{
+    max-width: 600px;
+    max-height: 350px;
+}
+
+/*Profile css*/
+.profile_container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
-    height: 15vh;
+    align-items: center;
+    padding-top: 10%;
 }
 
-.userinfo{
+.profile_info {
+    width: 70vh;
+    height: fit-content;
+    background-color: var(--notasblack);
+    border-radius: 5%;
+    color: var(--red);
+}
+
+.profile_info h1 {
+    text-align: center;
+}
+
+
+.userinfo {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     width: 100%;
     height: 65%;
 
 }
-.info{
-    width: 50%;
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
     height: 100%;
+}
+
+.ownrecipe_card, .likedrecipe_card{
+    width: 90%;
+    height: 30%;
+    min-height: 130px;
+    min-width: 240px;
+    background-color: #0a0000;
+    margin: 5px 5px 5px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .profile_info{
+        border-radius: 0%;
+    }
+    .userinfo {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .profile_info h1{
+        font-size: x-large;
+    }
+
+    .info h2{
+        font-size: larger;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .ownrecipe_card, .likedrecipe_card{
+        width: 70%;
+    }
 }
