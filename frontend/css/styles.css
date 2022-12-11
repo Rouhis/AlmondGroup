@@ -21,7 +21,8 @@ body {
     padding: 0px;
     background-color: var(--dark);
 }
-body{
+
+body {
     background: linear-gradient(120deg, #0E131F, #FF0035);
     height: fit-content;
     min-height: 100vh;
@@ -199,15 +200,18 @@ img {
     padding-bottom: 2em;
     position: relative;
 }
-.likebutton{
+
+.likebutton {
     height: 50px;
     width: 50px;
 }
-.likebutton_container{
+
+.likebutton_container {
     position: absolute;
     bottom: 0px;
     right: 0px;
 }
+
 #image_container {
     width: 60vh;
     height: 30vh;
@@ -234,8 +238,8 @@ img {
     box-shadow: 3px 3px 3px 3px #0E131F;
 }
 
-.ingredients {
-    margin-right: 15px;
+.steps {
+    margin-left: 2em;
 }
 
 .commentfield {
@@ -279,6 +283,56 @@ img {
 
 }
 
+@media only screen and (max-width: 1025px) {
+
+    .recipe_info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .steps {
+        margin-top: 2em;
+        margin-left: 0;
+    }
+
+    .commentfield {
+
+        width: 95%;
+
+    }
+
+    #image_container {
+
+        width: 95%;
+        height: 30%;
+    }
+
+    .image_container {
+
+        width: 95%;
+        height: 30%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+
+    .ingredients,
+    .steps {
+        width: 100%;
+
+    }
+
+    .likebutton{
+        height: 40px;
+        width: 40px;
+    }
+}
+
+
+
 /* Login and Signup CSS */
 
 .login_body {
@@ -319,21 +373,22 @@ img {
     padding: 5px;
 }
 
-.recipe_headers{
+.recipe_headers {
     text-align: center;
 }
 
-.addcomment{
+.addcomment {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.comment_area{
+.comment_area {
     width: 90%;
     height: 10vh;
 }
+
 /* Add recipe css */
 
 .recipeaddbody {
