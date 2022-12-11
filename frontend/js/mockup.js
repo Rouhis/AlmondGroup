@@ -33,7 +33,7 @@ searchButton.addEventListener("click", async (evt) => {
         <img src="../mockupPhoto/glögg.png" alt="recipe">
         </div>
         <div class="recipecardbottom">
-        <h1>Name<h1>
+        <h1>Glögisimpukka<h1>
         </div>
         </a>`
       ;

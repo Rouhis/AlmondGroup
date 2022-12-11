@@ -11,16 +11,20 @@
     --cold: #F5F3F4;
     --border: #0a0000;
     --notasblack: rgb(49, 46, 46);
+    --orange: rgb(216, 124, 38);
+    --whiteish: rgb(228, 203, 203);
 }
 
 * {
     box-sizing: border-box;
+    font-family: 'Roboto Slab';
 }
 
 html,
 body {
     margin: 0px;
     padding: 0px;
+    
 }
 
 body {
@@ -104,10 +108,6 @@ body {
 
 /* Login and Signup CSS */
 
-.login_body {
-    background: linear-gradient(120deg, #0E131F, #FF0035);
-    height: 100vh;
-}
 
 .logincenter {
     position: absolute;
@@ -115,7 +115,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
-    background: linear-gradient(120deg, #384052, #d8dfe7);
+    background: linear-gradient(120deg, var(--orange), var(--whiteish));
     border-radius: 10px;
 }
 
@@ -334,14 +334,14 @@ img {
     width: 80vh;
     height: fit-content;
     padding: 15px 15px 15px;
-
+    
 }
 
 .ingredients,
 .steps {
     width: 50%;
     height: fit-content;
-    background-color: var(--cold);
+    background: var(--light);
     border-radius: 2%;
     padding-left: 10px;
     box-shadow: 3px 3px 3px 3px #0E131F;
@@ -359,7 +359,7 @@ img {
     justify-content: center;
     height: fit-content;
     min-height: 12vh;
-    background-color: var(--light);
+    background: linear-gradient(120deg, var(--orange), var(--whiteish));
     margin-top: 2em;
     box-shadow: 3px 3px 3px 3px #0E131F;
 }
@@ -372,7 +372,11 @@ img {
     min-height: 8vh;
     background-color: var(--cold);
     margin: 10px 10px 10px;
-
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 2px solid var(--border);
 }
 
 .username {
@@ -381,7 +385,8 @@ img {
     justify-content: center;
     min-width: 30%;
     width: 30%;
-    height: 100%;
+    min-height: 100%;
+    border-right: 2px solid var(--border);
 }
 
 .comment_stuff {
