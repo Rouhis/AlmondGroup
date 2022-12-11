@@ -13,11 +13,9 @@ searchButton.addEventListener("click", async (evt) => {
   let json;
 
   if (!searchField.value) {
-    console.log("tyhjä");
     mainElement.innerHTML = ``;
     json = await getRecipes();
   } else {
-    console.log("onon");
     mainElement.innerHTML = ``;
     json = await getRecipeByName();
   }
