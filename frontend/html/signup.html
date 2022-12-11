@@ -14,19 +14,32 @@
     <nav>
         <!-- Navbar html -->
         <ul class="navbar">
-            <li class="navelement"><a id="nav_a" href="home.html">Almond app</a></li>
+            <li class="navelement"><a id="nav_a" href="home.html">Recipe GX</a></li>
             <li class="navlink" id="user">
-                <a id="nav_a" href="#">
-                    <img src="../mockupPhoto/user.jpg" alt="profilepicture"
-                        style="max-width: 3em; max-height: 3em; border-radius: 50%;"></a>
+                <button id="nav_a">
+                    <img src="../mockupPhoto/user.jpg" alt="profilepicture" id="user_pic"
+                        style="max-width: 3em; max-height: 3em; border-radius: 50%;">
+                    <div class="dropdown">
+                        <div class="dropdown-content">
+                            <a href="login.html">Log In</a>
+                            <a href="profile.html">Profile</a>
+                            <a href="addrecipe.html">Make a recipe</a>
+                            <a href="loggedout.html">Log Out</a>
+
+                        </div>
+                    </div>
+                </button>
             </li>
+
+
+
         </ul>
     </nav>
 
     <div class="logincenter">
         <h1>Signup</h1>
         <form method="post" class="login_form">
-            
+
             <div class="txt_field">
                 <label>Username</label>
                 <input type="text" required>

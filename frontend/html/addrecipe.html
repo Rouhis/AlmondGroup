@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Make a recipe</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
@@ -15,11 +15,26 @@
     <nav>
         <!-- Navbar html -->
         <ul class="navbar">
-            <li class="navelement"><a id="nav_a" href="home.html">Almond app</a></li>
-            <li class="navlink" id="user"><a id="nav_a" href="#"><img src="../mockupPhoto/user.jpg" alt="profilepicture"
-                        style="max-width: 3em; max-height: 3em; border-radius: 50%;"></a></li>
+            <li class="navelement"><a id="nav_a" href="home.html">Recipe GX</a></li>
+            <li class="navlink" id="user">
+                <button id="nav_a">
+                    <img src="../mockupPhoto/user.jpg" alt="profilepicture" id="user_pic"
+                        style="max-width: 3em; max-height: 3em; border-radius: 50%;">
+                    <div class="dropdown">
+                        <div class="dropdown-content">
+                            <a href="login.html">Log In</a>
+                            <a href="profile.html">Profile</a>
+                            <a href="addrecipe.html">Make a recipe</a>
+                            <a href="loggedout.html">Log Out</a>
+
+                        </div>
+                    </div>
+                </button>
+            </li>
         </ul>
     </nav>
+
+
     <div class="recipeadd_container">
 
         <form action="http://localhost:3000/recipe" class="recipe_add" id="recipe_add" method="post">
@@ -55,8 +70,6 @@
                 <button type="submit">submit</button>
             </div>
         </form>
-
-
     </div>
  <script src="../js/serialize.js"></script>
 <script src="../js/addrecipe.js"></script>

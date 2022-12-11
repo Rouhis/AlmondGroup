@@ -16,11 +16,25 @@ lines (41 sloc)  1.46 KB
     <nav>
         <!-- Navbar html -->
         <ul class="navbar">
-            <li class="navelement"><a id="nav_a">Almond app</a></li>
-            <li class="navlink"><a id="nav_a" href="home.html">Home</a></li>
-            <li class="navlink" id="user"><a id="nav_a" href="singin.html" onclick="openLogInForm()"><img
-                        src="../mockupPhoto/user.jpg" alt="profilepicture"
-                        style="max-width: 3em; max-height: 3em; border-radius: 50%;"></a></li>
+            <li class="navelement"><a id="nav_a" href="home.html">Recipe GX</a></li>
+            <li class="navlink" id="user">
+                <button id="nav_a">
+                    <img src="../mockupPhoto/user.jpg" alt="profilepicture" id="user_pic"
+                        style="max-width: 3em; max-height: 3em; border-radius: 50%;">
+                    <div class="dropdown">
+                        <div class="dropdown-content">
+                            <a href="login.html">Log In</a>
+                            <a href="profile.html">Profile</a>
+                            <a href="addrecipe.html">Make a recipe</a>
+                            <a href="loggedout.html">Log Out</a>
+
+                        </div>
+                    </div>
+                </button>
+            </li>
+
+
+
         </ul>
     </nav>
     <div class="profile_container">
@@ -30,20 +44,20 @@ lines (41 sloc)  1.46 KB
                 <img src="../mockupPhoto/user.jpg" class="userphoto">
             </div>
             <div class="userinfo">
-               <div class="info">
-                <h1>Own recipes</h1>
-                <article id="ownrecipes">
-                    <!--Javascript adds recipes here-->
-                </article>
-               </div>
-               <div class="info">
-                <h1>Liked recipes</h1>
-                <article id="likedreipe">
-                    <!--Javascript adds recipes here-->
-                </article>
-               </div>
+                <div class="info">
+                    <h1>Own recipes</h1>
+                    <article id="ownrecipes">
+                        <!--Javascript adds recipes here-->
+                    </article>
+                </div>
+                <div class="info">
+                    <h1>Liked recipes</h1>
+                    <article id="likedreipe">
+                        <!--Javascript adds recipes here-->
+                    </article>
+                </div>
             </div>
-            
+
         </div>
         <div class="logout"><button>Sign out</button></div>
     </div>

@@ -17,10 +17,23 @@
         <ul class="navbar">
             <li class="navelement"><a id="nav_a" href="home.html">Recipe GX</a></li>
             <li class="navlink" id="user">
-                <a id="nav_a" href="login.html">
-                    <img src="../mockupPhoto/user.jpg" alt="profilepicture"
-                    style="max-width: 3em; max-height: 3em; border-radius: 50%;"></a>
+                <button id="nav_a">
+                    <img src="../mockupPhoto/user.jpg" alt="profilepicture" id="user_pic"
+                        style="max-width: 3em; max-height: 3em; border-radius: 50%;">
+                    <div class="dropdown">
+                        <div class="dropdown-content">
+                            <a href="login.html" id="dropwdown_login">Log In</a>
+                            <a href="profile.html" id="dropwdown_profile">Profile</a>
+                            <a href="addrecipe.html" id="dropwdown_addrecipe">Make a recipe</a>
+                            <a href="loggedout.html" id="dropwdown_logout">Log Out</a>
+
+                        </div>
+                    </div>
+                </button>
             </li>
+
+
+
         </ul>
     </nav>
 
@@ -41,7 +54,7 @@
             </main>
         </div>
     </div>
-    
+
 </body>
 
 </html>
