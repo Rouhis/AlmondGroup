@@ -4,13 +4,13 @@
 const url = 'http://localhost:3000';
 const addForm = document.querySelector("#recipe_add");
 
-// const loadFile = function (event) {
-//     let output = document.getElementById('output');
-//     output.src = URL.createObjectURL(event.target.files[0]);
-//     output.onload = function () {
-//         URL.revokeObjectURL(output.src) 
-//     }
-// };
+const loadFile = function (event) {
+    let output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function () {
+        URL.revokeObjectURL(output.src) 
+    }
+};
 
 //const fd = new FormData(addForm);
 //const test = {"name": "KalaKukko3","userid": 1,"ingredients": "Kala ja KOVAKUKKO","instructions": "Laita Kukko kalaan","img": "kalakukko.jpeg"};

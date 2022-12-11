@@ -86,7 +86,6 @@ document.querySelector("#likebutton").addEventListener("click", async (e) => {
   
   if(sessionStorage.getItem("user")){
     const userId = JSON.parse(sessionStorage.getItem("user")).id;
-
     const response = await fetch(url + "/fav/test/", {
       method: "POST",
       headers: {

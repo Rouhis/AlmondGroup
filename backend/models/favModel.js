@@ -52,6 +52,7 @@ const checkFav = async (userId,recipeId,favo, res)=>{
         if(newResult > 0){
             console.log("Deleting existing favorite");
             removeFav(favo);
+
         }else{
             console.log("Adding to favorites");
             addFav(favo);
