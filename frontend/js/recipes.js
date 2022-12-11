@@ -50,49 +50,61 @@ const getCommentsById = async () => {
   }
 };
 
-console.log(JSON.parse(sessionStorage.getItem("user")).id);
+//console.log(JSON.parse(sessionStorage.getItem("user")).id);
 
 document
   .querySelector("#add_comment_button")
   .addEventListener("click", async (e) => {
     e.preventDefault();
-    const user_id = JSON.parse(sessionStorage.getItem("user")).id;
-    const recipe_id = recipeId;
-    const data = document.querySelector("#commentBox").value;
-    const response = await fetch(url + "/comment", {
+    if(sessionStorage.getItem("user")){
+      const user_id = JSON.parse(sessionStorage.getItem("user")).id;
+      const recipe_id = recipeId;
+      const data = document.querySelector("#commentBox").value;
+      const response = await fetch(url + "/comment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          recipe_id,
+          user_id,
+          data,
+        }),
+      })
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => console.log(data));
+    }else{
+      alert("Please login to add comment")
+    }
+
+  });
+
+document.querySelector("#likebutton").addEventListener("click", async (e) => {
+  e.preventDefault();
+  
+  if(sessionStorage.getItem("user")){
+    const userId = JSON.parse(sessionStorage.getItem("user")).id;
+
+    const response = await fetch(url + "/fav/test/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        recipe_id,
-        user_id,
-        data,
+        userId,
+        recipeId,
       }),
     })
       .then((res) => {
         return res.json();
       })
       .then((data) => console.log(data));
-  });
+  }else{
+    alert("Please login to add recipe to favorites")
+  }
 
-document.querySelector("#likebutton").addEventListener("click", async (e) => {
-  e.preventDefault();
-  const userId = JSON.parse(sessionStorage.getItem("user")).id;
-  const response = await fetch(url + "/fav/test/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      userId,
-      recipeId,
-    }),
-  })
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => console.log(data));
 });
 
 

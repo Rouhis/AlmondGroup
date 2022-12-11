@@ -44,7 +44,7 @@ const removeFav = async (favo, res)=>{
     }
 }
 
-const checkFav = async (favo, res)=>{
+const checkFav = async (userId,recipeId,favo, res)=>{
     try{
         const [result] = await promisePool.query("SELECT COUNT(id) FROM fav WHERE recipe_id=? AND user_id=?",[favo.recipeId,favo.userId]);
         const newResult = JSON.stringify(result[0]).match(/\d/g)
