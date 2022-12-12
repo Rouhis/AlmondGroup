@@ -503,12 +503,6 @@ img {
     padding-bottom: 1em;
    
 }
-.profilename h1{
-    background: -webkit-linear-gradient(120deg, rgb(228, 203, 203), rgb(172, 18, 151));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-   
-}
 
 .profile_content {
     display: flex;
