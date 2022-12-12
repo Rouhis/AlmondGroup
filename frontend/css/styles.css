@@ -3,6 +3,7 @@
 :root {
     --background1: #0E131F;
     --background2: #FF0035;
+    --darkred: rgb(128, 25, 25);
     --red: var(--background2);
     --dark: #B1A7A6;
     --black: #161A1D;
@@ -11,8 +12,9 @@
     --cold: #F5F3F4;
     --border: #0a0000;
     --notasblack: rgb(49, 46, 46);
-    --orange: rgb(216, 124, 38);
+    --orange: #E396DF;
     --whiteish: rgb(228, 203, 203);
+    --crayola: #F6EFEE;
 }
 
 * {
@@ -49,12 +51,6 @@ body {
     padding: .1em;
     color: var(--red);
 }
-
-.navlink:hover {
-    background-color: var(--lighterpurple);
-
-}
-
 
 #nav_a {
     font-size: x-large;
@@ -102,20 +98,18 @@ body {
     display: block;
 }
 
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-}
 
 /* Login and Signup CSS */
 
 
 .logincenter {
+    background: linear-gradient(120deg, var(--darkred),var(--crayola));
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
-    background: linear-gradient(120deg, var(--orange), var(--whiteish));
+    border: 3px solid var(--border);
     border-radius: 10px;
 }
 
@@ -142,21 +136,8 @@ body {
     padding: 5px;
 }
 
-.recipe_headers {
-    text-align: center;
-}
 
-.addcomment {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
-.comment_area {
-    width: 90%;
-    height: 10vh;
-}
 
 
 
@@ -312,7 +293,7 @@ img {
     width: 50px;
     font-size: xx-large;
     color: var(--border);
-    background-color: var(--background2);
+    background-color: var(--red);
 }
 
 .likebutton_container {
@@ -324,7 +305,7 @@ img {
 #image_container {
     width: 60vh;
     height: 30vh;
-    box-shadow: 3px 3px 3px 3px var(--black);
+    box-shadow: 5px 5px 5px 5px var(--black);
     position: relative;
 }
 
@@ -341,14 +322,40 @@ img {
 .steps {
     width: 50%;
     height: fit-content;
-    background: var(--light);
-    border-radius: 2%;
+    background: linear-gradient(120deg, var(--darkred),var(--crayola));
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     padding-left: 10px;
-    box-shadow: 3px 3px 3px 3px #0E131F;
+    box-shadow: 3px 3px 3px 3px var(--black);
 }
 
 .steps {
     margin-left: 2em;
+}
+
+
+.username {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30%;
+    width: 30%;
+    min-height: 100%;
+    border-right: 2px solid var(--black);
+}
+
+.comment_stuff {
+    min-width: 70%;
+    width: 70%;
+    min-height: 100%;
+    height: 100%;
+
+}
+
+.recipe_headers {
+    text-align: center;
 }
 
 .commentfield {
@@ -359,9 +366,12 @@ img {
     justify-content: center;
     height: fit-content;
     min-height: 12vh;
-    background: linear-gradient(120deg, var(--orange), var(--whiteish));
+    background: linear-gradient(120deg, var(--darkred), var(--crayola));
     margin-top: 2em;
-    box-shadow: 3px 3px 3px 3px #0E131F;
+    border-top: 2px solid var(--border);
+    border-left: 2px solid var(--border);
+    border-right: 2px solid var(--border);
+    box-shadow: 5px 0px ;
 }
 
 .comment {
@@ -377,25 +387,40 @@ img {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border: 2px solid var(--border);
+    margin-bottom: 0;
 }
 
-.username {
+.addcommentfield{
+    padding-top: 0;
     display: flex;
+    flex-direction: column;
+    width: 75vh;
     align-items: center;
     justify-content: center;
-    min-width: 30%;
-    width: 30%;
-    min-height: 100%;
+    height: fit-content;
+    min-height: 12vh;
+    background: linear-gradient(60deg, var(--darkred), var(--crayola));
+    border-left: 2px solid var(--border);
     border-right: 2px solid var(--border);
+    border-bottom: 2px solid var(--border);
+    box-shadow: 5px 0px var(--black);
+}
+.addcomment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+}
+#add_comment_button{
+  margin: 5px;
+}
+.comment_area {
+    width: 90%;
+    height: 10vh;
 }
 
-.comment_stuff {
-    min-width: 70%;
-    width: 70%;
-    min-height: 100%;
-    height: 100%;
 
-}
 
 @media only screen and (max-width: 1025px) {
 
@@ -464,29 +489,84 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 90vh;
+    
 }
 
 .recipe_add {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 75vw;
+    
+}
+
+.hide{
+    margin-top: 2em;
+}
+
+.add_image{
+    
+    min-width: 600px;
+    min-height: 325px;
+    background-color: var(--black);
+    border: 5px solid var(--border);
+}
+.class{
+    margin: 0;
+    padding: 0;
+}
+
+
+#image{
+    width: 100%;
     height: 100%;
-   
+    
 }
 
-.file_container {
-    max-width: 600px;
-    max-height: 350px;
-    border: 2px solid var(--border);
+.add_name{
+    text-align: center;
 }
 
-#output {
-    max-width: 600px;
-    max-height: 350px;
+.guidelines{
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
 }
+
+.add_ingredients, .add_steps{
+    background: linear-gradient(120deg, var(--darkred),var(--crayola));
+    margin-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 2em;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}
+
+.ingredients_input, .steps_input{
+
+    height: 20vw;
+}
+
+.submit_button{
+    color: var(--whiteish);
+    width: 7em;
+    height: 4em;
+    background: linear-gradient(120deg, var(--background1),var(--background2));
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.submit_button:hover{
+    
+    background: linear-gradient(120deg, var(--background2),var(--background1));
+}
+
+
 
 /*Profile css*/
 
