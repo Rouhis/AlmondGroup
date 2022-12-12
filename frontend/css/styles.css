@@ -1,4 +1,4 @@
-/*Eetu Rouhiainen*/
+ /*Eetu Rouhiainen 12.12*/
 
 :root {
     --background1: #0E131F;
@@ -522,6 +522,7 @@ img {
 .most_liked {
     width: fit-content;
     height: fit-content;
+    min-width: 400px;
     background-color: var(--black);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
