@@ -13,7 +13,7 @@ function hideButtons() {
 }
 
 function logout() {
-  sessionStorage.removeItem("token");
+  sessionStorage.clear;
 }
 
 window.onload = hideButtons;
