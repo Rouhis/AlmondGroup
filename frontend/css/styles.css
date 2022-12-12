@@ -452,6 +452,10 @@
          height: 200px;
      }
 
+     .comment ,.addcomment{
+        min-height: 100px;
+        min-width: 350px;
+     }
      
 
  }
