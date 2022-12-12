@@ -1,4 +1,7 @@
 "use strict";
+const token = sessionStorage.getItem("token")
+const base64 = token.split('.')[1];
+    const decoadedValue = JSON.parse(window.atob(base64));
 
 const getQParam = (param) => {
   const queryString = window.location.search;
@@ -55,8 +58,8 @@ document
   .querySelector("#add_comment_button")
   .addEventListener("click", async (e) => {
     e.preventDefault();
-    if (sessionStorage.getItem("user")) {
-      const user_id = JSON.parse(sessionStorage.getItem("user")).id;
+    if (sessionStorage.getItem("token")) {
+      const user_id = decoadedValue.id;
       const recipe_id = recipeId;
       const data = document.querySelector("#commentBox").value;
       const response = await fetch(url + "/comment", {
@@ -82,8 +85,8 @@ document
 document.querySelector("#likebutton").addEventListener("click", async (e) => {
   e.preventDefault();
 
-  if (sessionStorage.getItem("user")) {
-    const userId = JSON.parse(sessionStorage.getItem("user")).id;
+  if (sessionStorage.getItem("token")) {
+    const userId = decoadedValue.id;
     const response = await fetch(url + "/fav/test/", {
       method: "POST",
       headers: {

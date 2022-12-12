@@ -1,6 +1,6 @@
 'use strict';
 
-if(sessionStorage.getItem("user") == null){
+if(sessionStorage.getItem("token") == null){
     const url = 'http://127.0.0.1:3000'; // change url when uploading to server
 
 
@@ -26,7 +26,6 @@ loginForm.addEventListener('submit', async (evt) => {
   } else {
     // save token
     sessionStorage.setItem('token', json.token);
-    sessionStorage.setItem('user', JSON.stringify(json.user));
 }
 location.href = "profile.html"
 

@@ -1,25 +1,18 @@
 "use strict";
-const usernameElement = document.querySelector("#username");
-
-usernameElement.append(JSON.parse(sessionStorage.getItem("user")).username);
-
 
 const url = "http://127.0.0.1:3000";
-console.log(JSON.parse(sessionStorage.getItem("user")).id )
-
 const token = sessionStorage.getItem("token")
 
-const base64Url = token.split('.')[1];
-    const decoadedValue = JSON.parse(window.atob(base64Url));
-    console.log(decoadedValue)
-    sessionStorage.setItem('decoded', JSON.stringify(decoadedValue));
+const base64 = token.split('.')[1];
+    const decoadedValue = JSON.parse(window.atob(base64));
+    const usernameElement = document.querySelector("#username");
+    usernameElement.append(decoadedValue.username);
 
 const getRecipeByUserId = async () => {
     try {
         
-      const response = await fetch(url + "/recipe/user/" + JSON.parse(sessionStorage.getItem("user")).id);
+      const response = await fetch(url + "/recipe/user/" + decoadedValue.id);
       const recipes = await response.json();
-      console.log(recipes);
       return recipes;
     } catch (e) {
       console.log(e.message);
@@ -28,9 +21,8 @@ const getRecipeByUserId = async () => {
 
   const getFavoritesByUserId = async () =>{
     try{
-    const response = await fetch(url + "/fav/user/" + JSON.parse(sessionStorage.getItem("user")).id);
+    const response = await fetch(url + "/fav/user/" + decoadedValue.id);
     const recipes = await response.json();
-    console.log(recipes);
     return recipes;
   } catch (e) {
     console.log(e.message);

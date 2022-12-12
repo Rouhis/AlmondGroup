@@ -1,7 +1,9 @@
 "use strict";
 
+
+
 function hideButtons() {
-  if (sessionStorage.getItem("user")) {
+  if (sessionStorage.getItem("token")) {
     document.getElementById("dropdown_login").style.display = "none";
   } else {
     document.getElementById("dropdown_logout").style.display = "none";
@@ -11,7 +13,7 @@ function hideButtons() {
 }
 
 function logout() {
-  sessionStorage.removeItem("user");
+  sessionStorage.removeItem("token");
 }
 
 window.onload = hideButtons;

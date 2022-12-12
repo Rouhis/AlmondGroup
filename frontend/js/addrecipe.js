@@ -3,6 +3,11 @@
 
 const url = 'http://localhost:3000';
 const addForm = document.querySelector("#recipe_add");
+const token = sessionStorage.getItem("token")
+const base64 = token.split('.')[1];
+    const decoadedValue = JSON.parse(window.atob(base64));
+    
+    
 
 const loadFile = function (event) {
     let output = document.getElementById('output');
@@ -15,7 +20,7 @@ const loadFile = function (event) {
 function getUserId(){
     document.getElementById("add_id").style.display = "none";
     const textFieldId = document.querySelector(".userIdText")
-    textFieldId.append(JSON.parse(sessionStorage.getItem("user")).id)
+    textFieldId.append(decoadedValue.id)
 }
 
 addForm.addEventListener('submit', async (evt) => {
