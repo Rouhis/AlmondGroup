@@ -21,7 +21,10 @@ const login = (req, res) => {
 
       delete user.password;
       const token = jwt.sign(user, process.env.JWT_SECRET);
-      return res.json({ user, token });
+     /* const base64Url = token.split('.')[1];
+      const decoadedValue = JSON.parse(window.atob(base64Url));
+      console.log(decoadedValue)*/
+      return res.json({ user, token/*,decoadedValue*/});
     });
   })(req, res);
 };

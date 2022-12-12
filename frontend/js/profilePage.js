@@ -7,6 +7,13 @@ usernameElement.append(JSON.parse(sessionStorage.getItem("user")).username);
 const url = "http://127.0.0.1:3000";
 console.log(JSON.parse(sessionStorage.getItem("user")).id )
 
+const token = sessionStorage.getItem("token")
+
+const base64Url = token.split('.')[1];
+    const decoadedValue = JSON.parse(window.atob(base64Url));
+    console.log(decoadedValue)
+    sessionStorage.setItem('decoded', JSON.stringify(decoadedValue));
+
 const getRecipeByUserId = async () => {
     try {
         

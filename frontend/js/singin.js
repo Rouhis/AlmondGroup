@@ -1,7 +1,7 @@
 'use strict';
 
 if(sessionStorage.getItem("user") == null){
-    const url = 'http://localhost:3000'; // change url when uploading to server
+    const url = 'http://127.0.0.1:3000'; // change url when uploading to server
 
 
 const loginForm = document.querySelector('#login_form');
