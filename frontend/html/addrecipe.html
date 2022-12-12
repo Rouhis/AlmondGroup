@@ -24,10 +24,11 @@
                         style="max-width: 3em; max-height: 3em; border-radius: 50%;">
                     <div class="dropdown">
                         <div class="dropdown-content">
-                            <a href="login.html">Log In</a>
-                            <a href="profile.html">Profile</a>
-                            <a href="addrecipe.html">Make a recipe</a>
-                            <a href="loggedout.html">Log Out</a>
+                            <a href="login.html" id="dropdown_login">Log In</a>
+                            <a href="profile.html" id="dropdown_profile">Profile</a>
+                            <a href="addrecipe.html" id="dropdown_addrecipe">Make a recipe</a>
+                            <a href="loggedout.html" id="dropdown_logout" onclick="logout()">Log Out</a>
+    
                         </div>
                     </div>
                 </button>
@@ -37,19 +38,46 @@
 
 
     <div class="recipeadd_container">
-        <form class="recipe_add">
-            <h1>Recipe name</h1>
-            <input id="recipename" type="text">
-            <div class="add_photo">
-                <input id="recipe_file" type="file" onchange="loadFile(event)">
-                <figure class="file_container">
+
+        <form action="http://localhost:3000/recipe" class="recipe_add" id="recipe_add" method="post">
+            <div class="image_container">
+                <div class="add_image">
+                    <input class="hide" type="file" name="recipe" accept="image/*" onchange="loadFile(event)">
                     <img id="output">
-                </figure>
-               
+                </div>
+            </div>
+            <div class="guidelines">
+                <div class="add_name">
+                    <h2>Name</h2>
+                    <textarea name="name" id="textarea">asd</textarea>
+                </div>
+                <div class="add_id">
+                    <h2>ID</h2>
+                    <textarea name="userid" id="textarea">asd</textarea>
+                </div>
+                <div class="add_ingredients">
+                    <h2>Add ingredients</h2>
+                    <textarea name="ingredients" id="textarea">asd</textarea>
+                </div>
+                <div class="add_steps">
+                    <h2>Add steps</h2>
+                    <textarea name="instructions" id="textarea">dsa</textarea>
+                </div>
+                <!-- <div class="add_img">
+                    <h2>Img</h2>
+                    <textarea name="img" id="textarea">asd</textarea>
+                </div> -->
+            </div>
+            <div class="add_button">
+                <button type="submit">submit</button>
             </div>
         </form>
     </div>
-</body>
-<script src="../js/addrecipe.js"></script>
 
-</html><img>
+</body>
+ <script src="../js/serialize.js"></script>
+<script src="../js/addrecipe.js"></script>
+<script src="../js/logout.js"></script>
+
+
+</html>

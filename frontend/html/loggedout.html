@@ -21,12 +21,13 @@
                 <button id="nav_a">
                     <img src="../mockupPhoto/user.jpg" alt="profilepicture" id="user_pic"
                     style="max-width: 3em; max-height: 3em; border-radius: 50%;">
-                    <div class="dropdown">
-                        <div class="dropdown-content">
-                          <a href="login.html">Log In</a>
-                          <a href="loggedout.html">Log Out</a>
-                          <a href="addrecipe.html">Make a recipe</a>
-                        </div>
+                    <div class="dropdown-content">
+                        <a href="login.html" id="dropdown_login">Log In</a>
+                        <a href="profile.html" id="dropdown_profile">Profile</a>
+                        <a href="addrecipe.html" id="dropdown_addrecipe">Make a recipe</a>
+                        <a href="loggedout.html" id="dropdown_logout" onclick="logout()">Log Out</a>
+
+                    </div>
                       </div>    
             </li>
         </button>
@@ -41,5 +42,5 @@
         </div>
     
 </body>
-
+<script src="../js/logout.js"></script>
 </html>

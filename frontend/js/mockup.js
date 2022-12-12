@@ -1,8 +1,8 @@
-'use strict'
+"use strict";
 const maze = "https://api.tvmaze.com/search/shows?q=";
-const searchButton = document.getElementById('button');
-const searchField = document.getElementById('search');
-let mainElement = document.querySelector('main');
+const searchButton = document.getElementById("button");
+const searchField = document.getElementById("search");
+let mainElement = document.querySelector("main");
 let mazeSearch;
 
 searchButton.addEventListener("click", async (evt) => {
@@ -14,7 +14,7 @@ searchButton.addEventListener("click", async (evt) => {
 
   const response = await fetch(mazeSearch);
 
-  const json = await response.json()
+  const json = await response.json();
 
   console.log(json);
 
@@ -35,18 +35,16 @@ searchButton.addEventListener("click", async (evt) => {
         <div class="recipecardbottom">
         <h1>Glögisimpukka<h1>
         </div>
-        </a>`
-      ;
-  ;
-  }}
-);
+        </a>`;
+  }
+});
 
 const getRecipes = async () => {
-  try{
+  try {
     const response = await fetch(url + "/recipes");
     const recipes = await response.json();
     console.log(recipes);
-  }catch(e){
+  } catch (e) {
     console.log(e.message);
   }
-}
+};

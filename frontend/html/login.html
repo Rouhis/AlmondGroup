@@ -23,9 +23,11 @@
                     style="max-width: 3em; max-height: 3em; border-radius: 50%;">
                     <div class="dropdown">
                         <div class="dropdown-content">
-                          <a href="login.html">Log In</a>
-                          <a href="loggedout.html">Log Out</a>
-                          <a href="addrecipe.html">Make a recipe</a>
+                            <a href="login.html" id="dropdown_login">Log In</a>
+                            <a href="profile.html" id="dropdown_profile">Profile</a>
+                            <a href="addrecipe.html" id="dropdown_addrecipe">Make a recipe</a>
+                            <a href="loggedout.html" id="dropdown_logout" onclick="logout()">Log Out</a>
+    
                         </div>
                       </div>    
             </li>
@@ -37,15 +39,15 @@
     
         <div class="logincenter">
             <h1>Login</h1>
-            <form method="post" class="login_form">
+            <form method="post" class="login_form" id="login_form">
                 <div class="txt_field">
                     <label>Username</label>
-                    <input type="text" required>
+                    <input type="text"required name ="username">
                     
                 </div>
                 <div class="txt_field">
                     <label>Password</label>
-                    <input type="Password" required>
+                    <input type="Password" name="password" required>
                 </div>
                 <div class="loginbutton">
                     <input type="submit" value="Login">
@@ -56,7 +58,8 @@
                 </div>
             </form>
         </div>
-    
 </body>
-
+<script src="../js/serialize.js"></script>
+<script src="../js/singin.js"></script>
+<script src="../js/logout.js"></script>
 </html>
