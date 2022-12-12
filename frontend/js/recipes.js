@@ -18,6 +18,7 @@ const getRecipeById = async () => {
     const recipes = await response.json();
     console.log(recipes);
 
+    document.getElementById("foodImage").src = "../../backend/uploads/"+recipes.img; 
     document.getElementById("name").innerHTML = recipes.name;
     document.getElementById("ingredients").innerHTML = recipes.ingredients;
     document.getElementById("steps").innerHTML = recipes.instructions;

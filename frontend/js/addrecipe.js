@@ -12,18 +12,22 @@ const loadFile = function (event) {
     }
 };
 
+function getUserId(){
+    document.getElementById("add_id").style.display = "none";
+    const textFieldId = document.querySelector(".userIdText")
+    textFieldId.append(JSON.parse(sessionStorage.getItem("user")).id)
+}
 
 addForm.addEventListener('submit', async (evt) => {
     evt.preventDefault();
 const data = new FormData(addForm);
-console.log(data);
     const fetchOptions = {
         method: 'POST',
         body: data,
     };
-    console.log(fetchOptions);
     const response = await fetch(url + "/recipe" , fetchOptions);
     const json = await response.json();
     alert(json.message);
 })
  
+window.onload = getUserId();

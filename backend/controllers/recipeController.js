@@ -28,9 +28,7 @@ const getRecipeByUserId = async (req, res) => {
 const createRecipe = async (req, res) => {
   const errors = validationResult(req);
   if (!req.file) {
-    console.log(req.file);
-    console.log(req.body);
-    res.status(400).json({ message: "Kuveen lisäy ei toimi lol xd :D:D:D" });
+    res.status(400).json({ message: "Missing image or invalid file format" });
   } else if (errors.isEmpty) {
     const recipe = req.body;
     recipe.filename = req.file.filename;

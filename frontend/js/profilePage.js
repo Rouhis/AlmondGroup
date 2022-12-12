@@ -39,7 +39,7 @@ const getRecipeByUserId = async () => {
 
   for (const element of recipeJSON) {
     document.getElementById("info").innerHTML += `
-    <a class="ownrecipe_card" onclick="href='recipes.html?id=${element.id}';" style="cursor: pointer;">
+    <a class="recipecard" onclick="href='recipes.html?id=${element.id}';" style="cursor: pointer;">
         <div class="recipecardtop">
         <img src="../../backend/uploads/${element.img}"+".jpg" alt="recipe">
         </div>
@@ -51,7 +51,7 @@ const getRecipeByUserId = async () => {
   }
   for (const element of favoriteJSON) {
     document.getElementById("infoliked").innerHTML += `
-    <a class="ownrecipe_card" onclick="href='recipes.html?id=${element.id}';" style="cursor: pointer;">
+    <a class="recipecard" onclick="href='recipes.html?id=${element.id}';" style="cursor: pointer;">
         <div class="recipecardtop">
         <img src="../../backend/uploads/${element.img}"+".jpg" alt="recipe">
         </div>
