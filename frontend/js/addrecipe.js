@@ -12,43 +12,18 @@ const loadFile = function (event) {
     }
 };
 
-//const fd = new FormData(addForm);
-//const test = {"name": "KalaKukko3","userid": 1,"ingredients": "Kala ja KOVAKUKKO","instructions": "Laita Kukko kalaan","img": "kalakukko.jpeg"};
-//console.log(test);
 
-
-// ONKO SE NYT  ISO S vai pieni s :)
 addForm.addEventListener('submit', async (evt) => {
     evt.preventDefault();
 const data = new FormData(addForm);
+console.log(data);
     const fetchOptions = {
         method: 'POST',
-                headers: {
-           'Content-Type': 'application/json',
-         },
         body: data,
     };
     console.log(fetchOptions);
-    const response = await fetch(url + "/recipe" + fetchOptions);
+    const response = await fetch(url + "/recipe" , fetchOptions);
     const json = await response.json();
     alert(json.message);
 })
  
-//const fd = new FormData(addForm);
-
-// addForm.addEventListener('submit', async (evt) => {
-//     evt.preventDefault();
-// const data = serializeJSON(addForm);
-//     const fetchOptions = {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(data),
-//     };
-//     console.log(fetchOptions);
-//     const response = await fetch(url + "/recipe" + fetchOptions);
-//     const json = await response.json();
-//     alert(json.message);
-// })
-

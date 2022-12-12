@@ -17,7 +17,7 @@ const getFav = async (res) => {
 const getFavByUser = async (res, userId) => {
   try {
     const [rows] = await promisePool.query(
-      "SELECT * FROM fav WHERE user_id=?",
+      "SELECT recipe.id, recipe.name, recipe.ingredients, recipe.instructions, recipe.img FROM recipe INNER JOIN fav ON recipe.id = fav.recipe_id WHERE fav.user_id=?",
       [userId]
     );
     console.log("getting favovites", rows);
