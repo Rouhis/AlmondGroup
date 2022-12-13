@@ -16,7 +16,7 @@
      --whiteish: rgb(228, 203, 203);
      --crayola: #F6EFEE;
  }
-/*Border box for grid and flexbox and we use same font everywhere beacuse we are lazy*/
+/*Border box for grid and flexbox and we use same font everywhere beacuse we are lazy :D*/
  * {
      box-sizing: border-box;
      font-family: 'Roboto Slab';
