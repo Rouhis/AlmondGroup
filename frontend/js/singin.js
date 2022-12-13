@@ -28,10 +28,10 @@ loginForm.addEventListener('submit', async (evt) => {
     sessionStorage.setItem('token', json.token);
     sessionStorage.setItem('user', JSON.stringify(json.user));
 }
-location.href = "profile.html"
+location.href = "home.html"
 
 });
     
 }else{
-    location.href = "profile.html"
+    location.href = "home.html"
 }

@@ -1,6 +1,5 @@
- /*Eetu Rouhiainen 12.12*/
+ /*Eetu Rouhiainen*/
 
- /*We have all colors used for our website in root*/
  :root {
      --background1: #0E131F;
      --background2: #FF0035;
@@ -104,6 +103,7 @@
 
 
  /* Login and Signup page CSS */
+
 /*Width is here only 400px since that is the width of display our website supports*/
  .logincenter {
      background: linear-gradient(120deg, var(--darkred), var(--crayola));
@@ -141,7 +141,7 @@
 
 
  /* Front page css starts here */
-
+ /*Here we have css for searchbar*/
  .searchdiv {
      display: flex;
      flex-direction: row;
@@ -210,6 +210,7 @@
 
  }
 
+ /*Css for the recipe card used in home page and profile page*/
  .recipecard {
      display: flex;
      flex-direction: column;
