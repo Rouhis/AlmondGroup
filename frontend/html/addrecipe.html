@@ -1,0 +1,79 @@
+<!--Eetu Rouhiainen-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a recipe</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto+Slab">
+</head>
+
+<body class="recipeaddbody">
+    <nav>
+        <!-- Navbar html -->
+        <ul class="navbar">
+            <li class="navelement"><a id="nav_a" href="home.html">Recipe GX</a></li>
+            <li class="navlink" id="user">
+                <button id="nav_a">
+                    <img src="../mockupPhoto/user.jpg" alt="profilepicture" id="user_pic"
+                        style="max-width: 3em; max-height: 3em; border-radius: 50%;">
+                    <div class="dropdown">
+                        <div class="dropdown-content">
+                            <a href="login.html" id="dropdown_login">Log In</a>
+                            <a href="profile.html" id="dropdown_profile">Profile</a>
+                            <a href="addrecipe.html" id="dropdown_addrecipe">Make a recipe</a>
+                            <a href="loggedout.html" id="dropdown_logout" onclick="logout()">Log Out</a>
+    
+                        </div>
+                    </div>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="recipeadd_container">
+
+        <form action="http://localhost:3000/recipe" class="recipe_add" id="recipe_add" method="post">
+            <div class="add_name">
+                <h2>Name</h2>
+                <input name="name" id="textarea"></input>
+            </div>
+            <input class="hide" type="file" name="recipe" accept="image/*" onchange="loadFile(event)">
+            <div class="add_image">
+        
+                    <img id="output">
+                </div>
+      
+            <div class="guidelines">
+                <div id="add_id" class="add_id">
+                    <h2>ID</h2>
+                    <textarea name="userid" id="textarea" class="userIdText"></textarea>
+                </div>
+                <div class="add_ingredients">
+                    <h2>Add ingredients</h2>
+                    <textarea class="ingredients_input" name="ingredients" id="textarea"></textarea>
+                </div>
+                <div class="add_steps">
+                    <h2>Add steps</h2>
+                    <textarea class="steps_input" name="instructions" id="textarea"></textarea>
+                </div>
+            </div>
+            <div class="add_button">
+                <button class="submit_button"type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+ <script src="../js/serialize.js"></script>
+<script src="../js/addrecipe.js"></script>
+<script src="../js/logout.js"></script>
+
+
+</html>

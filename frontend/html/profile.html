@@ -1,0 +1,64 @@
+<!--Eetu Rouhiainen-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto+Slab">
+</head>
+<body>
+    <nav>
+        <!-- Navbar html -->
+        <ul class="navbar">
+            <li class="navelement"><a id="nav_a" href="home.html">Recipe GX</a></li>
+            <li class="navlink" id="user">
+                <button id="nav_a">
+                    <img src="../mockupPhoto/user.jpg" alt="profilepicture" id="user_pic"
+                        style="max-width: 3em; max-height: 3em; border-radius: 50%;">
+                    <div class="dropdown">
+                        <div class="dropdown-content">
+                            <a href="login.html" id="dropdown_login" class="dropdownlink">Log In</a>
+                            <a href="profile.html" id="dropdown_profile">Profile</a>
+                            <a href="addrecipe.html" id="dropdown_addrecipe">Make a recipe</a>
+                            <a href="loggedout.html" id="dropdown_logout" onclick="logout()">Log Out</a>
+    
+                        </div>
+                    </div>
+                </button>
+            </li>
+
+
+
+        </ul>
+    </nav>
+    <div class="profile_container">
+        <div class="profilename">
+            <h1 id="username"></h1>
+        </div>
+
+        <div class="profile_content">
+        
+            <div class="own_recipes" id="info">
+                <h2>Own recipes</h2>
+            </div>
+
+            <div class="most_liked" id="infoliked">
+                <h2>Liked recipes</h2>
+                
+            </div>
+        </div>
+
+
+    </div>
+    
+    <script src="../js/profilePage.js"></script>
+    
+</body>
+<script src="../js/logout.js"></script>
+<script src="../js/profilePage.js"></script>
+</html>

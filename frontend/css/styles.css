@@ -1,0 +1,731 @@
+ /*Eetu Rouhiainen*/
+
+ :root {
+     --background1: #0E131F;
+     --background2: #FF0035;
+     --darkred: rgb(128, 25, 25);
+     --red: var(--background2);
+     --dark: #B1A7A6;
+     --black: #161A1D;
+     --light: #D3D3D3;
+     --white: #FFFFFF;
+     --cold: #F5F3F4;
+     --border: #0a0000;
+     --notasblack: rgb(49, 46, 46);
+     --orange: #E396DF;
+     --whiteish: rgb(228, 203, 203);
+     --crayola: #F6EFEE;
+ }
+/*Border box for grid and flexbox and we use same font everywhere beacuse we are lazy :D*/
+ * {
+     box-sizing: border-box;
+     font-family: 'Roboto Slab';
+ }
+
+ /*Get rid of padding and margin everywhere*/
+ html,
+ body {
+     margin: 0px;
+     padding: 0px;
+
+ }
+
+ /*We use linear-gradient for nice effect on the background*/
+ body {
+     background: linear-gradient(120deg, var(--background1), var(--background2));
+     height: fit-content;
+     min-height: 100vh;
+ }
+
+ /*Navbar css starts here*/
+ .navbar {
+     background-color: var(--black);
+     display: flex;
+     flex-direction: row;
+     list-style-type: none;
+     justify-content: space-between;
+     align-items: center;
+     margin: 0;
+
+ }
+
+ .navlink {
+     padding: .1em;
+     color: var(--red);
+ }
+
+ #nav_a {
+     font-size: x-large;
+     color: var(--red);
+     text-decoration: none;
+     background-color: var(--black);
+     border: none;
+ }
+
+/*Has position relative so dropdown-content will always be at the same spot since it has absolute*/
+ .dropdown {
+     position: relative;
+     display: inline-block;
+     font-size: large;
+     color: var(--background2);
+ }
+
+
+ .dropdown-content {
+     display: none;
+     position: absolute;
+     right: 0px;
+     min-width: 160px;
+     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+     z-index: 1;
+     background-color: var(--black);
+ }
+
+
+ .dropdown-content a {
+     color: var(--red);
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+ }
+
+/*Ease adds a nice transition effect*/
+ .dropdown-content a:hover {
+     transition: 500ms ease;
+     background-color: var(--background2);
+     color: var(--border);
+ }
+
+
+ #nav_a:hover .dropdown-content {
+     display: block;
+ }
+
+
+ /* Login and Signup page CSS */
+
+/*Width is here only 400px since that is the width of display our website supports*/
+ .logincenter {
+     background: linear-gradient(120deg, var(--darkred), var(--crayola));
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 400px;
+     border: 3px solid var(--border);
+     border-radius: 10px;
+ }
+
+ .logincenter h1 {
+     text-align: center;
+     padding: 0 0 20px 0;
+     border-bottom: 1px solid black;
+ }
+
+ .login_form {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-items: center;
+     width: 400px;
+     padding-bottom: 30px;
+ }
+
+ .txt_field {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-items: center;
+     padding: 5px;
+ }
+
+
+ /* Front page css starts here */
+ /*Here we have css for searchbar*/
+ .searchdiv {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     padding: 5em;
+ }
+
+ .search {
+     display: flex;
+     width: 70%;
+ }
+
+ .search input[type=text] {
+     padding: 10px;
+     font-size: 17px;
+     border: 1px solid var(--black);
+     float: left;
+     background: var(--white);
+ }
+
+ .search input[type=text] {
+     padding: 10px;
+     font-size: 17px;
+     border: 1px solid var(--black);
+     float: left;
+     width: 90%;
+     background: var(--white);
+ }
+
+ .search button {
+     float: left;
+     min-width: 5%;
+     padding: 10px;
+     background: var(--black);
+     color: var(--red);
+     font-size: 17px;
+     border: 1px solid var(--black);
+     border-left: none;
+     cursor: pointer;
+ }
+
+ .search button:hover {
+    transition: 500ms ease;
+     background: var(--background2);
+     color: var(--background1);
+ }
+
+ .maincontainer {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     height: 100%;
+     width: 100%;
+ }
+
+ .container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+
+ .recipes {
+     display: grid;
+     grid-template-columns: auto auto auto;
+
+ }
+
+ /*Css for the recipe card used in home page and profile page*/
+ .recipecard {
+     display: flex;
+     flex-direction: column;
+     margin: 5px 5px 5px;
+     width: 25em;
+     height: 15em;
+     border: 2px solid var(--border);
+
+ }
+
+ .recipecardtop {
+     height: 80%;
+     width: 100%;
+ }
+
+ .recipecardbottom {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     background-color: var(--notasblack);
+     width: 100%;
+     height: 20%;
+     border-top: 2px solid var(--border);
+
+ }
+
+ .recipecardbottom h1 {
+     color: var(--red);
+     margin: 0;
+     padding: 0;
+     font-size: x-large;
+
+ }
+
+ .recipecardbottom button {
+     height: 100%;
+     width: 100%;
+     font-size: xx-large;
+ }
+
+ img {
+     width: 100%;
+     height: 100%;
+ }
+
+ @media only screen and (max-width: 1250px) {
+
+     .recipes {
+         display: grid;
+         grid-template-columns: auto auto;
+
+     }
+
+ }
+
+ @media only screen and (max-width: 835px) {
+
+     .recipes {
+         display: flex;
+         flex-direction: column;
+
+     }
+
+     .search {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 97%;
+    }
+
+    .search button {
+        min-width: 50px;
+        max-width: 50px;
+    }
+
+    .search input{
+        width: 100%;
+    }
+
+    .searchdiv{
+        padding: 0;
+    }
+ }
+
+ /* Recipe page css starts here */
+
+
+ .image_container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100vw;
+     height: fit-content;
+     padding-bottom: 2em;
+     position: relative;
+ }
+
+ .likebutton {
+     height: 50px;
+     width: 50px;
+     font-size: xx-large;
+     color: var(--border);
+     background-color: var(--darkred);
+ }
+
+ .likebutton:hover {
+    height: 50px;
+    width: 50px;
+    font-size: xx-large;
+    color: var(--border);
+    background-color: var(--red);
+}
+ .likebutton_container {
+     position: absolute;
+     bottom: 0px;
+     right: 0px;
+ }
+
+ #image_container {
+     width: 60vh;
+     height: 30vh;
+     box-shadow: 5px 5px 5px 5px var(--black);
+     position: relative;
+ }
+
+ .recipe_info {
+     display: flex;
+     flex-direction: row;
+     width: 80vh;
+     height: fit-content;
+     padding: 15px 15px 15px;
+
+ }
+
+ .ingredients,
+ .steps {
+     width: 50%;
+     height: fit-content;
+     background: linear-gradient(120deg, var(--darkred), var(--crayola));
+     border-top-left-radius: 20px;
+     border-top-right-radius: 20px;
+     border-bottom-left-radius: 20px;
+     border-bottom-right-radius: 20px;
+     padding-left: 10px;
+     box-shadow: 3px 3px 3px 3px var(--black);
+ }
+
+ .steps {
+     margin-left: 2em;
+ }
+
+ .steps p{
+    font-size: large;
+ }
+
+
+ .username {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     min-width: 30%;
+     width: 30%;
+     min-height: 100%;
+     border-right: 2px solid var(--black);
+ }
+
+ .comment_stuff {
+     min-width: 70%;
+     width: 70%;
+     min-height: 100%;
+     height: 100%;
+
+ }
+
+ .recipe_headers {
+     text-align: center;
+ }
+
+ .commentfield {
+     display: flex;
+     flex-direction: column;
+     width: 75vh;
+     align-items: center;
+     justify-content: center;
+     height: fit-content;
+     min-height: 12vh;
+     background: linear-gradient(120deg, var(--darkred), var(--crayola));
+     margin-top: 2em;
+     border-top: 2px solid var(--border);
+     border-left: 2px solid var(--border);
+     border-right: 2px solid var(--border);
+     box-shadow: 5px 0px;
+ }
+
+ .comment {
+     display: flex;
+     flex-direction: row;
+     width: 95%;
+     height: fit-content;
+     min-height: 8vh;
+     background-color: var(--cold);
+     margin: 10px 10px 10px;
+     border-top-left-radius: 20px;
+     border-top-right-radius: 20px;
+     border-bottom-left-radius: 20px;
+     border-bottom-right-radius: 20px;
+     border: 2px solid var(--border);
+     margin-bottom: 0;
+ }
+
+ .addcommentfield {
+     padding-top: 0;
+     display: flex;
+     flex-direction: column;
+     width: 75vh;
+     align-items: center;
+     justify-content: center;
+     height: fit-content;
+     min-height: 12vh;
+     background: linear-gradient(60deg, var(--darkred), var(--crayola));
+     border-left: 2px solid var(--border);
+     border-right: 2px solid var(--border);
+     border-bottom: 2px solid var(--border);
+     box-shadow: 5px 0px var(--black);
+ }
+
+ .addcomment {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     width: 45%;
+ }
+
+ #add_comment_button {
+     margin: 5px;
+ }
+
+ .comment_area {
+     width: 90%;
+     height: 10vh;
+ }
+
+
+ @media only screen and (max-width: 1025px) {
+
+     .recipe_info {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         width: 100%;
+     }
+
+     .ingredients,
+     .steps {
+         width: 75%;
+
+     }
+
+     .steps {
+         margin-top: 2em;
+         margin-left: 0;
+     }
+
+     .commentfield,
+     .addcommentfield {
+         width: 95%;
+         height: fit-content;
+         min-height: 150px;
+     }
+
+     #image_container {
+
+         width: 395px;
+         height: 200px;
+     }
+
+     .comment,
+     .addcomment {
+         min-height: 100px;
+         min-width: 350px;
+     }
+
+
+ }
+
+ @media only screen and (max-width: 650px) {
+
+     .ingredients,
+     .steps {
+         width: 100%;
+
+     }
+
+     .likebutton {
+         height: 40px;
+         width: 40px;
+         font-size: large;
+     }
+
+ }
+
+
+ /* Add recipe css */
+
+ .recipeadd_container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+ }
+
+ .recipe_add {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+
+ }
+
+ .hide {
+     margin-top: 2em;
+ }
+
+ .add_image {
+
+    width: 600px;
+    height: 325px;
+    background-color: var(--black);
+    border: 5px solid var(--border);
+}
+
+.class {
+    margin: 0;
+    padding: 0;
+}
+
+
+.output {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+
+ #image {
+     width: 100%;
+     height: 100%;
+
+ }
+
+ .add_name {
+     text-align: center;
+ }
+
+ .guidelines {
+     display: flex;
+     flex-direction: row;
+     gap: 5em;
+ }
+
+ .add_ingredients,
+ .add_steps {
+     background: linear-gradient(120deg, var(--darkred), var(--crayola));
+     margin-top: 2em;
+     padding-left: 2em;
+     padding-right: 2em;
+     padding-bottom: 2em;
+     border-top-left-radius: 20px;
+     border-top-right-radius: 20px;
+     border-bottom-left-radius: 20px;
+     border-bottom-right-radius: 20px;
+     min-height: 20vh;
+     height: fit-content;
+ }
+
+ .ingredients_input,
+ .steps_input {
+
+     height: 50%;
+ }
+
+ .submit_button {
+     color: var(--whiteish);
+     width: 7em;
+     height: 4em;
+     background: linear-gradient(120deg, var(--background1), var(--background2));
+     border-top-left-radius: 20px;
+     border-top-right-radius: 20px;
+     border-bottom-left-radius: 20px;
+     border-bottom-right-radius: 20px;
+ }
+
+ .submit_button:hover {
+
+     background: linear-gradient(120deg, var(--background2), var(--background1));
+ }
+
+ @media only screen and (max-width: 850px) {
+
+     .guidelines {
+         display: flex;
+         flex-direction: column;
+         gap: 10px;
+     }
+
+     .guidelines{
+        
+        width: 100%;
+     }
+     .add_ingredients,
+     .add_steps{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%
+     }
+     .add_image{
+        width: 95%;
+        height: 100%;
+        min-width: 375px;
+        min-height: 250px;
+     }
+ }
+
+
+ /*Profile css*/
+
+ .profile_container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 100vw;
+     height: 90vh;
+ }
+
+ .profilename {
+     padding-top: 2em;
+     padding-bottom: 1em;
+
+ }
+
+ .profile_content {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     width: 100%;
+     text-align: center;
+ }
+
+ .own_recipes,
+ .most_liked {
+     width: fit-content;
+     height: fit-content;
+     min-width: 400px;
+     background-color: var(--black);
+     border-top-left-radius: 20px;
+     border-top-right-radius: 20px;
+     border-bottom-left-radius: 20px;
+     border-bottom-right-radius: 20px;
+     color: var(--red);
+     box-shadow: 3px 3px var(--border);
+ }
+
+ .own_recipes {
+     margin-right: 2em;
+ }
+
+ .most_liked {
+     margin-left: 2em;
+ }
+
+ .most_liked .recipecard {
+     margin: 1em 1em 1em;
+ }
+
+ .own_recipes .recipecard {
+     margin: 1em 1em 1em;
+ }
+
+
+ @media only screen and (max-width: 950px) {
+
+     .profile_content {
+         flex-direction: column;
+         align-items: center;
+     }
+
+     .own_recipes,
+     .most_liked {
+         margin-right: 0;
+         margin-left: 0;
+         border-radius: 0%;
+     }
+
+ }
+
+
+ @media only screen and (max-width: 450px) {
+
+     .own_recipes,
+     .most_liked {
+         width: 100%;
+         padding: 0;
+         margin: 0;
+         align-items: flex-start;
+     }
+
+
+     .most_liked .recipecard {
+         margin: 0;
+     }
+
+     .own_recipes .recipecard {
+         margin: 0;
+     }
+ }

@@ -1,0 +1,82 @@
+<!--Eetu Rouhiainen-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
+</head>
+
+<nav>
+    <!-- Navbar html -->
+    <ul class="navbar">
+        <li class="navelement"><a id="nav_a" href="home.html">Recipe GX</a></li>
+        <li class="navlink" id="user">
+            <button id="nav_a">
+                <img src="../mockupPhoto/user.jpg" alt="profilepicture" id="user_pic"
+                    style="max-width: 3em; max-height: 3em; border-radius: 50%;">
+                <div class="dropdown">
+                    <div class="dropdown-content">
+                        <a href="login.html" id="dropdown_login">Log In</a>
+                        <a href="profile.html" id="dropdown_profile">Profile</a>
+                        <a href="addrecipe.html" id="dropdown_addrecipe">Make a recipe</a>
+                        <a href="loggedout.html" id="dropdown_logout" onclick="logout()">Log Out</a>
+
+                    </div>
+
+                </div>
+            </button>
+        </li>
+
+
+
+    </ul>
+</nav>
+
+<div class="container">
+    <h1 id="name"></h1>
+    <div class="image_container">
+        <div id="image_container">
+            <img id="foodImage" src="">
+            <div class="likebutton_container">
+                <button class="likebutton" id="likebutton"><i id="heart" class="fa fa-heart-o"
+                        aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="recipe_info">
+        <div class="ingredients">
+            <h2 class="recipe_headers">Ingredients</h2>
+            <p id="ingredients">
+            </p>
+        </div>
+        <div class="steps">
+            <h2 class="recipe_headers">Steps</h2>
+            <p id="steps"></p>
+        </div>
+    </div>
+    <div id="commentfield" class="commentfield">
+        <div class="comment"></div>
+        <div class="comment"></div>
+        <div class="comment"></div>
+        <div class="comment"></div>
+    </div>
+    <div class="addcommentfield">
+    <form class="addcomment">
+        <textarea id="commentBox" class="comment_area"></textarea>
+        <button class="submit_button" id="add_comment_button">Add comment</button>
+    </form>
+</div>
+</div>
+
+
+</body>
+<script src="../js/recipes.js"></script>
+<script src="../js/logout.js"></script>
+
+</html>
