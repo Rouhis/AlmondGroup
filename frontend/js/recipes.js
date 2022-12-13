@@ -28,7 +28,7 @@ const getRecipeById = async () => {
     const recipes = await response.json();
     console.log(recipes);
 
-    document.getElementById("foodImage").src = "../../backend/uploads/"+recipes.img; 
+    document.getElementById("foodImage").src = "../../backend/uploads/" + recipes.img;
     document.getElementById("name").innerHTML = recipes.name;
     document.getElementById("ingredients").innerHTML = recipes.ingredients;
     document.getElementById("steps").innerHTML = recipes.instructions;
@@ -69,37 +69,67 @@ document
   .querySelector("#add_comment_button")
   .addEventListener("click", async (e) => {
     e.preventDefault();
-    if(!document.querySelector("#commentBox").value){
-
-    }else{
-    if (sessionStorage.getItem("token")) {
-      const token = sessionStorage.getItem("token")
-      const base64 = token.split('.')[1];
-      const decoadedValue = JSON.parse(window.atob(base64));
-      const user_id = decoadedValue.id;
-      const recipe_id = recipeId;
-      const data = document.querySelector("#commentBox").value;
-      const response = await fetch(url + "/comment", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          recipe_id,
-          user_id,
-          data,
-        }),
-      })
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => console.log(data));
-        location.reload();
+    if (!document.querySelector("#commentBox").value) {
 
     } else {
-      alert("Please login to add comment");
+      if (sessionStorage.getItem("token")) {
+        const token = sessionStorage.getItem("token")
+        const base64 = token.split('.')[1];
+        const decoadedValue = JSON.parse(window.atob(base64));
+        const user_id = decoadedValue.id;
+        const recipe_id = recipeId;
+        const data = document.querySelector("#commentBox").value;
+        const response = await fetch(url + "/comment", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            recipe_id,
+            user_id,
+            data,
+          }),
+        })
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => console.log(data));
+        location.reload();
+
+      } else {
+        alert("Please login to add comment");
+      }
     }
-  }});
+  });
+
+document.querySelector("#Delete").addEventListener("click", async (e) => {
+  e.preventDefault();
+  const token = sessionStorage.getItem("token")
+  const base64 = token.split('.')[1];
+  const decoadedValue = JSON.parse(window.atob(base64));
+  const role = decoadedValue.role;
+  console.log(role)
+
+
+  if (role == "2") {
+    const response = await fetch(url + "/recipe/" + recipeId, {
+      method: "Delete",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        recipeId,
+      }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => console.log(data));
+
+  }
+
+
+});
 
 /* Adding a recipe to the favorites list. */
 document.querySelector("#likebutton").addEventListener("click", async (e) => {
