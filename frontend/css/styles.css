@@ -313,9 +313,16 @@
      width: 50px;
      font-size: xx-large;
      color: var(--border);
-     background-color: var(--red);
+     background-color: var(--darkred);
  }
 
+ .likebutton:hover {
+    height: 50px;
+    width: 50px;
+    font-size: xx-large;
+    color: var(--border);
+    background-color: var(--red);
+}
  .likebutton_container {
      position: absolute;
      bottom: 0px;
@@ -353,6 +360,10 @@
 
  .steps {
      margin-left: 2em;
+ }
+
+ .steps p{
+    font-size: large;
  }
 
 
