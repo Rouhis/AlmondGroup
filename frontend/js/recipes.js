@@ -57,6 +57,7 @@ const getCommentsById = async () => {
       <div class="comment_stuff">
           <p>${element.data}</p>
       </div>
+      <button>delete</button>
   </div>`;
     }
   } catch (e) {
