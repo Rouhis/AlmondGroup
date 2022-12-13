@@ -22,7 +22,7 @@ function hideButtons() {
  * It removes the token from the session storage
  */
 function logout() {
-  sessionStorage.removeItem("token");
+  sessionStorage.clear;
 }
 
 window.onload = hideButtons;
