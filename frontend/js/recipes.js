@@ -159,5 +159,17 @@ document.querySelector("#likebutton").addEventListener("click", async (e) => {
   }
 });
 
+function hideDelete() {
+  const token = sessionStorage.getItem("token")
+  const base64 = token.split('.')[1];
+  const decoadedValue = JSON.parse(window.atob(base64));
+  const role = decoadedValue.role;
+  console.log(role)
+
+  if (role !="2")
+    document.getElementById("#delete").style.display = "none";
+}
+
+window.onload = hideDelete();
 window.onload = getRecipeById();
 window.onload = getCommentsById();
