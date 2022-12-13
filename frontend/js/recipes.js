@@ -174,6 +174,6 @@ function hideDelete() {
 
   }
 }
-
+window.onload = hideDelete();
 window.onload = getRecipeById();
 window.onload = getCommentsById();
