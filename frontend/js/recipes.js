@@ -170,6 +170,5 @@ function hideDelete() {
     document.getElementById("#delete").style.display = "none";
 }
 
-window.onload = hideDelete();
 window.onload = getRecipeById();
 window.onload = getCommentsById();
