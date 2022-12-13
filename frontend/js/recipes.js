@@ -1,8 +1,12 @@
+/**
+ * @author Axel Kähkönen <axel.kahkonen@metropolia.fi>
+ */
 "use strict";
 const token = sessionStorage.getItem("token")
 const base64 = token.split('.')[1];
     const decoadedValue = JSON.parse(window.atob(base64));
 
+/*Takes rhe recipes id from the url and makes it a new const*/
 const getQParam = (param) => {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
@@ -15,6 +19,9 @@ const recipeId = getQParam("id");
 console.log(recipeId);
 const addCommnetForm = document.querySelector(".add_comment");
 
+/**
+ * It fetches the recipe from the database and displays it on the page.
+ */
 const getRecipeById = async () => {
   try {
     const response = await fetch(url + "/recipe/" + recipeId);
@@ -30,6 +37,9 @@ const getRecipeById = async () => {
   }
 };
 
+/**
+ * It fetches comments from the database and displays them on the page
+ */
 const getCommentsById = async () => {
   try {
     const commentResponse = await fetch(
@@ -54,6 +64,7 @@ const getCommentsById = async () => {
   }
 };
 
+/* Adding a comment to the database. */
 document
   .querySelector("#add_comment_button")
   .addEventListener("click", async (e) => {
@@ -77,11 +88,14 @@ document
           return res.json();
         })
         .then((data) => console.log(data));
+        location.reload();
+
     } else {
       alert("Please login to add comment");
     }
   });
 
+/* Adding a recipe to the favorites list. */
 document.querySelector("#likebutton").addEventListener("click", async (e) => {
   e.preventDefault();
 

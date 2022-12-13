@@ -1,8 +1,17 @@
+/**
+ * @author Axel Kähkönen <axel.kahkonen@metropolia.fi>
+ */
 "use strict";
 
 const pool = require("../db/db");
 const promisePool = pool.promise();
 
+/**
+ * It returns a promise that resolves to an array of objects, each object representing a row in the
+ * comments table.
+ * @param res - the response object
+ * @returns the rows from the database.
+ */
 const getAllComments = async (res) => {
   try {
     const [rows] = await promisePool.query("SELECT * FROM comments");
@@ -13,6 +22,13 @@ const getAllComments = async (res) => {
   }
 };
 
+/**
+ * It gets all the comments from the database that have the same recipe_id as the recipe_id that was
+ * passed in
+ * @param res - the response object
+ * @param recipeId - the id of the recipe
+ * @returns An array of objects.
+ */
 const getCommentsByRecipeId = async (res, recipeId) => {
   try {
     const [rows] = await promisePool.query(
@@ -27,6 +43,12 @@ const getCommentsByRecipeId = async (res, recipeId) => {
   }
 };
 
+/**
+ * It takes in a userId and returns all the comments that have that userId.
+ * @param res - the response object
+ * @param userId - the id of the user who made the comment
+ * @returns An array of objects.
+ */
 const getCommentByUserId = async (res, userId) => {
   try {
     const [rows] = await promisePool.query(
@@ -41,6 +63,12 @@ const getCommentByUserId = async (res, userId) => {
   }
 };
 
+/**
+ * It takes a comment object, and inserts it into the database.
+ * @param comment - {
+ * @param res - response object
+ * @returns The result of the query.
+ */
 const addComment = async (comment, res) => {
   try {
     const [result] = await promisePool.query(
@@ -55,6 +83,12 @@ const addComment = async (comment, res) => {
   }
 };
 
+/**
+ * It deletes a comment from the database if the comment id and user id match.
+ * @param comment - {
+ * @param res - the response object
+ * @returns The rows that were deleted.
+ */
 const deleteComment = async (comment, res) => {
   try {
     const [rows] = await promisePool.query(
@@ -68,6 +102,13 @@ const deleteComment = async (comment, res) => {
   }
 };
 
+/**
+ * It takes a recipeId as a parameter and returns an array of objects containing the comment id,
+ * comment data, and username of the user who made the comment.
+ * @param res - response object
+ * @param recipeId - the id of the recipe that the comment is associated with
+ * @returns An array of objects.
+ */
 const getCommentAndUser = async (res, recipeId) => {
   try {
     const [rows] = await promisePool.query(

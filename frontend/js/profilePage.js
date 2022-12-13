@@ -1,3 +1,6 @@
+/**
+ * @author Axel Kähkönen <axel.kahkonen@metropolia.fi>
+ */
 "use strict";
 
 const url = "http://127.0.0.1:3000";
@@ -8,6 +11,10 @@ const base64 = token.split('.')[1];
     const usernameElement = document.querySelector("#username");
     usernameElement.append(decoadedValue.username);
 
+/**
+ * It fetches the recipes associated with user_id from the database and returns them.
+ * @returns An array of objects.
+ */
 const getRecipeByUserId = async () => {
     try {
         
@@ -19,6 +26,10 @@ const getRecipeByUserId = async () => {
     }
   };
 
+/**
+ * a function that gets the favorites of a user by their user id.
+ * @returns An array of objects.
+ */
   const getFavoritesByUserId = async () =>{
     try{
     const response = await fetch(url + "/fav/user/" + decoadedValue.id);
@@ -29,6 +40,9 @@ const getRecipeByUserId = async () => {
   }
   }
 
+/**
+ * It gets the recipes and favorites from the database and displays them on the page.
+ */
   const showRecipes = async () =>{
     let recipeJSON;
     let favoriteJSON;

@@ -1,3 +1,6 @@
+/**
+ * @author Axel Kähkönen <axel.kahkonen@metropolia.fi>
+ */
 "use strict";
 
 const express = require("express");

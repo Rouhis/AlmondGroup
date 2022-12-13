@@ -1,12 +1,26 @@
+/**
+ * @author Axel Kähkönen <axel.kahkonen@metropolia.fi>
+ */
 "use strict";
 const { validationResult } = require("express-validator");
 const recipeModel = require("../models/recipeModel");
 
+/**
+ * It's a function that takes in a request and a response, and then it gets all the recipes from the
+ * database, and then it sends the recipes back to the client.
+ * @param req - The request object.
+ * @param res - the response object
+ */
 const getRecipes = async (req, res) => {
   const recipes = await recipeModel.getAllRecipes(res);
   res.json(recipes);
 };
 
+/**
+ * It gets a recipe by its id.
+ * @param req - The request object.
+ * @param res - the response object
+ */
 const getRecipeById = async (req, res) => {
   const recipe = await recipeModel.getRecipeById(res, req.params.recipeId);
   if (recipe) {
@@ -16,6 +30,12 @@ const getRecipeById = async (req, res) => {
   }
 };
 
+/**
+ * It gets all the recipes from the database that are associated with the userId that is passed in as a
+ * parameter.
+ * @param req - the request object
+ * @param res - the response object
+ */
 const getRecipeByUserId = async (req, res) => {
   const recipes = await recipeModel.getRecipeByUserId(res, req.params.userId);
   if (recipes) {
@@ -25,6 +45,11 @@ const getRecipeByUserId = async (req, res) => {
   }
 };
 
+/**
+ * It creates a new recipe in the database and returns the id of the newly created recipe.
+ * @param req - the request object
+ * @param res - the response object
+ */
 const createRecipe = async (req, res) => {
   const errors = validationResult(req);
   if (!req.file) {
@@ -56,6 +81,13 @@ const modifyRecipeById = async (req, res) => {
   }
 };
 
+/**
+ * It's a function that takes in a request and a response, and then it gets a recipe by name from the
+ * database, and if it finds a recipe, it sends the recipe back to the client, and if it doesn't find a
+ * recipe, it sends a 404 status code back to the client.
+ * @param req - The request object.
+ * @param res - the response object
+ */
 const getRecipeByName = async (req, res) => {
   const recipes = await recipeModel.getRecipeByName(res, req.params.recipeName);
   if (recipes) {

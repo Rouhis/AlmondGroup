@@ -1,7 +1,13 @@
+/**
+ * @author Axel Kähkönen <axel.kahkonen@metropolia.fi>
+ */
 "use strict";
 
 
-
+/**
+ * If the user is logged in, hide the login button. If the user is not logged in, hide the logout,
+ * profile, and add recipe buttons.
+ */
 function hideButtons() {
   if (sessionStorage.getItem("token")) {
     document.getElementById("dropdown_login").style.display = "none";
@@ -12,6 +18,9 @@ function hideButtons() {
   }
 }
 
+/**
+ * It removes the token from the session storage
+ */
 function logout() {
   sessionStorage.removeItem("token");
 }

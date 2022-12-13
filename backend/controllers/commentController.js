@@ -1,14 +1,27 @@
+/**
+ * @author Axel Kähkönen <axel.kahkonen@metropolia.fi>
+ */
 "use strict";
 
 const { validationResult } = require("express-validator");
 const { createPool } = require("mysql2");
 const commentModel = require("../models/commentModel");
 
+/**
+ * It gets all the comments from the database and sends them back to the client.
+ * @param req - The request object.
+ * @param res - the response object
+ */
 const getComments = async (req, res) => {
   const comments = await commentModel.getAllComments(res);
   res.json(comments);
 };
 
+/**
+ * It gets comments by recipe id.
+ * @param req - the request object
+ * @param res - the response object
+ */
 const getCommentsByRecipeId = async (req, res) => {
   const comment = await commentModel.getCommentsByRecipeId(
     res,
@@ -21,6 +34,11 @@ const getCommentsByRecipeId = async (req, res) => {
   }
 };
 
+/**
+ * It gets all comments by a user id.
+ * @param req - the request object
+ * @param res - the response object
+ */
 const getCommentByUserId = async (req, res) => {
   const comments = await commentModel.getCommentByUserId(
     res,
@@ -33,6 +51,11 @@ const getCommentByUserId = async (req, res) => {
   }
 };
 
+/**
+ * It creates a comment.
+ * @param req - the request object
+ * @param res - the response object
+ */
 const createComment = async (req, res) => {
   const errors = validationResult(req);
   if (errors.isEmpty) {
@@ -48,6 +71,11 @@ const createComment = async (req, res) => {
   }
 };
 
+/**
+ * It deletes a comment from the database.
+ * @param req - request
+ * @param res - the response object
+ */
 const deleteComment = async (req, res) => {
   const comment = req.body;
   const result = await commentModel.deleteComment(comment, res);
@@ -60,6 +88,11 @@ const deleteComment = async (req, res) => {
   }
 };
 
+/**
+ * It gets a comment and user from the database and returns it to the user.
+ * @param req - the request object
+ * @param res - response object
+ */
 const getCommentAndUser = async (req, res) => {
   const comment = await commentModel.getCommentAndUser(
     res,
