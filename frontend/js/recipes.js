@@ -160,14 +160,19 @@ document.querySelector("#likebutton").addEventListener("click", async (e) => {
 });
 
 function hideDelete() {
+  if(sessionStorage.getItem("token")){
   const token = sessionStorage.getItem("token")
   const base64 = token.split('.')[1];
   const decoadedValue = JSON.parse(window.atob(base64));
   const role = decoadedValue.role;
   console.log(role)
+  if (role =="2"){
+    document.querySelector("#Delete").style.display = "block";
+  }else{
+    document.querySelector("#Delete").style.display = "none";
+  }
 
-  if (role !="2")
-    document.getElementById("#delete").style.display = "none";
+  }
 }
 
 window.onload = getRecipeById();

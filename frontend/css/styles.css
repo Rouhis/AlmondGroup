@@ -95,6 +95,9 @@
      background-color: var(--background2);
      color: var(--border);
  }
+ #Delete{
+    display: none;
+ }
 
 
  #nav_a:hover .dropdown-content {
