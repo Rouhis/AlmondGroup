@@ -2,9 +2,9 @@
  * @author Axel Kähkönen <axel.kahkonen@metropolia.fi>
  */
 "use strict";
-const token = sessionStorage.getItem("token")
-const base64 = token.split('.')[1];
-    const decoadedValue = JSON.parse(window.atob(base64));
+
+
+
 
 /*Takes rhe recipes id from the url and makes it a new const*/
 const getQParam = (param) => {
@@ -73,6 +73,9 @@ document
 
     }else{
     if (sessionStorage.getItem("token")) {
+      const token = sessionStorage.getItem("token")
+      const base64 = token.split('.')[1];
+      const decoadedValue = JSON.parse(window.atob(base64));
       const user_id = decoadedValue.id;
       const recipe_id = recipeId;
       const data = document.querySelector("#commentBox").value;
@@ -103,6 +106,9 @@ document.querySelector("#likebutton").addEventListener("click", async (e) => {
   e.preventDefault();
 
   if (sessionStorage.getItem("token")) {
+    const token = sessionStorage.getItem("token")
+    const base64 = token.split('.')[1];
+    const decoadedValue = JSON.parse(window.atob(base64));
     const userId = decoadedValue.id;
     const response = await fetch(url + "/fav/test/", {
       method: "POST",
