@@ -4,6 +4,8 @@
 "use strict";
 const { validationResult } = require("express-validator");
 const recipeModel = require("../models/recipeModel");
+const commentModel = require("../models/commentModel");
+const favModel = require("../models/favModel")
 
 /**
  * It's a function that takes in a request and a response, and then it gets all the recipes from the
@@ -98,15 +100,16 @@ const getRecipeByName = async (req, res) => {
 };
 
 const deleteRecipeCommentFav = async (req,res) => {
-  const recipeId = req.body;
-  const result = await recipeModel.deleteRecipeCommentFav(recipeId, res);
-  console.log("Recipe deleted", result);
-
-  if (result.affectedRows > 0) {
-    res.json({ message: "Recipe deleted" });
+  const recipeId = req.params.recipeId;
+  const favResult = await favModel.removeFavs(recipeId, res);
+  const commentResult = await commentModel.deleteComments(recipeId, res);
+  const recipeResult = await recipeModel.deleteRecipe(recipeId,res);
+  if (favResult.affectedRows + commentResult.affectedRows + recipeResult.affectedRows > 0) {
+    res.json({ message: "fav deleted" });
   } else {
-    res.status(401).json({ message: "Recipe delete failed" });
+    res.status(401).json({ message: "fav delete failed" });
   }
+
 }
 
 module.exports = {

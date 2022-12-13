@@ -102,6 +102,19 @@ const deleteComment = async (comment, res) => {
   }
 };
 
+const deleteComments = async (recipe, res) => {
+  try {
+    const [rows] = await promisePool.query(
+      'DELETE FROM comments WHERE recipe_id=?',
+      [recipe]
+    );
+    return rows;
+  } catch (e) {
+    console.error("error", e.message);
+    res.status(500).send(e.message);
+  }
+};
+
 /**
  * It takes a recipeId as a parameter and returns an array of objects containing the comment id,
  * comment data, and username of the user who made the comment.
@@ -115,6 +128,7 @@ const getCommentAndUser = async (res, recipeId) => {
       "SELECT comments.id, comments.data, user.username FROM comments INNER JOIN user ON comments.user_id = user.id WHERE comments.recipe_id =?;",
       [recipeId]
     );
+  
     return rows;
   } catch (e) {
     console.error("error", e.message);
@@ -130,4 +144,5 @@ module.exports = {
   addComment,
   deleteComment,
   getCommentAndUser,
+  deleteComments
 };

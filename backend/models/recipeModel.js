@@ -135,9 +135,11 @@ const getRecipeByName = async (res, recipeName) => {
   }
 };
 
-const deleteRecipeCommentFav = async(recipeId,res)=>{
+const deleteRecipe = async(recipe,res)=>{
   try{
-    const rows = await promisePool.query("DELETE FROM comments WHERE recipe_id=19","DELETE FROM fav WHERE recipe_id=19","DELETE FROM recipe WHERE id=19");
+    const [rows] = await promisePool.query(
+      "DELETE FROM recipe WHERE id=?",
+      [recipe]);
     console.log(rows);
     return rows
   } catch (e) {
@@ -146,6 +148,7 @@ const deleteRecipeCommentFav = async(recipeId,res)=>{
   }
 }
 
+
 module.exports = {
   getAllRecipes,
   getRecipeById,
@@ -153,5 +156,5 @@ module.exports = {
   addRecipe,
   updateRecipeById,
   getRecipeByName,
-  deleteRecipeCommentFav
+  deleteRecipe
 };

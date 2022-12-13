@@ -8,6 +8,7 @@ const router = express.Router();
 const multer = require("multer");
 const { body } = require("express-validator");
 const recipeController = require("../controllers/recipeController");
+const favController = require("../controllers/favController");
 
 const fileFilter = (req, file, cb) => {
   const acceptedTypes = ["image/jpg", "image/jpeg", "image/png", "image/gif"];
@@ -35,7 +36,7 @@ router
     //body("img"),
     recipeController.createRecipe
   )
-  .delete("/:recipeId",recipeController.deleteRecipeCommentFav)
+  .delete("/:recipeId", recipeController.deleteRecipeCommentFav)
   .put("/", recipeController.modifyRecipeById);
 
 module.exports = router;

@@ -76,6 +76,19 @@ const removeFav = async (favo, res) => {
   }
 };
 
+const removeFavs = async (recipe, res) => {
+  try {
+    const [result] = await promisePool.query(
+      "DELETE FROM fav WHERE recipe_id=?",
+      [recipe]
+    );
+    return result
+  } catch (e) {
+    console.error("error", e.message);
+    res.status(500).send(e.message);
+  }
+};
+
 /**
  * It checks if a user has already favorited a recipe, if they have, it removes it, if they haven't, it
  * adds it.
@@ -111,4 +124,5 @@ module.exports = {
   addFav,
   removeFav,
   checkFav,
+  removeFavs,
 };

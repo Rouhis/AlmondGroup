@@ -1,11 +1,12 @@
 /**
  * @author Axel Kähkönen <axel.kahkonen@metropolia.fi>
  */
+
 "use strict";
 
 const { validationResult } = require("express-validator");
 const { createPool } = require("mysql2");
-const favModel = require("../models/favModel");
+const favModel = require("../models/favModel")
 
 /**
  * This function checks if a user has favorited a recipe.
