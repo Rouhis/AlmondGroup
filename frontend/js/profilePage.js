@@ -6,6 +6,7 @@
 const url = "http://127.0.0.1:3000";
 const token = sessionStorage.getItem("token")
 
+/* Getting the username from the token. */
 const base64 = token.split('.')[1];
     const decoadedValue = JSON.parse(window.atob(base64));
     const usernameElement = document.querySelector("#username");
