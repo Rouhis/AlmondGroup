@@ -40,36 +40,32 @@
     <div class="recipeadd_container">
 
         <form action="http://localhost:3000/recipe" class="recipe_add" id="recipe_add" method="post">
-            <div class="image_container">
-                <div class="add_image">
-                    <input class="hide" type="file" name="recipe" accept="image/*" onchange="loadFile(event)">
+            <div class="add_name">
+                <h2>Name</h2>
+                <input name="name" id="textarea"></input>
+            </div>
+            <input class="hide" type="file" name="recipe" accept="image/*" onchange="loadFile(event)">
+            <div class="add_image">
+        
                     <img id="output">
                 </div>
-            </div>
+      
             <div class="guidelines">
-                <div class="add_name">
-                    <h2>Name</h2>
-                    <textarea name="name" id="textarea">asd</textarea>
-                </div>
                 <div id="add_id" class="add_id">
                     <h2>ID</h2>
                     <textarea name="userid" id="textarea" class="userIdText"></textarea>
                 </div>
                 <div class="add_ingredients">
                     <h2>Add ingredients</h2>
-                    <textarea name="ingredients" id="textarea">asd</textarea>
+                    <textarea class="ingredients_input" name="ingredients" id="textarea"></textarea>
                 </div>
                 <div class="add_steps">
                     <h2>Add steps</h2>
-                    <textarea name="instructions" id="textarea">dsa</textarea>
+                    <textarea class="steps_input" name="instructions" id="textarea"></textarea>
                 </div>
-                <!-- <div class="add_img">
-                    <h2>Img</h2>
-                    <textarea name="img" id="textarea">asd</textarea>
-                </div> -->
             </div>
             <div class="add_button">
-                <button type="submit">submit</button>
+                <button class="submit_button"type="submit">Submit</button>
             </div>
         </form>
     </div>

@@ -1,5 +1,5 @@
 /**
- * @author Axel Kähkönen <axel.kahkonen@metropolia.fi>
+ * @author Axel Kähkönen OLIKOHAN :DDDD <axel.kahkonen@metropolia.fi>
  */
 "use strict";
 
@@ -19,8 +19,7 @@ searchButton.addEventListener("click", async (evt) => {
   let json;
 
   if (!searchField.value) {
-    mainElement.innerHTML = ``;
-    json = await getRecipes();
+    alert('Typee jotain tyhmyri :DDD');
   } else {
     mainElement.innerHTML = ``;
     json = await getRecipeByName();
