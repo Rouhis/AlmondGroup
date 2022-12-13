@@ -69,6 +69,9 @@ document
   .querySelector("#add_comment_button")
   .addEventListener("click", async (e) => {
     e.preventDefault();
+    if(!document.querySelector("#commentBox").value){
+
+    }else{
     if (sessionStorage.getItem("token")) {
       const user_id = decoadedValue.id;
       const recipe_id = recipeId;
@@ -93,7 +96,7 @@ document
     } else {
       alert("Please login to add comment");
     }
-  });
+  }});
 
 /* Adding a recipe to the favorites list. */
 document.querySelector("#likebutton").addEventListener("click", async (e) => {
