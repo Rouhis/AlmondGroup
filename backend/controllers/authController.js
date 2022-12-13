@@ -1,3 +1,7 @@
+/**
+ * @author Leo Gong <Leo.Gong@metropolia.fi>
+ */
+/* This is importing the required modules. */
 "use strict";
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
@@ -6,7 +10,17 @@ const { validationResult } = require("express-validator");
 const userModel = require("../../backend/models/userModel");
 require("dotenv").config();
 
+
+/**
+ * It takes a request and a response, and then it authenticates the user, and then it logs the user in,
+ * and then it deletes the user's password, and then it signs the user, and then it returns the user
+ * and the token.
+ * @param req - The request object.
+ * @param res - The response object.
+ */
 const login = (req, res) => {
+ 
+  /* A function that is being exported. */
   passport.authenticate("local", { session: false }, (err, user, info) => {
     if (err || !user) {
       return res.status(400).json({
@@ -21,14 +35,17 @@ const login = (req, res) => {
 
       delete user.password;
       const token = jwt.sign(user, process.env.JWT_SECRET);
-     /* const base64Url = token.split('.')[1];
-      const decoadedValue = JSON.parse(window.atob(base64Url));
-      console.log(decoadedValue)*/
-      return res.json({ user, token/*,decoadedValue*/});
+     
+      return res.json({user, token});
     });
   })(req, res);
 };
 
+/**
+ * It creates a new user.
+ * @param req - The request object.
+ * @param res - the response object
+ */
 const createUser = async (req, res) => {
   console.log("Creating a new user:", req.body);
   const newUser = req.body;
@@ -51,6 +68,7 @@ const createUser = async (req, res) => {
   }
 };
 
+/* Exporting the functions. */
 module.exports = {
   login,
   createUser,

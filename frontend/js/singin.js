@@ -1,12 +1,22 @@
+/**
+ * @author Leo Gong <Leo.Gong@metropolia.fi>
+ */
+
+
 'use strict';
 
+/* Checking if the token is null. If it is null, it will redirect to the login page. */
 if(sessionStorage.getItem("token") == null){
-    const url = 'http://127.0.0.1:3000'; // change url when uploading to server
+    const url = 'http://127.0.0.1:3000'; 
 
 
+/* Selecting the form with the id login_form. */
 const loginForm = document.querySelector('#login_form');
 
 
+/* The above code is checking if the user is logged in or not. If the user is not logged in, then the
+user will be redirected to the login page. If the user is logged in, then the user will be
+redirected to the home page. */
 loginForm.addEventListener('submit', async (evt) => {
   evt.preventDefault();
   const data = serializeJson(loginForm);
@@ -15,7 +25,7 @@ loginForm.addEventListener('submit', async (evt) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(data), // body data type must match "Content-Type" header
+    body: JSON.stringify(data), 
   };
     console.log(fetchOptions)
   const response = await fetch(url + '/auth/login', fetchOptions);
