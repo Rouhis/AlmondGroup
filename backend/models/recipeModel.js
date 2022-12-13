@@ -135,6 +135,17 @@ const getRecipeByName = async (res, recipeName) => {
   }
 };
 
+const deleteRecipeCommentFav = async(recipeId,res)=>{
+  try{
+    const rows = await promisePool.query("DELETE FROM comments WHERE recipe_id=19","DELETE FROM fav WHERE recipe_id=19","DELETE FROM recipe WHERE id=19");
+    console.log(rows);
+    return rows
+  } catch (e) {
+    console.error("error", e.message);
+    res.status(500).send(e.message);
+  }
+}
+
 module.exports = {
   getAllRecipes,
   getRecipeById,
@@ -142,4 +153,5 @@ module.exports = {
   addRecipe,
   updateRecipeById,
   getRecipeByName,
+  deleteRecipeCommentFav
 };

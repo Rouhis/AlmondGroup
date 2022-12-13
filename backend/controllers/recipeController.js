@@ -97,6 +97,18 @@ const getRecipeByName = async (req, res) => {
   }
 };
 
+const deleteRecipeCommentFav = async (req,res) => {
+  const recipeId = req.body;
+  const result = await recipeModel.deleteRecipeCommentFav(recipeId, res);
+  console.log("Recipe deleted", result);
+
+  if (result.affectedRows > 0) {
+    res.json({ message: "Recipe deleted" });
+  } else {
+    res.status(401).json({ message: "Recipe delete failed" });
+  }
+}
+
 module.exports = {
   getRecipes,
   getRecipeById,
@@ -104,4 +116,5 @@ module.exports = {
   createRecipe,
   modifyRecipeById,
   getRecipeByName,
+  deleteRecipeCommentFav
 };

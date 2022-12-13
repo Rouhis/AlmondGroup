@@ -122,6 +122,7 @@ const getCommentAndUser = async (res, recipeId) => {
   }
 };
 
+
 module.exports = {
   getAllComments,
   getCommentsByRecipeId,

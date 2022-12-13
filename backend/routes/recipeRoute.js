@@ -35,6 +35,7 @@ router
     //body("img"),
     recipeController.createRecipe
   )
+  .delete("/:recipeId",recipeController.deleteRecipeCommentFav)
   .put("/", recipeController.modifyRecipeById);
 
 module.exports = router;
