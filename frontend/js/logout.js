@@ -1,5 +1,6 @@
 /**
  * @author Axel Kähkönen <axel.kahkonen@metropolia.fi>
+ * @author Leo Gong <Leo.Gong@metropolia.fi>
  */
 "use strict";
 
