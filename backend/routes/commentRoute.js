@@ -25,6 +25,7 @@ router
     body("id"),
     body("user_id"),
     commentController.deleteComment
-  );
+  )
+  .delete("/deleteId/:Id",commentController.deleteCommentById);
 
 module.exports = router;

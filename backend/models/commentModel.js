@@ -125,7 +125,7 @@ const deleteComments = async (recipe, res) => {
 const getCommentAndUser = async (res, recipeId) => {
   try {
     const [rows] = await promisePool.query(
-      "SELECT comments.id, comments.data, user.username FROM comments INNER JOIN user ON comments.user_id = user.id WHERE comments.recipe_id =?;",
+      "SELECT comments.id, comments.data, user.username, comments.user_id FROM comments INNER JOIN user ON comments.user_id = user.id WHERE comments.recipe_id =?;",
       [recipeId]
     );
   
@@ -136,6 +136,20 @@ const getCommentAndUser = async (res, recipeId) => {
   }
 };
 
+const deleteCommentById = async (commentId, res) => {
+  try{
+    const [rows] = await promisePool.query(
+      "DELETE FROM comments WHERE id=?",
+      [commentId]);
+    console.log(rows);
+    return rows
+  } catch (e) {
+    console.error("error", e.message);
+    res.status(500).send(e.message);
+  }
+}
+
+
 
 module.exports = {
   getAllComments,
@@ -144,5 +158,6 @@ module.exports = {
   addComment,
   deleteComment,
   getCommentAndUser,
-  deleteComments
+  deleteComments,
+  deleteCommentById
 };

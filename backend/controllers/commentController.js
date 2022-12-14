@@ -105,6 +105,17 @@ const getCommentAndUser = async (req, res) => {
   }
 };
 
+const deleteCommentById = async (req,res)=>{
+  const commentId = req.params.Id;
+  const comment = await commentModel.deleteCommentById(commentId,res);
+  if (comment) {
+    res.json(comment);
+  } else {
+    res.sendStatus(404);
+  }
+};
+
+
 module.exports = {
   getComments,
   getCommentsByRecipeId,
@@ -112,4 +123,5 @@ module.exports = {
   createComment,
   deleteComment,
   getCommentAndUser,
+  deleteCommentById
 };

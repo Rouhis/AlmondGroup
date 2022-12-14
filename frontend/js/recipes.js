@@ -48,21 +48,75 @@ const getCommentsById = async () => {
     const comments = await commentResponse.json();
     console.log(comments);
     for (const element of comments) {
-      document.getElementById(
-        "commentfield"
-      ).innerHTML += `<div class="comment">
-      <div class="username">
-          <h4>${element.username}</h4>
+      if(sessionStorage.getItem("token")){
+        const token = sessionStorage.getItem("token")
+        const base64 = token.split('.')[1];
+        const decoadedValue = JSON.parse(window.atob(base64));
+        const role = decoadedValue.role;
+        console.log(role)
+        if (role =="2"){
+          document.getElementById(
+            "commentfield"
+          ).innerHTML += `<div class="comment" id="${element.id}">
+          <div class="username">
+              <h4>${element.username}</h4>
+          </div>
+          <div class="comment_stuff">
+              <p>${element.data}</p>
+              <p hidden>${element.user_id}</p>
+          </div>
+          <div>
+          <button id="commentDelete" onClick="deleteComment(${element.id})">Delete</button
+        </div>
       </div>
-      <div class="comment_stuff">
-          <p>${element.data}</p>
-      </div>
-  </div>`;
-    }
+      <script>const buttonDelete = document.getElementById("commentDelete");
+      buttonDelete.addEventListener("click",deleteComment(id),async(e) =>{e.preventDefault();});
+      </script>`;
+        } else {
+          document.getElementById(
+            "commentfield"
+          ).innerHTML += `<div class="comment" id="${element.id}">
+          <div class="username">
+              <h4>${element.username}</h4>
+          </div>
+          <div class="comment_stuff">
+              <p>${element.data}</p>
+              <p hidden>${element.user_id}</p>
+          </div>`
+        }
+      
+    }}
   } catch (e) {
     console.log(e.message);
   }
 };
+
+/** COMMENT DELETE */
+async function deleteComment(id) {
+  const token = sessionStorage.getItem("token")
+  const base64 = token.split('.')[1];
+  const decoadedValue = JSON.parse(window.atob(base64));
+  const role = decoadedValue.role;
+  console.log(id)
+  console.log(role)
+  if (role == "2") {
+    const response = await fetch(url + "/comment/deleteId/" + id, {
+      method: "Delete",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id,
+      }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => console.log(data));
+
+  }
+};
+
 
 /* Adding a comment to the database. */
 document
@@ -102,6 +156,10 @@ document
     }
   });
 
+
+//image.pngdocument.querySelector("#ShowCommentDelete").addEventListener("click",hideDelete2());
+
+/* Deleting the recipe from the database. */
 document.querySelector("#Delete").addEventListener("click", async (e) => {
   e.preventDefault();
   const token = sessionStorage.getItem("token")
@@ -127,8 +185,6 @@ document.querySelector("#Delete").addEventListener("click", async (e) => {
       .then((data) => console.log(data));
 
   }
-
-
 });
 
 /* Adding a recipe to the favorites list. */
@@ -171,9 +227,13 @@ function hideDelete() {
   }else{
     document.querySelector("#Delete").style.display = "none";
   }
-
   }
 }
+
+
 window.onload = hideDelete();
 window.onload = getRecipeById();
 window.onload = getCommentsById();
+
+
+

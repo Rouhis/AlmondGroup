@@ -13,7 +13,7 @@ const passport = require("./backend//utils/passport");
 
 const port = 3000;
 
-app.use(express.static('uploads'));
+app.use(express.static('/uploads'));
 
 app.use(cors());
 app.use(express.json());
