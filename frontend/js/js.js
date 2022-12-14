@@ -8,7 +8,7 @@ const searchButton = document.getElementById("button");
 const searchField = document.getElementById("search");
 let mainElement = document.querySelector("main");
 
-const url = "http://127.0.0.1:3000";
+const url = 'https://recipegx.northeurope.cloudapp.azure.com/app';
 
 /* An event listener that is listening for a click on the search button. When the button is clicked, it
 will prevent the default action of the button. It will then check if the search field is empty. If

@@ -4,7 +4,7 @@
 "use strict"
 
 
-const url = 'http://localhost:3000';
+const url = 'https://recipegx.northeurope.cloudapp.azure.com/app';
 const addForm = document.querySelector("#recipe_add");
 const token = sessionStorage.getItem("token")
 const base64 = token.split('.')[1];

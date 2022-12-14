@@ -4,7 +4,7 @@
  */
 "use strict";
 
-const url = "http://127.0.0.1:3000";
+const url = 'https://recipegx.northeurope.cloudapp.azure.com/app';
 const token = sessionStorage.getItem("token")
 
 /* Getting the username from the token. */

@@ -8,7 +8,7 @@
 
 /* Checking if the token is null. If it is null, it will redirect to the login page. */
 if(sessionStorage.getItem("token") == null){
-    const url = 'http://127.0.0.1:3000'; 
+  const url = 'https://recipegx.northeurope.cloudapp.azure.com/app';
 
 
 /* Selecting the form with the id login_form. */
