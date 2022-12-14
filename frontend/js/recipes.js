@@ -14,7 +14,7 @@ const getQParam = (param) => {
 };
 
 let likeBtn = document.getElementById("likebutton");
-const url = "http://127.0.0.1:3000";
+const url = 'https://recipegx.northeurope.cloudapp.azure.com/app';
 const recipeId = getQParam("id");
 console.log(recipeId);
 const addCommnetForm = document.querySelector(".add_comment");
@@ -27,7 +27,6 @@ const getRecipeById = async () => {
     const response = await fetch(url + "/recipe/" + recipeId);
     const recipes = await response.json();
     console.log(recipes);
-
     document.getElementById("foodImage").src = "../../backend/uploads/" + recipes.img;
     document.getElementById("name").innerHTML = recipes.name;
     document.getElementById("ingredients").innerHTML = recipes.ingredients;
