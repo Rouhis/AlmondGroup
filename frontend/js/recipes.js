@@ -72,6 +72,17 @@ const getCommentsById = async () => {
       <script>const buttonDelete = document.getElementById("commentDelete");
       buttonDelete.addEventListener("click",deleteComment(id),async(e) =>{e.preventDefault();});
       </script>`;
+        }else {
+          document.getElementById(
+            "commentfield"
+          ).innerHTML += `<div class="comment" id="${element.id}">
+          <div class="username">
+              <h4>${element.username}</h4>
+          </div>
+          <div class="comment_stuff">
+              <p>${element.data}</p>
+              <p hidden>${element.user_id}</p>
+          </div>`
         }} else {
           document.getElementById(
             "commentfield"
